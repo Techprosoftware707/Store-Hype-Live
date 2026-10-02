@@ -766,6 +766,8 @@ final class Admin {
 			'regular_price'    => __( 'Regular price', 'wp-live-hype' ),
 			'discount_percent' => __( 'Real discount, e.g. "25%" or "up to 30%"', 'wp-live-hype' ),
 			'period'           => __( 'Popularity window, e.g. "in the last 7 days"', 'wp-live-hype' ),
+			'quantity'         => __( 'Real quantity in that order (used only when 2 or more)', 'wp-live-hype' ),
+			'count'            => __( 'Real units sold in the period', 'wp-live-hype' ),
 			'current'          => __( 'Name of the product being viewed', 'wp-live-hype' ),
 			'cart_count'       => __( 'Number of items in the visitor\'s cart', 'wp-live-hype' ),
 			'cart_total'       => __( 'Visitor\'s cart subtotal', 'wp-live-hype' ),

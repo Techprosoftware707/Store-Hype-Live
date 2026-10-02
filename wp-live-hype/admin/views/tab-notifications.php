@@ -30,9 +30,9 @@ Admin::card_start( __( 'Real-data notification types', 'wp-live-hype' ), __( 'Us
 	<?php
 	$wplh_type_rows = array(
 		array( 'type_product_purchase', 'weight_product_purchase', __( 'Recent product purchase', 'wp-live-hype' ), __( 'On product and category pages, real purchases of the product (or category) being viewed are shown first.', 'wp-live-hype' ) ),
-		array( 'type_purchase', 'weight_purchase', __( 'Recent purchase', 'wp-live-hype' ), __( 'Real qualifying orders from your geographic scope.', 'wp-live-hype' ) ),
+		array( 'type_purchase', 'weight_purchase', __( 'Just bought!', 'wp-live-hype' ), __( 'Real qualifying orders from your geographic scope: product, real quantity, location and time.', 'wp-live-hype' ) ),
 		array( 'type_sale', 'weight_sale', __( 'Active sale', 'wp-live-hype' ), __( 'Products with a genuine, currently active WooCommerce sale price.', 'wp-live-hype' ) ),
-		array( 'type_popular', 'weight_popular', __( 'Popular product', 'wp-live-hype' ), __( 'Only when real sales substantiate it (see the Data tab).', 'wp-live-hype' ) ),
+		array( 'type_popular', 'weight_popular', __( 'Popular product / units sold', 'wp-live-hype' ), __( 'e.g. "38 sold in the last 7 days: BPC-157" — only when real sales substantiate it (minimum and window on the Data tab). The number is the real count of units in qualifying orders.', 'wp-live-hype' ) ),
 	);
 	foreach ( $wplh_type_rows as $wplh_row ) :
 		?>

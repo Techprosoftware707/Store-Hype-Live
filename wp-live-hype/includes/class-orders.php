@@ -13,7 +13,7 @@
  *
  * Only the fields needed for a notification are extracted: order date,
  * country, normalized region, sanitized city (only when the configured
- * location level uses it) and product IDs. Names, emails, phones, street
+ * location level uses it), product IDs and quantities. Names, emails, phones, street
  * addresses, postcodes, order numbers and payment data are never read into
  * the dataset. Order IDs are replaced by a keyed, non-reversible hash.
  *
@@ -55,6 +55,7 @@ final class Orders {
 		$result  = array(
 			'purchases' => array(),
 			'counts'    => array(),
+			'units'     => array(),
 			'stats'     => array(
 				'scope'            => false === $allowed ? 'disabled' : ( null === $allowed ? 'all' : implode( ',', $allowed ) ),
 				'scanned'          => 0,
@@ -161,7 +162,8 @@ final class Orders {
 					continue;
 				}
 
-				$product_ids = self::featurable_product_ids( $order );
+				$quantities  = self::featurable_products( $order );
+				$product_ids = array_keys( $quantities );
 				if ( empty( $product_ids ) ) {
 					++$result['stats']['skipped_products'];
 					continue;
@@ -170,8 +172,9 @@ final class Orders {
 				++$result['stats']['qualifying'];
 
 				if ( $need_popular && $timestamp >= $popular_since ) {
-					foreach ( $product_ids as $product_id ) {
+					foreach ( $quantities as $product_id => $qty ) {
 						$result['counts'][ $product_id ] = ( $result['counts'][ $product_id ] ?? 0 ) + 1;
+						$result['units'][ $product_id ]  = ( $result['units'][ $product_id ] ?? 0 ) + $qty;
 					}
 				}
 
@@ -186,6 +189,7 @@ final class Orders {
 							'region'   => $keep_region && '' !== $country ? Country::region_name( $country, $address['state'] ) : '',
 							'city'     => $keep_city && '' !== $country ? Security::clean_place_name( $address['city'] ) : '',
 							'products' => $product_ids,
+							'qty'      => $quantities,
 						);
 					}
 				}
@@ -246,12 +250,13 @@ final class Orders {
 	}
 
 	/**
-	 * Parent product IDs in an order that may be featured publicly.
+	 * Parent products in an order that may be featured publicly, with the
+	 * quantity purchased net of refunds (variations count toward their parent).
 	 *
 	 * @param \WC_Order $order Order.
-	 * @return int[]
+	 * @return array<int,int> product ID => quantity.
 	 */
-	private static function featurable_product_ids( \WC_Order $order ): array {
+	private static function featurable_products( \WC_Order $order ): array {
 		$ids = array();
 		foreach ( $order->get_items( 'line_item' ) as $item ) {
 			if ( ! $item instanceof \WC_Order_Item_Product ) {
@@ -259,16 +264,21 @@ final class Orders {
 			}
 			// For variations get_product_id() is the parent product.
 			$product_id = (int) $item->get_product_id();
-			if ( $product_id <= 0 || isset( $ids[ $product_id ] ) ) {
+			$qty        = max( 0, (int) $item->get_quantity() - abs( (int) $order->get_qty_refunded_for_item( $item->get_id() ) ) );
+			if ( $product_id <= 0 || $qty <= 0 ) {
+				continue;
+			}
+			if ( isset( $ids[ $product_id ] ) ) {
+				$ids[ $product_id ] += $qty;
 				continue;
 			}
 			if ( null !== Products::public_data( $product_id ) ) {
-				$ids[ $product_id ] = $product_id;
+				$ids[ $product_id ] = $qty;
 			}
 			if ( count( $ids ) >= 10 ) {
 				break;
 			}
 		}
-		return array_values( $ids );
+		return $ids;
 	}
 }

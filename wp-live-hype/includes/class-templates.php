@@ -29,10 +29,10 @@ final class Templates {
 	 */
 	public static function allowed_tokens(): array {
 		return array(
-			'purchase'       => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city', 'time_ago' ),
+			'purchase'       => array( 'product', 'quantity', 'location', 'country', 'region', 'province', 'state', 'city', 'time_ago' ),
 			'sale'           => array( 'product', 'sale_price', 'regular_price', 'discount_percent' ),
-			'popular'        => array( 'product', 'period' ),
-			'bestseller'     => array( 'product' ),
+			'popular'        => array( 'product', 'period', 'count' ),
+			'bestseller'     => array( 'product', 'count' ),
 			'featured'       => array( 'product' ),
 			'explore'        => array( 'product' ),
 			'location'       => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city' ),
@@ -85,9 +85,10 @@ final class Templates {
 		switch ( $type ) {
 			case 'purchase':
 				return array(
-					__( 'Someone in {location} recently purchased {product}', 'wp-live-hype' ),
-					__( 'A customer in {city} recently ordered {product}', 'wp-live-hype' ),
-					__( 'Recently purchased: {product}', 'wp-live-hype' ),
+					__( 'A customer from {location} bought {quantity} × {product}', 'wp-live-hype' ),
+					__( 'A customer from {location} bought {product}', 'wp-live-hype' ),
+					__( 'Someone bought {quantity} × {product}', 'wp-live-hype' ),
+					__( 'Someone bought {product}', 'wp-live-hype' ),
 				);
 			case 'sale':
 				return array(
@@ -97,10 +98,12 @@ final class Templates {
 				);
 			case 'popular':
 				return array(
+					__( '{count} sold {period}: {product}', 'wp-live-hype' ),
 					__( '{product} has been popular recently', 'wp-live-hype' ),
 				);
 			case 'bestseller':
 				return array(
+					__( '{product} — {count} sold so far', 'wp-live-hype' ),
 					__( '{product} is one of our best sellers', 'wp-live-hype' ),
 				);
 			case 'featured':
@@ -170,7 +173,7 @@ final class Templates {
 	public static function fallback_template( string $type ): string {
 		switch ( $type ) {
 			case 'purchase':
-				return __( 'Recently purchased: {product}', 'wp-live-hype' );
+				return __( 'Someone bought {product}', 'wp-live-hype' );
 			case 'sale':
 				return __( '{product} is currently on sale', 'wp-live-hype' );
 			case 'popular':
@@ -201,7 +204,7 @@ final class Templates {
 	public static function default_label( string $type ): string {
 		switch ( $type ) {
 			case 'purchase':
-				return __( 'Recent purchase', 'wp-live-hype' );
+				return __( 'Just bought!', 'wp-live-hype' );
 			case 'sale':
 				return __( 'On sale', 'wp-live-hype' );
 			case 'popular':

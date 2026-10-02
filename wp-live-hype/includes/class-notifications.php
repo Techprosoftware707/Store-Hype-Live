@@ -131,7 +131,7 @@ final class Notifications {
 					if ( ! isset( $products[ $id ] ) ) {
 						continue;
 					}
-					$item = self::popular_item( $products[ $id ], $mode );
+					$item = self::popular_item( $products[ $id ], $mode, (int) ( $dataset['popular']['units'][ $id ] ?? 0 ) );
 					if ( null === $item ) {
 						continue;
 					}
@@ -196,9 +196,28 @@ final class Notifications {
 				}
 			}
 		} else {
-			foreach ( self::TYPES as $type ) {
-				foreach ( $lists[ $type ] as $item ) {
-					$queue[] = $item;
+			// Purchases lead; after every three, one sales-count / sale notice keeps
+			// those visible even when there are many purchases.
+			$primary   = array_merge( $lists['product_purchase'], $lists['purchase'] );
+			$secondary = array();
+			$max       = max( count( $lists['popular'] ), count( $lists['sale'] ) );
+			for ( $i = 0; $i < $max; $i++ ) {
+				if ( isset( $lists['popular'][ $i ] ) ) {
+					$secondary[] = $lists['popular'][ $i ];
+				}
+				if ( isset( $lists['sale'][ $i ] ) ) {
+					$secondary[] = $lists['sale'][ $i ];
+				}
+			}
+			$queued = 0;
+			while ( $queued < self::MAX_QUEUE && ( $primary || $secondary ) ) {
+				for ( $i = 0; $i < 3 && $primary; $i++ ) {
+					$queue[] = array_shift( $primary );
+					++$queued;
+				}
+				if ( $secondary ) {
+					$queue[] = array_shift( $secondary );
+					++$queued;
 				}
 			}
 			$queue = array_slice( $queue, 0, self::MAX_QUEUE );
@@ -277,6 +296,7 @@ final class Notifications {
 			(string) Settings::get( 'location_level' )
 		);
 
+		$quantity        = (int) ( $purchase['qty'][ $product['id'] ] ?? 0 );
 		$item            = self::base_item( $product, $type, Security::opaque_id( 'p:' . $purchase['key'] . ':' . $product['id'] ) );
 		$item['message'] = Templates::render_for(
 			'purchase',
@@ -288,6 +308,8 @@ final class Notifications {
 				'province' => $location['region'],
 				'state'    => $location['region'],
 				'city'     => $location['city'],
+				// Real quantity from the order; only used when more than one was bought.
+				'quantity' => $quantity > 1 ? number_format_i18n( $quantity ) : '',
 			)
 		);
 
@@ -334,9 +356,10 @@ final class Notifications {
 	 *
 	 * @param array  $product Public product data.
 	 * @param string $mode    24h|7d|30d|lifetime.
+	 * @param int    $units   Real units sold in the period (0 = unknown, {count} is then not used).
 	 * @return array|null
 	 */
-	private static function popular_item( array $product, string $mode ): ?array {
+	private static function popular_item( array $product, string $mode, int $units = 0 ): ?array {
 		$periods = array(
 			'24h' => __( 'in the last 24 hours', 'wp-live-hype' ),
 			'7d'  => __( 'in the last 7 days', 'wp-live-hype' ),
@@ -344,13 +367,20 @@ final class Notifications {
 		);
 		$item    = self::base_item( $product, 'popular', Security::opaque_id( 'h:' . $product['id'] ) );
 		if ( 'lifetime' === $mode ) {
-			$item['message'] = Templates::render_for( 'bestseller', array( 'product' => $product['name'] ) );
+			$item['message'] = Templates::render_for(
+				'bestseller',
+				array(
+					'product' => $product['name'],
+					'count'   => $units > 0 ? number_format_i18n( $units ) : '',
+				)
+			);
 		} elseif ( isset( $periods[ $mode ] ) ) {
 			$item['message'] = Templates::render_for(
 				'popular',
 				array(
 					'product' => $product['name'],
 					'period'  => $periods[ $mode ],
+					'count'   => $units > 0 ? number_format_i18n( $units ) : '',
 				)
 			);
 		} else {
@@ -459,6 +489,7 @@ final class Notifications {
 		$location = Country::public_location( $country, $sample['region'], $sample['city'], $level );
 		$tokens   = array(
 			'product'  => $product['name'],
+			'quantity' => '2', // Sample value (previews are labelled as such).
 			'location' => $location['location'],
 			'country'  => $location['country'],
 			'region'   => $location['region'],

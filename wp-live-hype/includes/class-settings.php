@@ -476,7 +476,7 @@ final class Settings {
 			'type_popular'               => array(
 				'tab'     => 'notifications',
 				'type'    => 'bool',
-				'default' => false,
+				'default' => true,
 			),
 			'priority_mode'              => array(
 				'tab'     => 'notifications',

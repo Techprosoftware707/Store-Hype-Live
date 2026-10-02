@@ -25,7 +25,7 @@ final class Cache {
 	const SOON_HOOK      = 'wplh_refresh_dataset_soon';
 	const GROUP          = 'wplh';
 	const LOCK_TIMEOUT   = 120;
-	const DATASET_FORMAT = 4;
+	const DATASET_FORMAT = 5;
 
 	/**
 	 * Request memo.
@@ -64,8 +64,9 @@ final class Cache {
 			'purchases'     => array(),
 			'sales'         => array(),
 			'popular'       => array(
-				'mode' => '',
-				'ids'  => array(),
+				'mode'  => '',
+				'ids'   => array(),
+				'units' => array(),
 			),
 			'products'      => array(),
 			'pool'          => array(
@@ -232,17 +233,32 @@ final class Cache {
 				if ( 'lifetime' === $source ) {
 					// Store-wide counter: only valid when no geographic restriction applies.
 					if ( null === Country::allowed_countries() ) {
+						$ids             = Products::lifetime_bestsellers( $min, $limit );
 						$data['popular'] = array(
-							'mode' => 'lifetime',
-							'ids'  => Products::lifetime_bestsellers( $min, $limit ),
+							'mode'  => 'lifetime',
+							'ids'   => $ids,
+							// WooCommerce's own store-wide units-sold counter.
+							'units' => array_combine(
+								$ids,
+								array_map(
+									static function ( $id ) {
+										return max( 0, (int) get_post_meta( $id, 'total_sales', true ) );
+									},
+									$ids
+								)
+							),
 						);
 					} else {
 						$data['stats']['popular_unavailable'] = 'geo';
 					}
 				} else {
+					$ids             = Products::popular_from_counts( $orders['counts'], $min, $limit );
 					$data['popular'] = array(
-						'mode' => $source,
-						'ids'  => Products::popular_from_counts( $orders['counts'], $min, $limit ),
+						'mode'  => $source,
+						'ids'   => $ids,
+						// Units sold in the window. Omitted when the order scan was cut short,
+						// so a number is only ever shown when it is complete.
+						'units' => empty( $orders['stats']['limit_reached'] ) ? array_intersect_key( (array) ( $orders['units'] ?? array() ), array_flip( $ids ) ) : array(),
 					);
 				}
 			}

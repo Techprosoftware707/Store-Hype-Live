@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Live Hype 1.1.0\n"
+"Project-Id-Version: WP Live Hype 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-live-hype\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-02T07:21:54+00:00\n"
+"POT-Creation-Date: 2026-10-02T18:46:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-live-hype\n"
@@ -248,79 +248,87 @@ msgid "Popularity window, e.g. \"in the last 7 days\""
 msgstr ""
 
 #: admin/class-admin.php:769
-msgid "Name of the product being viewed"
+msgid "Real quantity in that order (used only when 2 or more)"
 msgstr ""
 
 #: admin/class-admin.php:770
-msgid "Number of items in the visitor's cart"
+msgid "Real units sold in the period"
 msgstr ""
 
 #: admin/class-admin.php:771
-msgid "Visitor's cart subtotal"
+msgid "Name of the product being viewed"
 msgstr ""
 
 #: admin/class-admin.php:772
-msgid "Your WooCommerce free-shipping minimum"
+msgid "Number of items in the visitor's cart"
 msgstr ""
 
 #: admin/class-admin.php:773
+msgid "Visitor's cart subtotal"
+msgstr ""
+
+#: admin/class-admin.php:774
+msgid "Your WooCommerce free-shipping minimum"
+msgstr ""
+
+#: admin/class-admin.php:775
 msgid "Amount still needed for free shipping"
 msgstr ""
 
-#: admin/class-admin.php:792
+#: admin/class-admin.php:794
 msgid "Insert token"
 msgstr ""
 
-#: admin/class-admin.php:809
+#: admin/class-admin.php:811
 #: admin/views/tab-conversion.php:64
 msgid "Purchase"
 msgstr ""
 
-#: admin/class-admin.php:810
+#: admin/class-admin.php:812
 #: admin/views/tab-weighting.php:18
-#: includes/class-templates.php:210
+#: includes/class-templates.php:213
 msgid "Featured"
 msgstr ""
 
-#: admin/class-admin.php:811
-#: includes/class-templates.php:212
+#: admin/class-admin.php:813
+#: includes/class-templates.php:215
 msgid "Spotlight"
 msgstr ""
 
-#: admin/class-admin.php:812
+#: admin/class-admin.php:814
 msgid "Shipping"
 msgstr ""
 
-#: admin/class-admin.php:813
+#: admin/class-admin.php:815
 msgid "Sale"
 msgstr ""
 
-#: admin/class-admin.php:814
-#: includes/class-templates.php:208
+#: admin/class-admin.php:816
+#: includes/class-templates.php:211
 msgid "Popular"
 msgstr ""
 
-#: admin/class-admin.php:842
+#: admin/class-admin.php:844
 #: admin/views/tab-country.php:120
 #: includes/class-frontend.php:190
 msgid "SYNTHETIC PREVIEW — NOT REAL CUSTOMER ACTIVITY"
 msgstr ""
 
-#: admin/class-admin.php:844
+#: admin/class-admin.php:846
 msgid "Device"
 msgstr ""
 
-#: admin/class-admin.php:845
+#: admin/class-admin.php:847
 #: admin/views/part-funnel.php:93
 msgid "Desktop"
 msgstr ""
 
-#: admin/class-admin.php:846
+#: admin/class-admin.php:848
 #: admin/views/part-funnel.php:93
 msgid "Mobile"
 msgstr ""
 
-#: admin/class-admin.php:848
+#: admin/class-admin.php:850
 msgid "Notification type"
 msgstr ""
 
@@ -872,8 +880,6 @@ msgid "Recent product purchase"
 msgstr ""
 
 #: admin/views/tab-analytics.php:24
-#: admin/views/tab-notifications.php:33
-#: includes/class-templates.php:204
 msgid "Recent purchase"
 msgstr ""
 
@@ -883,7 +889,6 @@ msgid "Active sale"
 msgstr ""
 
 #: admin/views/tab-analytics.php:26
-#: admin/views/tab-notifications.php:35
 msgid "Popular product"
 msgstr ""
 
@@ -1178,7 +1183,7 @@ msgstr ""
 #: admin/views/tab-conversion.php:190
 #: admin/views/tab-products.php:36
 #: includes/class-conversion.php:171
-#: includes/class-templates.php:222
+#: includes/class-templates.php:225
 msgid "Checkout"
 msgstr ""
 
@@ -1389,7 +1394,7 @@ msgid "One template per line. Cart values are filled in by the visitor's own bro
 msgstr ""
 
 #: admin/views/tab-conversion.php:163
-#: includes/class-templates.php:154
+#: includes/class-templates.php:157
 msgid "Free-shipping minimum reached"
 msgstr ""
 
@@ -1421,7 +1426,7 @@ msgstr ""
 
 #: admin/views/tab-conversion.php:189
 #: admin/views/tab-dashboard.php:191
-#: includes/class-templates.php:225
+#: includes/class-templates.php:228
 msgid "Free shipping"
 msgstr ""
 
@@ -2466,7 +2471,12 @@ msgid "On product and category pages, real purchases of the product (or category
 msgstr ""
 
 #: admin/views/tab-notifications.php:33
-msgid "Real qualifying orders from your geographic scope."
+#: includes/class-templates.php:207
+msgid "Just bought!"
+msgstr ""
+
+#: admin/views/tab-notifications.php:33
+msgid "Real qualifying orders from your geographic scope: product, real quantity, location and time."
 msgstr ""
 
 #: admin/views/tab-notifications.php:34
@@ -2474,7 +2484,11 @@ msgid "Products with a genuine, currently active WooCommerce sale price."
 msgstr ""
 
 #: admin/views/tab-notifications.php:35
-msgid "Only when real sales substantiate it (see the Data tab)."
+msgid "Popular product / units sold"
+msgstr ""
+
+#: admin/views/tab-notifications.php:35
+msgid "e.g. \"38 sold in the last 7 days: BPC-157\" — only when real sales substantiate it (minimum and window on the Data tab). The number is the real count of units in qualifying orders."
 msgstr ""
 
 #: admin/views/tab-notifications.php:42
@@ -2795,7 +2809,7 @@ msgid "Configure a country on the Country tab to weight regions and cities."
 msgstr ""
 
 #. translators: %d: number of minutes.
-#: includes/class-cache.php:347
+#: includes/class-cache.php:363
 #, php-format
 msgid "Every %d minute (WP Live Hype)"
 msgid_plural "Every %d minutes (WP Live Hype)"
@@ -2947,12 +2961,12 @@ msgid "Verified purchase"
 msgstr ""
 
 #: includes/class-frontend.php:178
-#: includes/class-notifications.php:394
+#: includes/class-notifications.php:424
 msgid "Just now"
 msgstr ""
 
 #: includes/class-frontend.php:179
-#: includes/class-notifications.php:375
+#: includes/class-notifications.php:405
 msgid "Recently"
 msgstr ""
 
@@ -2981,45 +2995,45 @@ msgctxt "city, country"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: includes/class-notifications.php:341
+#: includes/class-notifications.php:364
 msgid "in the last 24 hours"
 msgstr ""
 
-#: includes/class-notifications.php:342
+#: includes/class-notifications.php:365
 msgid "in the last 7 days"
 msgstr ""
 
-#: includes/class-notifications.php:343
+#: includes/class-notifications.php:366
 msgid "in the last 30 days"
 msgstr ""
 
 #. translators: %s: human-readable time difference, e.g. "5 mins".
-#: includes/class-notifications.php:397
+#: includes/class-notifications.php:427
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: includes/class-notifications.php:407
+#: includes/class-notifications.php:437
 msgid "Within the last hour"
 msgstr ""
 
-#: includes/class-notifications.php:408
+#: includes/class-notifications.php:438
 msgid "In the last few hours"
 msgstr ""
 
-#: includes/class-notifications.php:409
+#: includes/class-notifications.php:439
 msgid "In the last 24 hours"
 msgstr ""
 
-#: includes/class-notifications.php:410
+#: includes/class-notifications.php:440
 msgid "In the last week"
 msgstr ""
 
-#: includes/class-notifications.php:411
+#: includes/class-notifications.php:441
 msgid "In the last 30 days"
 msgstr ""
 
-#: includes/class-notifications.php:436
+#: includes/class-notifications.php:466
 #: includes/class-synthetic-engine.php:376
 msgid "Sample Product"
 msgstr ""
@@ -3078,189 +3092,201 @@ msgid "At least one qualifying order status is required. The previous selection 
 msgstr ""
 
 #: includes/class-templates.php:88
-msgid "Someone in {location} recently purchased {product}"
+msgid "A customer from {location} bought {quantity} × {product}"
 msgstr ""
 
 #: includes/class-templates.php:89
-msgid "A customer in {city} recently ordered {product}"
+msgid "A customer from {location} bought {product}"
 msgstr ""
 
 #: includes/class-templates.php:90
-#: includes/class-templates.php:173
-msgid "Recently purchased: {product}"
+msgid "Someone bought {quantity} × {product}"
 msgstr ""
 
-#: includes/class-templates.php:94
-#: includes/class-templates.php:175
-msgid "{product} is currently on sale"
+#: includes/class-templates.php:91
+#: includes/class-templates.php:176
+msgid "Someone bought {product}"
 msgstr ""
 
 #: includes/class-templates.php:95
-msgid "Sale available on {product}"
+#: includes/class-templates.php:178
+msgid "{product} is currently on sale"
 msgstr ""
 
 #: includes/class-templates.php:96
+msgid "Sale available on {product}"
+msgstr ""
+
+#: includes/class-templates.php:97
 msgid "{product} — now {sale_price}"
 msgstr ""
 
-#: includes/class-templates.php:100
-#: includes/class-templates.php:177
+#: includes/class-templates.php:101
+msgid "{count} sold {period}: {product}"
+msgstr ""
+
+#: includes/class-templates.php:102
+#: includes/class-templates.php:180
 msgid "{product} has been popular recently"
 msgstr ""
 
-#: includes/class-templates.php:104
-#: includes/class-templates.php:179
+#: includes/class-templates.php:106
+msgid "{product} — {count} sold so far"
+msgstr ""
+
+#: includes/class-templates.php:107
+#: includes/class-templates.php:182
 msgid "{product} is one of our best sellers"
 msgstr ""
 
-#: includes/class-templates.php:108
-#: includes/class-templates.php:181
+#: includes/class-templates.php:111
+#: includes/class-templates.php:184
 msgid "{product} — featured in our store"
 msgstr ""
 
-#: includes/class-templates.php:109
+#: includes/class-templates.php:112
 msgid "Handpicked for you: {product}"
 msgstr ""
 
-#: includes/class-templates.php:110
+#: includes/class-templates.php:113
 msgid "Our pick: {product}"
 msgstr ""
 
-#: includes/class-templates.php:114
-#: includes/class-templates.php:183
+#: includes/class-templates.php:117
+#: includes/class-templates.php:186
 msgid "Explore {product}"
 msgstr ""
 
-#: includes/class-templates.php:115
+#: includes/class-templates.php:118
 msgid "Take a closer look at {product}"
 msgstr ""
 
-#: includes/class-templates.php:116
+#: includes/class-templates.php:119
 msgid "Discover {product}"
 msgstr ""
 
-#: includes/class-templates.php:120
+#: includes/class-templates.php:123
 msgid "Ships across {region}"
 msgstr ""
 
-#: includes/class-templates.php:121
+#: includes/class-templates.php:124
 msgid "Now shipping to {city}"
 msgstr ""
 
-#: includes/class-templates.php:122
+#: includes/class-templates.php:125
 msgid "Available across {country}"
 msgstr ""
 
-#: includes/class-templates.php:126
+#: includes/class-templates.php:129
 msgid "{product} is on sale — now {sale_price}"
 msgstr ""
 
-#: includes/class-templates.php:127
-#: includes/class-templates.php:187
+#: includes/class-templates.php:130
+#: includes/class-templates.php:190
 msgid "{product} is ready when you are"
 msgstr ""
 
-#: includes/class-templates.php:128
+#: includes/class-templates.php:131
 msgid "Interested in {product}? Add it to your cart anytime"
 msgstr ""
 
-#: includes/class-templates.php:132
-#: includes/class-templates.php:189
+#: includes/class-templates.php:135
+#: includes/class-templates.php:192
 msgid "You may also like {product}"
 msgstr ""
 
-#: includes/class-templates.php:133
+#: includes/class-templates.php:136
 msgid "Related to {current}: {product}"
 msgstr ""
 
-#: includes/class-templates.php:134
+#: includes/class-templates.php:137
 msgid "Also in our store: {product}"
 msgstr ""
 
-#: includes/class-templates.php:138
+#: includes/class-templates.php:141
 msgid "Your cart is saved — subtotal {cart_total}"
 msgstr ""
 
-#: includes/class-templates.php:139
+#: includes/class-templates.php:142
 msgid "Items in your cart: {cart_count}"
 msgstr ""
 
-#: includes/class-templates.php:143
+#: includes/class-templates.php:146
 msgid "Ready to check out? Cart subtotal: {cart_total}"
 msgstr ""
 
-#: includes/class-templates.php:144
+#: includes/class-templates.php:147
 msgid "Complete your order whenever you are ready"
 msgstr ""
 
-#: includes/class-templates.php:148
+#: includes/class-templates.php:151
 msgid "You are {amount_remaining} away from free shipping"
 msgstr ""
 
-#: includes/class-templates.php:149
+#: includes/class-templates.php:152
 msgid "Add {amount_remaining} more to qualify for free shipping"
 msgstr ""
 
-#: includes/class-templates.php:153
+#: includes/class-templates.php:156
 msgid "Your cart has reached the free-shipping minimum of {threshold}"
 msgstr ""
 
-#: includes/class-templates.php:158
+#: includes/class-templates.php:161
 msgid "Take your time — the full collection is here when you are ready"
 msgstr ""
 
-#: includes/class-templates.php:185
+#: includes/class-templates.php:188
 msgid "Now shipping across {location}"
 msgstr ""
 
-#: includes/class-templates.php:206
+#: includes/class-templates.php:209
 msgid "On sale"
 msgstr ""
 
-#: includes/class-templates.php:214
+#: includes/class-templates.php:217
 msgid "Now shipping"
 msgstr ""
 
-#: includes/class-templates.php:216
+#: includes/class-templates.php:219
 msgid "This product"
 msgstr ""
 
-#: includes/class-templates.php:218
+#: includes/class-templates.php:221
 msgid "You may also like"
 msgstr ""
 
-#: includes/class-templates.php:220
+#: includes/class-templates.php:223
 msgid "Your cart"
 msgstr ""
 
-#: includes/class-templates.php:227
+#: includes/class-templates.php:230
 msgid "Still browsing?"
 msgstr ""
 
-#: includes/class-templates.php:271
+#: includes/class-templates.php:274
 msgid "Shipping templates must include a location token such as {region}."
 msgstr ""
 
-#: includes/class-templates.php:274
+#: includes/class-templates.php:277
 msgid "Free-shipping progress templates must include the {amount_remaining} token."
 msgstr ""
 
-#: includes/class-templates.php:276
+#: includes/class-templates.php:279
 msgid "Every template must include the {product} token."
 msgstr ""
 
 #. translators: %s: token name such as {city}.
-#: includes/class-templates.php:283
+#: includes/class-templates.php:286
 #, php-format
 msgid "The token {%s} is not available for this notification type."
 msgstr ""
 
-#: includes/class-templates.php:289
+#: includes/class-templates.php:292
 msgid "The template contains an unrecognised or malformed token. Tokens look like {product}."
 msgstr ""
 
 #. translators: 1: template text, 2: reason it was rejected.
-#: includes/class-templates.php:326
+#: includes/class-templates.php:329
 #, php-format
 msgid "Template \"%1$s\" was not saved: %2$s"
 msgstr ""

@@ -6,7 +6,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 7.6
 WC tested up to: 11.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,7 @@ Activity wording ("recently purchased", "popular", "2 min ago") is reserved for 
 
 = Real data (Hybrid / Aggregate) =
 
+* "Just bought!" notices: real product, real quantity, real location and time from qualifying orders. Units-sold notices ("37 sold in the last 7 days") use real order totals.
 * Purchases only from real orders with qualifying statuses (Processing, Completed by default); pending, failed, cancelled, refunded, draft and trashed orders never qualify.
 * Server-side country targeting with no fallback to other countries.
 * Real sale pricing for simple and variable products; discounts rounded down, never invented.
@@ -128,6 +129,11 @@ Filters: `wplh_capability`, `wplh_should_display`, `wplh_order_query_args`, `wpl
 Deleting the plugin removes what you selected on the Advanced tab: settings, cached data and/or analytics (including the conversion funnel table). WooCommerce products, customers, orders and core data are never touched.
 
 == Changelog ==
+
+= 1.2.0 =
+* "Just bought!" purchase notices built from real orders: product, real quantity (when 2 or more), location and time.
+* Units-sold notices from real order totals, e.g. "37 sold in the last 7 days: Retatrutide" (lifetime mode uses WooCommerce's own sales counter). A number is only shown when the order scan for the period is complete.
+* Sales-count and sale notices are interleaved with purchases so they stay visible on busy stores; popular/units-sold notices are on by default for new installs.
 
 = 1.1.0 =
 * New conversion assistant: visitor-stage decision engine, product calls to action, recommendations, cart reminder, checkout prompt and genuine free-shipping progress.
