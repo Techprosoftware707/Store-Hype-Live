@@ -378,7 +378,8 @@
 
 .afsp-preview-strip {
 	display: block;
-	padding: 4px 36px 4px 12px;
+	min-height: 24px;
+	padding: 5px 36px 5px 12px;
 	background: #b91c1c;
 	color: #ffffff;
 	font-size: 10px;
@@ -391,7 +392,7 @@
 .afsp-root .afsp-toast--preview .afsp-close {
 	top: 0;
 	right: 0;
-	height: 23px;
+	height: 25px;
 	border-radius: 0;
 	color: #ffffff;
 }

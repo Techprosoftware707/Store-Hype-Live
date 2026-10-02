@@ -18,7 +18,7 @@ $afsp_enabled = (bool) $settings['enabled'];
 $afsp_msg = isset( $_GET['afsp_msg'] ) ? sanitize_key( wp_unslash( $_GET['afsp_msg'] ) ) : '';
 ?>
 <div class="wrap afsp-wrap">
-	<header class="afsp-header">
+	<div class="afsp-header">
 		<div class="afsp-header__brand">
 			<?php if ( Branding::show() ) : ?>
 				<img class="afsp-header__logo" src="<?php echo esc_url( Branding::logo_url() ); ?>" alt="<?php echo esc_attr( Branding::developer_name() ); ?>" width="40" height="40" />
@@ -42,7 +42,7 @@ $afsp_msg = isset( $_GET['afsp_msg'] ) ? sanitize_key( wp_unslash( $_GET['afsp_m
 				<span class="afsp-pill afsp-pill--on"><?php esc_html_e( 'Live', 'always-final-social-proof' ); ?></span>
 			<?php endif; ?>
 		</div>
-	</header>
+	</div>
 
 	<nav class="nav-tab-wrapper afsp-tabs" aria-label="<?php esc_attr_e( 'Settings sections', 'always-final-social-proof' ); ?>">
 		<?php foreach ( $afsp_tabs as $afsp_slug => $afsp_label ) : ?>
@@ -59,8 +59,8 @@ $afsp_msg = isset( $_GET['afsp_msg'] ) ? sanitize_key( wp_unslash( $_GET['afsp_m
 		<?php endif; ?>
 	</div>
 
-	<main class="afsp-main afsp-tab-<?php echo esc_attr( $tab ); ?>">
-		<?php include AFSP_PATH . 'admin/views/tab-' . $tab . '.php'; ?>
-	</main>
+	<div class="afsp-main afsp-tab-<?php echo esc_attr( $tab ); ?>">
+		<?php require AFSP_PATH . 'admin/views/tab-' . $tab . '.php'; ?>
+	</div>
 
 </div>

@@ -12,19 +12,19 @@ namespace AlwaysFinal\SocialProof;
 defined( 'ABSPATH' ) || exit;
 
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only report filter.
-$afsp_period  = isset( $_GET['period'] ) ? absint( $_GET['period'] ) : 30;
-$afsp_period  = in_array( $afsp_period, array( 7, 30, 90 ), true ) ? $afsp_period : 30;
-$afsp_totals  = Analytics::totals( $afsp_period );
-$afsp_types   = Analytics::by_type( $afsp_period );
-$afsp_top     = Analytics::top_products( $afsp_period, 10 );
-$afsp_daily   = Analytics::daily( $afsp_period );
-$afsp_names   = array(
+$afsp_period = isset( $_GET['period'] ) ? absint( $_GET['period'] ) : 30;
+$afsp_period = in_array( $afsp_period, array( 7, 30, 90 ), true ) ? $afsp_period : 30;
+$afsp_totals = Analytics::totals( $afsp_period );
+$afsp_types  = Analytics::by_type( $afsp_period );
+$afsp_top    = Analytics::top_products( $afsp_period, 10 );
+$afsp_daily  = Analytics::daily( $afsp_period );
+$afsp_names  = array(
 	'product_purchase' => __( 'Recent product purchase', 'always-final-social-proof' ),
 	'purchase'         => __( 'Recent purchase', 'always-final-social-proof' ),
 	'sale'             => __( 'Active sale', 'always-final-social-proof' ),
 	'popular'          => __( 'Popular product', 'always-final-social-proof' ),
 );
-$afsp_ctr = static function ( $clicks, $views ) {
+$afsp_ctr    = static function ( $clicks, $views ) {
 	return $views > 0 ? number_format_i18n( $clicks / $views * 100, 1 ) . '%' : '—';
 };
 
@@ -37,7 +37,7 @@ $afsp_ctr = static function ( $clicks, $views ) {
  * @param string $unit   Tooltip unit label.
  */
 $afsp_chart = static function ( array $daily, string $metric, string $title, string $unit ) {
-	$max   = 0;
+	$max = 0;
 	foreach ( $daily as $counts ) {
 		$max = max( $max, (int) $counts[ $metric ] );
 	}
@@ -52,8 +52,8 @@ $afsp_chart = static function ( array $daily, string $metric, string $title, str
 			}
 		}
 	}
-	$dates = array_keys( $daily );
-	$count = count( $dates );
+	$dates    = array_keys( $daily );
+	$count    = count( $dates );
 	$label_at = array( 0, (int) floor( ( $count - 1 ) / 2 ), $count - 1 );
 	?>
 	<figure class="afsp-chart" aria-label="<?php echo esc_attr( $title ); ?>">
@@ -188,13 +188,17 @@ $afsp_chart = static function ( array $daily, string $metric, string $title, str
 			<thead><tr><th scope="col"><?php esc_html_e( 'Product', 'always-final-social-proof' ); ?></th><th scope="col" class="num"><?php esc_html_e( 'Clicks', 'always-final-social-proof' ); ?></th><th scope="col" class="num"><?php esc_html_e( 'Shown', 'always-final-social-proof' ); ?></th><th scope="col" class="num"><?php esc_html_e( 'CTR', 'always-final-social-proof' ); ?></th></tr></thead>
 			<tbody>
 				<?php foreach ( $afsp_top as $afsp_row ) : ?>
-					<?php $afsp_title = get_the_title( $afsp_row['product_id'] ); ?>
+					<?php
+					$afsp_title = 'product' === get_post_type( $afsp_row['product_id'] ) ? get_the_title( $afsp_row['product_id'] ) : '';
+					/* translators: %d: product ID. */
+					$afsp_title = '' !== $afsp_title ? $afsp_title : sprintf( __( 'Deleted product #%d', 'always-final-social-proof' ), $afsp_row['product_id'] );
+					?>
 					<tr>
 						<td>
-							<?php if ( current_user_can( 'edit_post', $afsp_row['product_id'] ) ) : ?>
-								<a href="<?php echo esc_url( (string) get_edit_post_link( $afsp_row['product_id'] ) ); ?>"><?php echo esc_html( '' !== $afsp_title ? $afsp_title : '#' . $afsp_row['product_id'] ); ?></a>
+							<?php if ( 'product' === get_post_type( $afsp_row['product_id'] ) && current_user_can( 'edit_post', $afsp_row['product_id'] ) ) : ?>
+								<a href="<?php echo esc_url( (string) get_edit_post_link( $afsp_row['product_id'] ) ); ?>"><?php echo esc_html( $afsp_title ); ?></a>
 							<?php else : ?>
-								<?php echo esc_html( '' !== $afsp_title ? $afsp_title : '#' . $afsp_row['product_id'] ); ?>
+								<?php echo esc_html( $afsp_title ); ?>
 							<?php endif; ?>
 						</td>
 						<td class="num"><?php echo esc_html( number_format_i18n( $afsp_row['clicks'] ) ); ?></td>

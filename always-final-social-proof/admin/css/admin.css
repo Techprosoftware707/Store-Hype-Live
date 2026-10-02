@@ -828,7 +828,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	height: 160px;
-	color: #898781;
+	color: #646970;
 	font-size: 11px;
 	font-variant-numeric: tabular-nums;
 	text-align: right;
@@ -921,7 +921,7 @@
 	position: relative;
 	height: 22px;
 	margin-top: 6px;
-	color: #898781;
+	color: #646970;
 	font-size: 11px;
 }
 

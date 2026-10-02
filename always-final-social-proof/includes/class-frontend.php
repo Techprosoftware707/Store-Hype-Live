@@ -52,7 +52,7 @@ final class Frontend {
 
 		$config = self::config();
 		if ( '' !== $preview ) {
-			$config['preview'] = array_values( array_filter( array( Notifications::preview_items()[ $preview ] ?? null ) ) );
+			$config['preview']       = array_values( array_filter( array( Notifications::preview_items()[ $preview ] ?? null ) ) );
 			$config['freq']['first'] = 1;
 		}
 
@@ -139,22 +139,22 @@ final class Frontend {
 				'hover'      => (bool) Settings::get( 'pause_on_hover' ),
 			),
 			'i18n'        => array(
-				'region'      => __( 'Store activity notifications', 'always-final-social-proof' ),
-				'close'       => __( 'Close notification', 'always-final-social-proof' ),
-				'verified'    => __( 'Verified purchase', 'always-final-social-proof' ),
-				'justNow'     => __( 'Just now', 'always-final-social-proof' ),
-				'recently'    => __( 'Recently', 'always-final-social-proof' ),
-				'hour'        => $approx['hour'],
-				'hours'       => $approx['hours'],
-				'day'         => $approx['day'],
-				'week'        => $approx['week'],
-				'month'       => $approx['month'],
-				'was'         => __( 'Regular price', 'always-final-social-proof' ),
-				'now'         => __( 'Sale price', 'always-final-social-proof' ),
-				'save'        => __( 'Save', 'always-final-social-proof' ),
-				'preview'     => __( 'PREVIEW — NOT REAL CUSTOMER ACTIVITY', 'always-final-social-proof' ),
+				'region'    => __( 'Store activity notifications', 'always-final-social-proof' ),
+				'close'     => __( 'Close notification', 'always-final-social-proof' ),
+				'verified'  => __( 'Verified purchase', 'always-final-social-proof' ),
+				'justNow'   => __( 'Just now', 'always-final-social-proof' ),
+				'recently'  => __( 'Recently', 'always-final-social-proof' ),
+				'hour'      => $approx['hour'],
+				'hours'     => $approx['hours'],
+				'day'       => $approx['day'],
+				'week'      => $approx['week'],
+				'month'     => $approx['month'],
+				'was'       => __( 'Regular price', 'always-final-social-proof' ),
+				'now'       => __( 'Sale price', 'always-final-social-proof' ),
+				'save'      => __( 'Save', 'always-final-social-proof' ),
+				'preview'   => __( 'PREVIEW — NOT REAL CUSTOMER ACTIVITY', 'always-final-social-proof' ),
 				/* translators: %s: developer name. */
-				'poweredBy'   => __( 'by %s', 'always-final-social-proof' ),
+				'poweredBy' => __( 'by %s', 'always-final-social-proof' ),
 			),
 		);
 	}

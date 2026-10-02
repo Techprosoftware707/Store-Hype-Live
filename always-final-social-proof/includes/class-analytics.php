@@ -63,7 +63,7 @@ final class Analytics {
 	public static function table_exists(): bool {
 		global $wpdb;
 		static $exists = array();
-		$table = self::table();
+		$table         = self::table();
 		if ( ! isset( $exists[ $table ] ) ) {
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$exists[ $table ] = $table === $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table ) ) );

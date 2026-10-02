@@ -174,7 +174,7 @@ final class Notifications {
 				'sale'             => (int) Settings::get( 'weight_sale' ),
 				'popular'          => (int) Settings::get( 'weight_popular' ),
 			);
-			while ( count( $queue ) < self::MAX_QUEUE ) {
+			for ( $picked = 0; $picked < self::MAX_QUEUE; $picked++ ) {
 				$available = array();
 				$total     = 0;
 				foreach ( $lists as $type => $list ) {
@@ -341,7 +341,7 @@ final class Notifications {
 			'7d'  => __( 'in the last 7 days', 'always-final-social-proof' ),
 			'30d' => __( 'in the last 30 days', 'always-final-social-proof' ),
 		);
-		$item = self::base_item( $product, 'popular', Security::opaque_id( 'h:' . $product['id'] ) );
+		$item    = self::base_item( $product, 'popular', Security::opaque_id( 'h:' . $product['id'] ) );
 		if ( 'lifetime' === $mode ) {
 			$item['message'] = Templates::render_for( 'bestseller', array( 'product' => $product['name'] ) );
 		} elseif ( isset( $periods[ $mode ] ) ) {
@@ -439,8 +439,8 @@ final class Notifications {
 			'img_h' => 0,
 			'cats'  => array(),
 		);
-		$dataset  = Cache::get_dataset( false );
-		$products = (array) ( $dataset['products'] ?? array() );
+		$dataset        = Cache::get_dataset( false );
+		$products       = (array) ( $dataset['products'] ?? array() );
 
 		// Purchase preview: a real product name (the location/time are sample values, labelled as such).
 		$product = $sample_product;

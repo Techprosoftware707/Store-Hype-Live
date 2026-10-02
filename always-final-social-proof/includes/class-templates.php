@@ -206,7 +206,7 @@ final class Templates {
 		}
 
 		$valid = array_slice( array_values( array_unique( $valid ) ), 0, self::MAX_LINES );
-		if ( $valid === self::default_templates( $type ) ) {
+		if ( self::default_templates( $type ) === $valid ) {
 			return '';
 		}
 		return implode( "\n", $valid );

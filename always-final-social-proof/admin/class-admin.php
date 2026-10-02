@@ -192,6 +192,7 @@ final class Admin {
 				'preview'   => $preview_items,
 				'countries' => $countries,
 				'i18n'      => array(
+					/* translators: %s: country name. */
 					'eligibleOnly'   => __( '%s orders only', 'always-final-social-proof' ),
 					'eligibleAll'    => __( 'All valid store orders (any country)', 'always-final-social-proof' ),
 					'eligibleNone'   => __( 'None — select a target country', 'always-final-social-proof' ),
@@ -327,9 +328,9 @@ final class Admin {
 		}
 	}
 
-	/* --------------------------------------------------------------------
+	/*
 	 * Field helpers (all output escaped).
-	 * ------------------------------------------------------------------ */
+	 */
 
 	/**
 	 * Field name attribute.
@@ -347,11 +348,11 @@ final class Admin {
 	 * @param string $key   Key (for ids).
 	 * @param string $label Label.
 	 * @param string $help  Help text.
-	 * @param bool   $for   Whether the label targets an input id.
+	 * @param bool   $labelled Whether the label targets an input id.
 	 */
-	public static function row_start( string $key, string $label, string $help = '', bool $for = true ): void {
+	public static function row_start( string $key, string $label, string $help = '', bool $labelled = true ): void {
 		echo '<div class="afsp-field" data-field="' . esc_attr( $key ) . '"><div class="afsp-field__label">';
-		if ( $for ) {
+		if ( $labelled ) {
 			echo '<label for="afsp-' . esc_attr( $key ) . '">' . esc_html( $label ) . '</label>';
 		} else {
 			echo '<span class="afsp-field__title" id="afsp-' . esc_attr( $key ) . '-title">' . esc_html( $label ) . '</span>';
@@ -414,6 +415,7 @@ final class Admin {
 	 */
 	public static function select_control( string $key, array $options, array $attrs = array(), bool $described = false ): void {
 		$value = (string) Settings::get( $key );
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- self::attrs() escapes every name and value.
 		echo '<select id="afsp-' . esc_attr( $key ) . '" name="' . esc_attr( self::name( $key ) ) . '"' . self::attrs( $attrs ) . ( $described ? ' aria-describedby="afsp-' . esc_attr( $key ) . '-help"' : '' ) . '>';
 		foreach ( $options as $option_value => $option_label ) {
 			echo '<option value="' . esc_attr( (string) $option_value ) . '" ' . selected( $value, (string) $option_value, false ) . '>' . esc_html( (string) $option_label ) . '</option>';
@@ -708,10 +710,10 @@ final class Admin {
 	 *
 	 * @param string $title Title.
 	 * @param string $intro Intro paragraph.
-	 * @param string $class Extra class.
+	 * @param string $extra_class Extra class.
 	 */
-	public static function card_start( string $title, string $intro = '', string $class = '' ): void {
-		echo '<section class="afsp-card ' . esc_attr( $class ) . '">';
+	public static function card_start( string $title, string $intro = '', string $extra_class = '' ): void {
+		echo '<section class="afsp-card ' . esc_attr( $extra_class ) . '">';
 		if ( '' !== $title ) {
 			echo '<h2 class="afsp-card__title">' . esc_html( $title ) . '</h2>';
 		}

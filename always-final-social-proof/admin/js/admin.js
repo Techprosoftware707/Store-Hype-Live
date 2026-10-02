@@ -2,7 +2,7 @@
  * ALWAYS FINAL Social Proof — admin interface.
  * Developed by ALWAYS FINAL. License: GPL-2.0-or-later.
  */
-/* global jQuery, afspAdmin */
+/* global jQuery */
 ( function ( $ ) {
 	'use strict';
 

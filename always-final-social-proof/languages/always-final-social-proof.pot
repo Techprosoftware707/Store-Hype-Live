@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-02T02:03:43+00:00\n"
+"POT-Creation-Date: 2026-10-02T02:16:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: always-final-social-proof\n"
@@ -17,7 +17,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: always-final-social-proof.php
 #: admin/views/tab-branding.php:18
-#: includes/class-settings.php:440
+#: includes/class-settings.php:873
 msgid "ALWAYS FINAL Social Proof"
 msgstr ""
 
@@ -77,136 +77,136 @@ msgid "Branding"
 msgstr ""
 
 #. translators: %s: country name.
-#: admin/class-admin.php:195
+#: admin/class-admin.php:196
 #: admin/views/tab-country.php:19
 #, php-format
 msgid "%s orders only"
 msgstr ""
 
-#: admin/class-admin.php:196
+#: admin/class-admin.php:197
 #: admin/views/tab-country.php:45
 msgid "All valid store orders (any country)"
 msgstr ""
 
 #. translators: %s: country name.
-#: admin/class-admin.php:197
+#: admin/class-admin.php:198
 #: admin/views/tab-country.php:19
 msgid "None — select a target country"
 msgstr ""
 
-#: admin/class-admin.php:198
+#: admin/class-admin.php:199
 msgid "Delete all analytics data? This cannot be undone."
 msgstr ""
 
-#: admin/class-admin.php:199
+#: admin/class-admin.php:200
 msgid "Preview could not be loaded."
 msgstr ""
 
-#: admin/class-admin.php:200
+#: admin/class-admin.php:201
 msgid "Notifications are hidden on mobile with the current settings."
 msgstr ""
 
-#: admin/class-admin.php:201
+#: admin/class-admin.php:202
 msgid "This notification type has no preview available."
 msgstr ""
 
-#: admin/class-admin.php:212
+#: admin/class-admin.php:213
 msgid "You do not have permission to access this page."
 msgstr ""
 
-#: admin/class-admin.php:224
-#: admin/class-admin.php:239
+#: admin/class-admin.php:225
+#: admin/class-admin.php:240
 msgid "You do not have permission to do this."
 msgstr ""
 
-#: admin/class-admin.php:254
+#: admin/class-admin.php:255
 msgid "Permission denied."
 msgstr ""
 
-#: admin/class-admin.php:278
+#: admin/class-admin.php:279
 msgid "Settings"
 msgstr ""
 
 #. translators: %s: developer name (ALWAYS FINAL).
-#: admin/class-admin.php:298
+#: admin/class-admin.php:299
 #, php-format
 msgid "Developed by %s"
 msgstr ""
 
 #. translators: %s: plugin version.
-#: admin/class-admin.php:312
+#: admin/class-admin.php:313
 #, php-format
 msgid "Version %s"
 msgstr ""
 
-#: admin/class-admin.php:323
+#: admin/class-admin.php:324
 msgid "notifications use only real WooCommerce activity. Review your country targeting to finish setup:"
 msgstr ""
 
-#: admin/class-admin.php:323
+#: admin/class-admin.php:324
 msgid "Open settings"
 msgstr ""
 
-#: admin/class-admin.php:498
+#: admin/class-admin.php:500
 msgid "Custom…"
 msgstr ""
 
-#: admin/class-admin.php:600
+#: admin/class-admin.php:602
 msgid "Choose a country…"
 msgstr ""
 
-#: admin/class-admin.php:601
+#: admin/class-admin.php:603
 msgid "— Select a country —"
 msgstr ""
 
-#: admin/class-admin.php:620
+#: admin/class-admin.php:622
 msgid "Choose countries…"
 msgstr ""
 
-#: admin/class-admin.php:639
+#: admin/class-admin.php:641
 msgid "Search for a product…"
 msgstr ""
 
-#: admin/class-admin.php:661
+#: admin/class-admin.php:663
 msgid "Search for a category…"
 msgstr ""
 
-#: admin/class-admin.php:702
+#: admin/class-admin.php:704
 #: admin/views/tab-analytics.php:106
 msgid "Save changes"
 msgstr ""
 
-#: admin/class-admin.php:739
+#: admin/class-admin.php:741
 #: admin/views/tab-country.php:119
 #: includes/class-frontend.php:155
 msgid "PREVIEW — NOT REAL CUSTOMER ACTIVITY"
 msgstr ""
 
-#: admin/class-admin.php:741
+#: admin/class-admin.php:743
 msgid "Device"
 msgstr ""
 
-#: admin/class-admin.php:742
+#: admin/class-admin.php:744
 msgid "Desktop"
 msgstr ""
 
-#: admin/class-admin.php:743
+#: admin/class-admin.php:745
 msgid "Mobile"
 msgstr ""
 
-#: admin/class-admin.php:745
+#: admin/class-admin.php:747
 msgid "Notification type"
 msgstr ""
 
-#: admin/class-admin.php:746
+#: admin/class-admin.php:748
 msgid "Purchase"
 msgstr ""
 
-#: admin/class-admin.php:747
+#: admin/class-admin.php:749
 msgid "Sale"
 msgstr ""
 
-#: admin/class-admin.php:748
+#: admin/class-admin.php:750
 #: includes/class-templates.php:104
 msgid "Popular"
 msgstr ""
@@ -780,7 +780,7 @@ msgid "Notifications are switched off (General tab)."
 msgstr ""
 
 #: admin/views/tab-dashboard.php:43
-#: includes/class-settings.php:282
+#: includes/class-settings.php:715
 msgid "Country filtering is ON but no target country is selected. Purchase notifications will remain inactive until a country is chosen."
 msgstr ""
 
@@ -853,7 +853,7 @@ msgid "Not configured"
 msgstr ""
 
 #: admin/views/tab-dashboard.php:93
-#: includes/class-country.php:257
+#: includes/class-country.php:261
 msgid "All countries"
 msgstr ""
 
@@ -1341,86 +1341,86 @@ msgid "seconds"
 msgstr ""
 
 #. translators: %d: number of seconds.
-#: admin/views/tab-frequency.php:18
+#: admin/views/tab-frequency.php:17
 #, php-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/views/tab-frequency.php:23
+#: admin/views/tab-frequency.php:22
 msgid "Timing"
 msgstr ""
 
-#: admin/views/tab-frequency.php:23
+#: admin/views/tab-frequency.php:22
 msgid "Tasteful pacing builds trust. Notifications pause while the visitor hovers or focuses them, and never run in a background tab."
 msgstr ""
 
-#: admin/views/tab-frequency.php:24
+#: admin/views/tab-frequency.php:25
 msgid "First notification delay"
 msgstr ""
 
-#: admin/views/tab-frequency.php:24
+#: admin/views/tab-frequency.php:32
 msgid "Wait after the page loads before the first notification."
 msgstr ""
 
-#: admin/views/tab-frequency.php:25
+#: admin/views/tab-frequency.php:37
 msgid "Notification duration"
 msgstr ""
 
-#: admin/views/tab-frequency.php:25
+#: admin/views/tab-frequency.php:44
 msgid "How long each notification stays visible."
 msgstr ""
 
-#: admin/views/tab-frequency.php:26
+#: admin/views/tab-frequency.php:49
 msgid "Minimum interval between notifications"
 msgstr ""
 
-#: admin/views/tab-frequency.php:26
+#: admin/views/tab-frequency.php:56
 msgid "Measured from one notification appearing to the next, across pages."
 msgstr ""
 
-#: admin/views/tab-frequency.php:27
+#: admin/views/tab-frequency.php:59
 msgid "Pause while hovered"
 msgstr ""
 
-#: admin/views/tab-frequency.php:30
+#: admin/views/tab-frequency.php:62
 msgid "Limits"
 msgstr ""
 
-#: admin/views/tab-frequency.php:30
+#: admin/views/tab-frequency.php:62
 msgid "The same notification is never repeated within a browsing session."
 msgstr ""
 
-#: admin/views/tab-frequency.php:33
+#: admin/views/tab-frequency.php:65
 msgid "Maximum notifications per session"
 msgstr ""
 
-#: admin/views/tab-frequency.php:38
+#: admin/views/tab-frequency.php:70
 msgid "Unlimited"
 msgstr ""
 
-#: admin/views/tab-frequency.php:40
+#: admin/views/tab-frequency.php:72
 msgid "A session ends after 30 minutes of inactivity. 0 = unlimited."
 msgstr ""
 
-#: admin/views/tab-frequency.php:44
+#: admin/views/tab-frequency.php:76
 msgid "Maximum notifications per page"
 msgstr ""
 
-#: admin/views/tab-frequency.php:53
+#: admin/views/tab-frequency.php:85
 msgid "When a visitor closes a notification"
 msgstr ""
 
-#: admin/views/tab-frequency.php:55
+#: admin/views/tab-frequency.php:87
 msgid "Stop for the rest of the session"
 msgstr ""
 
-#: admin/views/tab-frequency.php:56
+#: admin/views/tab-frequency.php:88
 msgid "Stop on the current page"
 msgstr ""
 
-#: admin/views/tab-frequency.php:57
+#: admin/views/tab-frequency.php:89
 msgid "Continue as normal"
 msgstr ""
 
@@ -1758,56 +1758,56 @@ msgid_plural "Every %d minutes (ALWAYS FINAL Social Proof)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-country.php:180
+#: includes/class-country.php:184
 msgid "Yukon"
 msgstr ""
 
-#: includes/class-country.php:254
+#: includes/class-country.php:258
 msgid "None — purchase notifications are inactive until a geographic configuration is completed."
 msgstr ""
 
 #. translators: %s: comma separated list of country names.
-#: includes/class-country.php:261
+#: includes/class-country.php:265
 #, php-format
 msgid "%s only"
 msgstr ""
 
 #. translators: 1: city, 2: region/state/province.
-#: includes/class-country.php:303
+#: includes/class-country.php:307
 #, php-format
 msgctxt "city, region"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: includes/class-country.php:333
+#: includes/class-country.php:337
 msgid "Toronto"
 msgstr ""
 
-#: includes/class-country.php:334
+#: includes/class-country.php:338
 msgid "Los Angeles"
 msgstr ""
 
-#: includes/class-country.php:335
+#: includes/class-country.php:339
 msgid "London"
 msgstr ""
 
-#: includes/class-country.php:336
+#: includes/class-country.php:340
 msgid "Sydney"
 msgstr ""
 
-#: includes/class-country.php:337
+#: includes/class-country.php:341
 msgid "Auckland"
 msgstr ""
 
-#: includes/class-country.php:338
+#: includes/class-country.php:342
 msgid "Berlin"
 msgstr ""
 
-#: includes/class-country.php:339
+#: includes/class-country.php:343
 msgid "Paris"
 msgstr ""
 
-#: includes/class-country.php:340
+#: includes/class-country.php:344
 msgid "Dublin"
 msgstr ""
 
@@ -1889,12 +1889,12 @@ msgstr ""
 msgid "Sample Product"
 msgstr ""
 
-#: includes/class-plugin.php:163
+#: includes/class-plugin.php:202
 msgid "ALWAYS FINAL Social Proof requires WooCommerce."
 msgstr ""
 
 #. translators: %s: minimum WooCommerce version.
-#: includes/class-plugin.php:176
+#: includes/class-plugin.php:215
 #, php-format
 msgid "ALWAYS FINAL Social Proof requires WooCommerce %s or newer. The plugin is inactive until WooCommerce is updated."
 msgstr ""
@@ -1922,23 +1922,23 @@ msgstr ""
 msgid "Notifications are currently limited to administrators."
 msgstr ""
 
-#: includes/class-rest-api.php:186
+#: includes/class-rest-api.php:193
 msgid "Payload too large."
 msgstr ""
 
-#: includes/class-rest-api.php:191
+#: includes/class-rest-api.php:198
 msgid "Invalid payload."
 msgstr ""
 
-#: includes/class-rest-api.php:200
+#: includes/class-rest-api.php:207
 msgid "Too many events."
 msgstr ""
 
-#: includes/class-settings.php:285
+#: includes/class-settings.php:718
 msgid "No countries were selected for the \"specific countries\" scope. Purchase notifications will remain inactive until at least one country is selected."
 msgstr ""
 
-#: includes/class-settings.php:370
+#: includes/class-settings.php:803
 msgid "At least one qualifying order status is required. The previous selection was kept."
 msgstr ""
 

@@ -18,6 +18,7 @@
 	var SVG_NS = 'http://www.w3.org/2000/svg';
 	var TYPES = [ 'purchase', 'product_purchase', 'sale', 'popular' ];
 	var SESSION_KEY = 'afsp_session_v1';
+	var SESSION_SCHEMA = 1;
 	var SESSION_IDLE_MS = 30 * 60 * 1000;
 	var MOBILE_QUERY = '(max-width: 600px)';
 
@@ -485,8 +486,10 @@
 	function loadSession() {
 		var s = local.get( SESSION_KEY );
 		var t = now();
-		if ( ! s || typeof s !== 'object' || s.v !== cfg.version || ! s.touch || t - s.touch > SESSION_IDLE_MS ) {
-			s = { v: cfg.version, touch: t, shown: 0, last: 0, lastProduct: 0, seen: [], muted: false };
+		// Keyed to a fixed schema version (not the cache version) so a mix of
+		// freshly rendered and page-cached HTML can never reset the limits.
+		if ( ! s || typeof s !== 'object' || s.v !== SESSION_SCHEMA || ! s.touch || t - s.touch > SESSION_IDLE_MS ) {
+			s = { v: SESSION_SCHEMA, touch: t, shown: 0, last: 0, lastProduct: 0, seen: [], muted: false };
 		}
 		s.shown = toInt( s.shown, 0 );
 		s.last = toInt( s.last, 0 );

@@ -43,23 +43,23 @@ final class Rest_Api {
 				'callback'            => array( __CLASS__, 'get_notifications' ),
 				'permission_callback' => array( __CLASS__, 'can_read' ),
 				'args'                => array(
+					// Schema-validated (rest_validate_request_arg): invalid input is rejected with a 400.
 					'ctx' => array(
-						'type'              => 'string',
-						'enum'              => self::CONTEXTS,
-						'default'           => 'other',
-						'sanitize_callback' => 'sanitize_key',
+						'type'    => 'string',
+						'enum'    => self::CONTEXTS,
+						'default' => 'other',
 					),
 					'pid' => array(
-						'type'              => 'integer',
-						'minimum'           => 0,
-						'default'           => 0,
-						'sanitize_callback' => 'absint',
+						'type'    => 'integer',
+						'minimum' => 0,
+						'maximum' => PHP_INT_MAX,
+						'default' => 0,
 					),
 					'tid' => array(
-						'type'              => 'integer',
-						'minimum'           => 0,
-						'default'           => 0,
-						'sanitize_callback' => 'absint',
+						'type'    => 'integer',
+						'minimum' => 0,
+						'maximum' => PHP_INT_MAX,
+						'default' => 0,
 					),
 				),
 			)
@@ -110,6 +110,13 @@ final class Rest_Api {
 					)
 				);
 			}
+			Logger::debug(
+				'Notifications generated.',
+				array(
+					'context' => (string) $request->get_param( 'ctx' ),
+					'items'   => count( $items ),
+				)
+			);
 		} catch ( \Throwable $e ) {
 			Logger::error( 'REST notifications error: ' . get_class( $e ) . ' — ' . $e->getMessage() );
 			$items = array();

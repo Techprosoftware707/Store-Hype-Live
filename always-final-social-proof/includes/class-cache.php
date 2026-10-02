@@ -106,9 +106,14 @@ final class Cache {
 			return $fresh;
 		}
 
+		$result = $valid ? $data : self::empty_dataset();
+		if ( ! $allow_build ) {
+			// A read-only peek must not pin missing/stale data for the rest of the request.
+			return $result;
+		}
 		Logger::debug( $valid ? 'Serving stale dataset while a rebuild is in progress.' : 'Dataset unavailable while a rebuild is in progress.' );
-		self::$memo = $valid ? $data : self::empty_dataset();
-		return self::$memo;
+		self::$memo = $result;
+		return $result;
 	}
 
 	/**

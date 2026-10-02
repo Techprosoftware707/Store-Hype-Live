@@ -139,7 +139,7 @@ final class Country {
 	 * @return string
 	 */
 	public static function region_name( string $country, string $state ): string {
-		$state = trim( $state );
+		$state = Security::clean_text( $state, 80 );
 		if ( '' === $state || '' === $country ) {
 			return '';
 		}
@@ -150,12 +150,16 @@ final class Country {
 			if ( isset( $states[ $upper ] ) ) {
 				return $states[ $upper ];
 			}
+			// Some countries key regions with an ISO 3166-2 prefix (e.g. DE-BE).
+			$prefixed = strtoupper( $country ) . '-' . $upper;
+			if ( isset( $states[ $prefixed ] ) ) {
+				return $states[ $prefixed ];
+			}
 			if ( preg_match( '/^([A-Z]{2})[\-_ ]([A-Z0-9]{1,3})$/', $upper, $m ) && strtoupper( $country ) === $m[1] && isset( $states[ $m[2] ] ) ) {
 				return $states[ $m[2] ];
 			}
-			$plain = Security::clean_text( $state, 80 );
 			foreach ( $states as $name ) {
-				if ( 0 === strcasecmp( remove_accents( $name ), remove_accents( $plain ) ) ) {
+				if ( 0 === strcasecmp( remove_accents( $name ), remove_accents( $state ) ) ) {
 					return $name;
 				}
 			}
@@ -335,7 +339,7 @@ final class Country {
 			'GB' => array( '', __( 'London', 'always-final-social-proof' ) ),
 			'AU' => array( 'NSW', __( 'Sydney', 'always-final-social-proof' ) ),
 			'NZ' => array( 'AUK', __( 'Auckland', 'always-final-social-proof' ) ),
-			'DE' => array( 'BE', __( 'Berlin', 'always-final-social-proof' ) ),
+			'DE' => array( 'DE-BE', __( 'Berlin', 'always-final-social-proof' ) ),
 			'FR' => array( '', __( 'Paris', 'always-final-social-proof' ) ),
 			'IE' => array( 'D', __( 'Dublin', 'always-final-social-proof' ) ),
 		);

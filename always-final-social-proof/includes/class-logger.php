@@ -58,7 +58,7 @@ final class Logger {
 	 * @param array  $context Context.
 	 */
 	private static function write( string $level, string $message, array $context ): void {
-		if ( ! self::enabled() || ! function_exists( 'wc_get_logger' ) ) {
+		if ( ! self::enabled() ) {
 			return;
 		}
 
@@ -80,7 +80,12 @@ final class Logger {
 			$line .= ' ' . wp_json_encode( $safe );
 		}
 
-		wc_get_logger()->log( $level, $line, array( 'source' => self::SOURCE ) );
+		if ( function_exists( 'wc_get_logger' ) ) {
+			wc_get_logger()->log( $level, $line, array( 'source' => self::SOURCE ) );
+		} elseif ( defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+			// WooCommerce is unavailable (e.g. deactivated): fall back to the PHP error log.
+			error_log( '[' . self::SOURCE . '] ' . strtoupper( $level ) . ' ' . $line ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+		}
 	}
 
 	/**

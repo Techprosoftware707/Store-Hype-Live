@@ -34,10 +34,12 @@ final class Plugin {
 
 		if ( ! class_exists( 'WooCommerce' ) || ! function_exists( 'WC' ) ) {
 			add_action( 'admin_notices', array( __CLASS__, 'notice_missing_woocommerce' ) );
+			Logger::error( 'WooCommerce not detected; plugin is dormant.' );
 			return;
 		}
 		if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, AFSP_MIN_WC_VERSION, '<' ) ) {
 			add_action( 'admin_notices', array( __CLASS__, 'notice_old_woocommerce' ) );
+			Logger::error( 'WooCommerce version too old; plugin is dormant.', array( 'wc_version' => WC_VERSION ) );
 			return;
 		}
 
@@ -91,6 +93,24 @@ final class Plugin {
 	 * Init tasks: upgrades and self-healing cron schedules (admin/cron only).
 	 */
 	public static function on_init(): void {
+		if ( Logger::enabled() ) {
+			Logger::debug(
+				'Plugin started.',
+				array(
+					'version'        => AFSP_VERSION,
+					'wc_version'     => defined( 'WC_VERSION' ) ? WC_VERSION : '',
+					'hpos'           => class_exists( '\Automattic\WooCommerce\Utilities\OrderUtil' ) && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled(),
+					'request'        => self::request_type(),
+					'enabled'        => (bool) Settings::get( 'enabled' ),
+					'country_filter' => (bool) Settings::get( 'country_filter' ),
+					'target_country' => (string) Settings::get( 'target_country' ),
+					'scope'          => Country::allowed_countries() === false ? 'disabled' : ( null === Country::allowed_countries() ? 'all' : implode( ',', (array) Country::allowed_countries() ) ),
+				)
+			);
+			if ( Settings::get( 'country_filter' ) && ! Country::is_valid( (string) Settings::get( 'target_country' ) ) ) {
+				Logger::error( 'Configuration: country filtering is ON without a valid target country; purchase notifications are inactive.' );
+			}
+		}
 		if ( is_admin() || wp_doing_cron() ) {
 			Installer::maybe_upgrade();
 			if ( Settings::get( 'enabled' ) ) {
@@ -100,6 +120,25 @@ final class Plugin {
 				wp_schedule_event( time() + HOUR_IN_SECONDS, 'daily', Installer::MAINTENANCE_HOOK );
 			}
 		}
+	}
+
+	/**
+	 * Request type label for debug logs.
+	 *
+	 * @return string
+	 */
+	private static function request_type(): string {
+		if ( wp_doing_cron() ) {
+			return 'cron';
+		}
+		if ( wp_doing_ajax() ) {
+			return 'ajax';
+		}
+		if ( is_admin() ) {
+			return 'admin';
+		}
+		$uri = isset( $_SERVER['REQUEST_URI'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '';
+		return false !== strpos( $uri, '/' . rest_get_url_prefix() . '/' ) || false !== strpos( $uri, 'rest_route=' ) ? 'rest' : 'front';
 	}
 
 	/**

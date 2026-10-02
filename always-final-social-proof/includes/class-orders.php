@@ -178,8 +178,8 @@ final class Orders {
 				if ( $need_purchases && $timestamp >= $lookback_since ) {
 					++$result['stats']['in_lookback'];
 					if ( count( $result['purchases'] ) < $max_records ) {
-						$country                 = $address['country'];
-						$result['purchases'][]   = array(
+						$country               = $address['country'];
+						$result['purchases'][] = array(
 							'key'      => Security::opaque_id( 'order:' . $order->get_id() ),
 							'ts'       => $timestamp - ( $timestamp % self::TIME_PRECISION ),
 							'country'  => $country,
