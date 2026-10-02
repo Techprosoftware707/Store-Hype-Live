@@ -543,6 +543,11 @@
 		if ( display.image ) {
 			classes.push( 'wplh-has-media' );
 		}
+		// Right-to-left sites (Arabic, Hebrew…): mirror the card layout.
+		var dir = ( document.documentElement.getAttribute( 'dir' ) || document.body.getAttribute( 'dir' ) || '' ).toLowerCase();
+		if ( dir === 'rtl' ) {
+			classes.push( 'wplh-rtl' );
+		}
 		if ( opts.preview ) {
 			classes.push( 'wplh-preview-mode' );
 		}
@@ -823,6 +828,10 @@
 	/** Remember that this visitor interacted with a notification (clicked it). */
 	function touchAttribution() {
 		if ( ! ATTR_MINUTES || ! cfg.analytics ) {
+			return;
+		}
+		// Consent plugins using the WP Consent API: only with statistics consent.
+		if ( typeof window.wp_has_consent === 'function' && ! window.wp_has_consent( 'statistics' ) ) {
 			return;
 		}
 		var current = readAttribution();

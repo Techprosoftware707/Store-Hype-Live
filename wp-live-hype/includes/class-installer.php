@@ -70,6 +70,27 @@ final class Installer {
 	}
 
 	/**
+	 * A site was added to a network where the plugin is network-activated:
+	 * set it up right away instead of on its first admin visit.
+	 *
+	 * @param \WP_Site $site New site.
+	 */
+	public static function on_new_site( $site ): void {
+		if ( ! $site instanceof \WP_Site ) {
+			return;
+		}
+		if ( ! function_exists( 'is_plugin_active_for_network' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		if ( ! is_plugin_active_for_network( WPLH_BASENAME ) ) {
+			return;
+		}
+		switch_to_blog( (int) $site->blog_id );
+		self::install_site();
+		restore_current_blog();
+	}
+
+	/**
 	 * Deactivation hook: remove scheduled events. Data is kept.
 	 */
 	public static function deactivate(): void {

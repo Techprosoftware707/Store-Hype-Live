@@ -6,7 +6,7 @@ Tested up to: 7.1
 Requires PHP: 7.4
 WC requires at least: 7.6
 WC tested up to: 11.1
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,11 +18,11 @@ A polished, privacy-safe live activity layer for WooCommerce. Developed by ALWAY
 
 = Activity modes =
 
-* **Synthetic (default)** — a weighted promotional rotation built from your catalogue: "Featured — Retatrutide", "Explore BPC-157", "Ships across Ontario", and genuine WooCommerce sales. Works on a brand-new store with zero orders. Synthetic events never claim that someone bought or viewed something and carry no invented times.
-* **Hybrid** — real store activity leads ("Someone in Ontario recently purchased BPC-157", "has been popular recently", with real relative times); the synthetic rotation fills the quiet periods in between.
+* **Synthetic** — a weighted promotional rotation built from your catalogue: "Featured — Retatrutide", "Explore BPC-157", "Ships across Ontario", and genuine WooCommerce sales. Works on a brand-new store with zero orders. Synthetic events never claim that someone bought or viewed something and carry no invented times.
+* **Hybrid (default)** — real store activity leads ("Just bought! A customer from Ontario bought 2 × BPC-157", "37 sold in the last 7 days", with real relative times); on a store without orders it behaves like Synthetic; the synthetic rotation fills the quiet periods in between.
 * **Aggregate** — only activity backed by real WooCommerce data.
 
-Activity wording ("recently purchased", "popular", "2 min ago") is reserved for events backed by real store data, so the layer stays lively without misleading shoppers.
+Activity wording ("Just bought!", "sold", "2 min ago") is reserved for events backed by real store data, so the layer stays lively without misleading shoppers.
 
 = The engine =
 
@@ -129,6 +129,14 @@ Filters: `wplh_capability`, `wplh_should_display`, `wplh_order_query_args`, `wpl
 Deleting the plugin removes what you selected on the Advanced tab: settings, cached data and/or analytics (including the conversion funnel table). WooCommerce products, customers, orders and core data are never touched.
 
 == Changelog ==
+
+= 1.3.0 =
+* Hybrid is now the default mode for new installs, so real activity leads.
+* Cookie consent: the attribution cookie respects the WP Consent API (Complianz, CookieYes and others) and is described to consent plugins.
+* Suggested privacy policy text in Settings → Privacy.
+* Right-to-left (RTL) layout for notifications.
+* French translation (fr_FR, fr_CA).
+* Clearer wording for the popularity threshold and the analytics counters.
 
 = 1.2.0 =
 * "Just bought!" purchase notices built from real orders: product, real quantity (when 2 or more), location and time.

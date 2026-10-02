@@ -1,0 +1,18 @@
+{
+    "name": "always-final/wp-live-hype-dev",
+    "description": "Development tooling for the WP Live Hype WordPress plugin (not shipped in the plugin ZIP).",
+    "license": "GPL-2.0-or-later",
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.1",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint:php": "phpcs",
+        "fix:php": "phpcbf"
+    }
+}

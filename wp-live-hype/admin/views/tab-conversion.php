@@ -138,7 +138,7 @@ Admin::number( 'suppress_repeat', __( 'Calm repeat product views after', 'wp-liv
 Admin::card_end();
 
 Admin::card_start( __( 'Attribution', 'wp-live-hype' ), __( 'When a visitor clicks a message, a first-party cookie (wplh_attr) holding a random ID, the A/B variant letter and a timestamp is set for the window below. If they order within it, the order is flagged as attributed. No personal data is stored, and nothing is sent to third parties.', 'wp-live-hype' ) );
-Admin::toggle( 'attribution', __( 'Enable anonymous attribution', 'wp-live-hype' ), __( 'Requires Analytics to be enabled. Turn off if your cookie policy does not allow it; funnel counters keep working without it.', 'wp-live-hype' ) );
+Admin::toggle( 'attribution', __( 'Enable anonymous attribution', 'wp-live-hype' ), __( 'Requires Analytics to be enabled. When a consent plugin that supports the WP Consent API is active (e.g. Complianz, CookieYes), the cookie is only set after the visitor allows statistics cookies. Without such a plugin, turn this off if your cookie policy requires consent; funnel counters keep working without it.', 'wp-live-hype' ) );
 echo '<div data-show-when="attribution">';
 Admin::select(
 	'attribution_window',

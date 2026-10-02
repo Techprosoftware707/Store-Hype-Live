@@ -2,7 +2,7 @@
 /**
  * Plugin Name:          WP Live Hype
  * Description:          WP Live Hype — a polished, privacy-safe live activity layer and conversion assistant for WooCommerce: a weighted synthetic promotional rotation, real sale and aggregate activity, context-aware calls to action, genuine free-shipping progress, A/B testing and an anonymous conversion funnel. Developed by ALWAYS FINAL.
- * Version:              1.2.0
+ * Version:              1.3.0
  * Requires at least:    6.2
  * Requires PHP:         7.4
  * Requires Plugins:     woocommerce
@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'WPLH_VERSION', '1.2.0' );
+define( 'WPLH_VERSION', '1.3.0' );
 define( 'WPLH_DB_VERSION', '2' );
 define( 'WPLH_FILE', __FILE__ );
 define( 'WPLH_PATH', plugin_dir_path( __FILE__ ) );
@@ -52,6 +52,7 @@ require_once WPLH_PATH . 'includes/class-plugin.php';
 
 register_activation_hook( __FILE__, array( 'AlwaysFinal\\LiveHype\\Installer', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'AlwaysFinal\\LiveHype\\Installer', 'deactivate' ) );
+add_action( 'wp_initialize_site', array( 'AlwaysFinal\\LiveHype\\Installer', 'on_new_site' ), 200 );
 
 /*
  * Declare compatibility with WooCommerce High-Performance Order Storage and the

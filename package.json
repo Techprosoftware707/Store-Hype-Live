@@ -1,0 +1,18 @@
+{
+  "name": "wp-live-hype-dev",
+  "private": true,
+  "description": "Development tooling for the WP Live Hype WordPress plugin (not shipped in the plugin ZIP).",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "lint:js": "eslint wp-live-hype/public/js/notifications.js wp-live-hype/admin/js/admin.js tests/e2e",
+    "build:js": "terser wp-live-hype/public/js/notifications.js --compress --mangle --comments \"/^!/\" -o wp-live-hype/public/js/notifications.min.js",
+    "test:e2e": "node tests/e2e/run.js"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "playwright": "^1.48.0",
+    "terser": "^5.31.0"
+  }
+}

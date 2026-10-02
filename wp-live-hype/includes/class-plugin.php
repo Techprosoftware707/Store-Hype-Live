@@ -89,6 +89,11 @@ final class Plugin {
 		// Conversion attribution (order hooks).
 		Conversion::init();
 
+		// Privacy: consent plugins (WP Consent API) and the Privacy Policy Guide.
+		add_filter( 'wp_consent_api_registered_' . WPLH_BASENAME, '__return_true' );
+		add_action( 'init', array( __CLASS__, 'register_cookie_info' ), 30 );
+		add_action( 'admin_init', array( __CLASS__, 'privacy_policy_content' ) );
+
 		// REST API.
 		add_action( 'rest_api_init', array( Rest_Api::class, 'register_routes' ) );
 
@@ -202,6 +207,41 @@ final class Plugin {
 		if ( $new_status !== $old_status && $post instanceof \WP_Post && 'product' === $post->post_type && ( 'publish' === $new_status || 'publish' === $old_status ) ) {
 			Cache::schedule_soon();
 		}
+	}
+
+	/**
+	 * Describe the attribution cookie to consent plugins (WP Consent API).
+	 */
+	public static function register_cookie_info(): void {
+		if ( ! function_exists( 'wp_add_cookie_info' ) || ! Settings::get( 'attribution' ) ) {
+			return;
+		}
+		wp_add_cookie_info(
+			Conversion::COOKIE,
+			Settings::plugin_label(),
+			'statistics',
+			__( 'Up to 24 hours (set on the Conversion tab)', 'wp-live-hype' ),
+			__( 'Set only when the visitor clicks a store message. Holds a random ID, an A/B test letter, a mobile/desktop flag and a timestamp, so an order placed shortly afterwards can be counted as following that click.', 'wp-live-hype' ),
+			false,
+			false,
+			false
+		);
+	}
+
+	/**
+	 * Suggested text for Settings → Privacy → Policy Guide.
+	 */
+	public static function privacy_policy_content(): void {
+		if ( ! function_exists( 'wp_add_privacy_policy_content' ) ) {
+			return;
+		}
+		$content  = '<p class="privacy-policy-tutorial">' . esc_html__( 'Suggested text, adjust it to your settings.', 'wp-live-hype' ) . '</p>';
+		$content .= '<p><strong class="privacy-policy-tutorial">' . esc_html__( 'Suggested text:', 'wp-live-hype' ) . '</strong> ';
+		$content .= esc_html__( 'This store shows short messages about its products and its real recent sales. Those messages never contain customer names, contact details, addresses or order numbers; at most they mention a product, a region or city, a quantity and an approximate time.', 'wp-live-hype' ) . '</p>';
+		$content .= '<p>' . esc_html__( 'To improve these messages we count, without identifying anyone, how often they are shown, clicked or closed, and how many visits reach product pages, the cart and checkout. Only daily totals are stored, together with an A/B test letter and whether the device was a phone or a computer. No IP address or user ID is stored and nothing is shared with third parties.', 'wp-live-hype' ) . '</p>';
+		$content .= '<p>' . esc_html__( 'If you click one of these messages, a cookie named wplh_attr is stored in your browser for a limited time (between 30 minutes and 24 hours). It contains a random ID, an A/B test letter, a device-type flag and a timestamp, and lets us count an order placed shortly afterwards as following that click. The order is marked only with the test letter. When a cookie-consent tool is used on this site, the cookie is set only after you allow statistics cookies.', 'wp-live-hype' ) . '</p>';
+		$content .= '<p>' . esc_html__( 'Your browser also keeps a small local record (localStorage) of which messages it has already shown and how far you have browsed, so messages are not repeated. This record never leaves your device.', 'wp-live-hype' ) . '</p>';
+		wp_add_privacy_policy_content( Settings::plugin_label(), wp_kses_post( $content ) );
 	}
 
 	/**

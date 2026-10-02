@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  php:
+    name: PHP lint (${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: [ '7.4', '8.0', '8.3' ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+      - name: Syntax check
+        run: find wp-live-hype -name '*.php' -print0 | xargs -0 -n1 php -l
+
+  standards:
+    name: Coding standards
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+          coverage: none
+      - run: composer install --no-interaction --no-progress
+      - name: WPCS + PHPCompatibility (7.4+)
+        run: vendor/bin/phpcs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-audit --no-fund
+      - name: ESLint
+        run: npm run lint:js
+      - name: Minified script is in sync with the source
+        run: |
+          npm run build:js
+          git diff --exit-code wp-live-hype/public/js/notifications.min.js
+
+  integration:
+    name: Integration + browser tests (WordPress + WooCommerce)
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mariadb:10.11
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: wp
+        ports: [ '3306:3306' ]
+        options: --health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli, gd, zip
+          tools: wp-cli
+          coverage: none
+      - name: Install WordPress, WooCommerce and the plugin
+        run: bash tests/setup-wordpress.sh /tmp/wp http://localhost:8899
+      - name: Integration tests
+        run: wp --path=/tmp/wp eval-file tests/integration/run.php
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-audit --no-fund && npx playwright install --with-deps chromium
+      - name: Browser tests
+        run: |
+          (cd /tmp/wp && php -S localhost:8899 > /tmp/server.log 2>&1 &)
+          sleep 2
+          BASE_URL=http://localhost:8899 npm run test:e2e

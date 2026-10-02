@@ -41,7 +41,7 @@ Admin::select(
 Admin::number( 'max_records', __( 'Maximum recent purchases kept', 'wp-live-hype' ), __( 'The most recent qualifying purchases kept in the cached dataset.', 'wp-live-hype' ) );
 Admin::card_end();
 
-Admin::card_start( __( 'Popular products', 'wp-live-hype' ), __( 'A product is only called popular when real orders support it. Numbers are never displayed or invented.', 'wp-live-hype' ) );
+Admin::card_start( __( 'Popular products', 'wp-live-hype' ), __( 'A product is only called popular when real orders support it. Numbers shown are real and never invented.', 'wp-live-hype' ) );
 Admin::select(
 	'popular_source',
 	__( 'Popularity based on', 'wp-live-hype' ),
@@ -53,7 +53,7 @@ Admin::select(
 	),
 	__( 'Time-based windows respect country targeting. Lifetime sales are store-wide, so they are only used when no geographic restriction applies.', 'wp-live-hype' )
 );
-Admin::number( 'popular_min_sales', __( 'Minimum qualifying orders', 'wp-live-hype' ), __( 'A product needs at least this many qualifying orders in the window to be described as popular.', 'wp-live-hype' ) );
+Admin::number( 'popular_min_sales', __( 'Minimum qualifying orders', 'wp-live-hype' ), __( 'A product needs at least this many qualifying orders in the window to be described as popular. The notice itself shows units sold ("37 sold"), which can be higher than the number of orders because one order can contain several units.', 'wp-live-hype' ) );
 Admin::number( 'popular_count', __( 'Maximum popular products', 'wp-live-hype' ) );
 Admin::products( 'popular_products', __( 'Manual product selection (optional)', 'wp-live-hype' ), __( 'Limit popular notifications to these products. They are still only shown when real sales data meets the threshold.', 'wp-live-hype' ) );
 Admin::card_end();

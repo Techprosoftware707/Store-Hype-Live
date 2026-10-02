@@ -694,6 +694,60 @@
 	}
 }
 
+/* Right-to-left: mirror the card (corner positions stay as configured). */
+.wplh-root.wplh-rtl {
+	direction: rtl;
+	text-align: right;
+}
+
+.wplh-rtl .wplh-body,
+.wplh-root.wplh-rtl .wplh-body {
+	padding: 12px 12px 12px 42px;
+}
+
+.wplh-root.wplh-rtl .wplh-close {
+	right: auto;
+	left: 6px;
+}
+
+.wplh-rtl .wplh-preview-strip {
+	padding: 5px 12px 5px 36px;
+}
+
+.wplh-root.wplh-rtl .wplh-toast--preview .wplh-close {
+	left: 0;
+}
+
+.wplh-root.wplh-rtl .wplh-actions {
+	padding: 0 80px 12px 12px;
+}
+
+.wplh-root.wplh-rtl:not(.wplh-has-media) .wplh-actions {
+	padding-right: 12px;
+}
+
+.wplh-root.wplh-rtl .wplh-action .wplh-icon {
+	transform: scaleX(-1);
+}
+
+.wplh-rtl .wplh-cta::after {
+	content: " \2190";
+}
+
+@media (max-width: 600px) {
+	.wplh-root.wplh-rtl .wplh-body {
+		padding: 10px 10px 10px 40px;
+	}
+
+	.wplh-root.wplh-rtl .wplh-close {
+		left: 2px;
+	}
+
+	.wplh-root.wplh-rtl .wplh-actions {
+		padding: 0 10px 10px;
+	}
+}
+
 /* Admin preview: same component, positioned inside a frame. */
 .wplh-root.wplh-preview-mode {
 	position: absolute;

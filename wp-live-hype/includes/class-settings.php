@@ -96,7 +96,7 @@ final class Settings {
 			'activity_mode'              => array(
 				'tab'     => 'engine',
 				'type'    => 'choice',
-				'default' => 'synthetic',
+				'default' => 'hybrid',
 				'choices' => array( 'synthetic', 'hybrid', 'aggregate' ),
 			),
 			'use_aggregate'              => array(

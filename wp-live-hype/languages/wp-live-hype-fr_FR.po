@@ -2,14 +2,16 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Live Hype 1.3.0\n"
+"Project-Id-Version: WP Live Hype 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-live-hype\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: ALWAYS FINAL\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-02T19:05:10+00:00\n"
+"POT-Creation-Date: 2026-10-02T18:58:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wp-live-hype\n"
@@ -19,1168 +21,1168 @@ msgstr ""
 #: admin/views/tab-branding.php:18
 #: includes/class-settings.php:1308
 msgid "WP Live Hype"
-msgstr ""
+msgstr "WP Live Hype"
 
 #. Description of the plugin
 #: wp-live-hype.php
 msgid "WP Live Hype — a polished, privacy-safe live activity layer and conversion assistant for WooCommerce: a weighted synthetic promotional rotation, real sale and aggregate activity, context-aware calls to action, genuine free-shipping progress, A/B testing and an anonymous conversion funnel. Developed by ALWAYS FINAL."
-msgstr ""
+msgstr "WP Live Hype — une couche d’activité en direct soignée et respectueuse de la vie privée, avec assistant de conversion pour WooCommerce : rotation promotionnelle synthétique pondérée, ventes réelles et activité agrégée, appels à l’action contextuels, progression réelle vers la livraison gratuite, tests A/B et entonnoir de conversion anonyme. Développé par ALWAYS FINAL."
 
 #. Author of the plugin
 #: wp-live-hype.php
 msgid "ALWAYS FINAL"
-msgstr ""
+msgstr "ALWAYS FINAL"
 
 #: admin/class-admin.php:64
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 #: admin/class-admin.php:65
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: admin/class-admin.php:66
 msgid "Live Hype"
-msgstr ""
+msgstr "Live Hype"
 
 #: admin/class-admin.php:67
 msgid "Conversion"
-msgstr ""
+msgstr "Conversion"
 
 #: admin/class-admin.php:68
 msgid "A/B testing"
-msgstr ""
+msgstr "Tests A/B"
 
 #: admin/class-admin.php:69
 msgid "Weighting"
-msgstr ""
+msgstr "Pondération"
 
 #: admin/class-admin.php:70
 #: admin/class-admin.php:759
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: admin/class-admin.php:71
 msgid "Notifications"
-msgstr ""
+msgstr "Notifications"
 
 #: admin/class-admin.php:72
 msgid "Display"
-msgstr ""
+msgstr "Affichage"
 
 #: admin/class-admin.php:73
 #: admin/views/tab-abtest.php:45
 #: admin/views/tab-sound.php:20
 msgid "Sound"
-msgstr ""
+msgstr "Son"
 
 #: admin/class-admin.php:74
 #: admin/views/tab-abtest.php:44
 msgid "Frequency"
-msgstr ""
+msgstr "Fréquence"
 
 #: admin/class-admin.php:75
 msgid "Products"
-msgstr ""
+msgstr "Produits"
 
 #: admin/class-admin.php:76
 msgid "Data"
-msgstr ""
+msgstr "Données"
 
 #: admin/class-admin.php:77
 msgid "Analytics"
-msgstr ""
+msgstr "Statistiques"
 
 #: admin/class-admin.php:78
 msgid "Advanced"
-msgstr ""
+msgstr "Avancé"
 
 #: admin/class-admin.php:79
 msgid "Branding"
-msgstr ""
+msgstr "Marque"
 
 #. translators: %s: country name.
 #: admin/class-admin.php:209
 #: admin/views/tab-country.php:19
 #, php-format
 msgid "%s orders only"
-msgstr ""
+msgstr "Commandes de %s uniquement"
 
 #: admin/class-admin.php:210
 #: admin/views/tab-country.php:45
 msgid "All valid store orders (any country)"
-msgstr ""
+msgstr "Toutes les commandes valides (tous pays)"
 
 #. translators: %s: country name.
 #: admin/class-admin.php:211
 #: admin/views/tab-country.php:19
 msgid "None — select a target country"
-msgstr ""
+msgstr "Aucune — choisissez un pays cible"
 
 #: admin/class-admin.php:212
 msgid "Delete all analytics data? This cannot be undone."
-msgstr ""
+msgstr "Supprimer toutes les statistiques ? Cette action est irréversible."
 
 #: admin/class-admin.php:213
 msgid "Preview could not be loaded."
-msgstr ""
+msgstr "L’aperçu n’a pas pu être chargé."
 
 #: admin/class-admin.php:214
 msgid "Notifications are hidden on mobile with the current settings."
-msgstr ""
+msgstr "Les notifications sont masquées sur mobile avec les réglages actuels."
 
 #: admin/class-admin.php:215
 msgid "missing"
-msgstr ""
+msgstr "manquant"
 
 #: admin/class-admin.php:216
 msgid "No preview available for this type yet — it needs published products (and, for shipping messages, a country your store ships to)."
-msgstr ""
+msgstr "Aucun aperçu disponible pour ce type pour l’instant — il faut des produits publiés (et, pour les messages de livraison, un pays vers lequel votre boutique expédie)."
 
 #: admin/class-admin.php:227
 msgid "You do not have permission to access this page."
-msgstr ""
+msgstr "Vous n’avez pas l’autorisation d’accéder à cette page."
 
 #: admin/class-admin.php:239
 #: admin/class-admin.php:254
 msgid "You do not have permission to do this."
-msgstr ""
+msgstr "Vous n’avez pas l’autorisation d’effectuer cette action."
 
 #: admin/class-admin.php:270
 msgid "Permission denied."
-msgstr ""
+msgstr "Autorisation refusée."
 
 #: admin/class-admin.php:297
 msgid "Settings"
-msgstr ""
+msgstr "Réglages"
 
 #. translators: %s: developer name (ALWAYS FINAL).
 #: admin/class-admin.php:317
 #, php-format
 msgid "Developed by %s"
-msgstr ""
+msgstr "Développé par %s"
 
 #. translators: %s: plugin version.
 #: admin/class-admin.php:331
 #, php-format
 msgid "Version %s"
-msgstr ""
+msgstr "Version %s"
 
 #: admin/class-admin.php:342
 msgid "notifications use only real WooCommerce activity. Review your country targeting to finish setup:"
-msgstr ""
+msgstr "les notifications n’utilisent que l’activité WooCommerce réelle. Vérifiez le ciblage par pays pour terminer la configuration :"
 
 #: admin/class-admin.php:342
 msgid "Open settings"
-msgstr ""
+msgstr "Ouvrir les réglages"
 
 #: admin/class-admin.php:518
 msgid "Custom…"
-msgstr ""
+msgstr "Personnalisé…"
 
 #: admin/class-admin.php:620
 msgid "Choose a country…"
-msgstr ""
+msgstr "Choisissez un pays…"
 
 #: admin/class-admin.php:621
 msgid "— Select a country —"
-msgstr ""
+msgstr "— Choisir un pays —"
 
 #: admin/class-admin.php:640
 msgid "Choose countries…"
-msgstr ""
+msgstr "Choisissez des pays…"
 
 #: admin/class-admin.php:659
 msgid "Search for a product…"
-msgstr ""
+msgstr "Rechercher un produit…"
 
 #: admin/class-admin.php:681
 msgid "Search for a category…"
-msgstr ""
+msgstr "Rechercher une catégorie…"
 
 #: admin/class-admin.php:722
 #: admin/views/tab-analytics.php:117
 msgid "Save changes"
-msgstr ""
+msgstr "Enregistrer les modifications"
 
 #: admin/class-admin.php:757
 msgid "Product name"
-msgstr ""
+msgstr "Nom du produit"
 
 #: admin/class-admin.php:758
 msgid "Location at the configured level"
-msgstr ""
+msgstr "Lieu au niveau configuré"
 
 #: admin/class-admin.php:760
 #: admin/views/tab-country.php:64
 msgid "Province / state / region"
-msgstr ""
+msgstr "Province / État / région"
 
 #: admin/class-admin.php:761
 #: admin/class-admin.php:762
 msgid "Alias of {region}"
-msgstr ""
+msgstr "Alias de {region}"
 
 #: admin/class-admin.php:763
 #: admin/views/tab-country.php:65
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 #: admin/class-admin.php:764
 msgid "Elapsed time, e.g. \"2 hours ago\""
-msgstr ""
+msgstr "Temps écoulé, p. ex. « il y a 2 heures »"
 
 #: admin/class-admin.php:765
 msgid "Current sale price (\"from\" for variable products)"
-msgstr ""
+msgstr "Prix soldé actuel (« à partir de » pour les produits variables)"
 
 #: admin/class-admin.php:766
 #: includes/class-frontend.php:185
 msgid "Regular price"
-msgstr ""
+msgstr "Prix normal"
 
 #: admin/class-admin.php:767
 msgid "Real discount, e.g. \"25%\" or \"up to 30%\""
-msgstr ""
+msgstr "Remise réelle, p. ex. « 25 % » ou « jusqu’à 30 % »"
 
 #: admin/class-admin.php:768
 msgid "Popularity window, e.g. \"in the last 7 days\""
-msgstr ""
+msgstr "Période de popularité, p. ex. « au cours des 7 derniers jours »"
 
 #: admin/class-admin.php:769
 msgid "Real quantity in that order (used only when 2 or more)"
-msgstr ""
+msgstr "Quantité réelle de cette commande (utilisée seulement à partir de 2)"
 
 #: admin/class-admin.php:770
 msgid "Real units sold in the period"
-msgstr ""
+msgstr "Unités réellement vendues sur la période"
 
 #: admin/class-admin.php:771
 msgid "Name of the product being viewed"
-msgstr ""
+msgstr "Nom du produit consulté"
 
 #: admin/class-admin.php:772
 msgid "Number of items in the visitor's cart"
-msgstr ""
+msgstr "Nombre d’articles dans le panier du visiteur"
 
 #: admin/class-admin.php:773
 msgid "Visitor's cart subtotal"
-msgstr ""
+msgstr "Sous-total du panier du visiteur"
 
 #: admin/class-admin.php:774
 msgid "Your WooCommerce free-shipping minimum"
-msgstr ""
+msgstr "Votre minimum WooCommerce pour la livraison gratuite"
 
 #: admin/class-admin.php:775
 msgid "Amount still needed for free shipping"
-msgstr ""
+msgstr "Montant restant pour la livraison gratuite"
 
 #: admin/class-admin.php:794
 msgid "Insert token"
-msgstr ""
+msgstr "Insérer un jeton"
 
 #: admin/class-admin.php:811
 #: admin/views/tab-conversion.php:64
 msgid "Purchase"
-msgstr ""
+msgstr "Achat"
 
 #: admin/class-admin.php:812
 #: admin/views/tab-weighting.php:18
 #: includes/class-templates.php:213
 msgid "Featured"
-msgstr ""
+msgstr "En vedette"
 
 #: admin/class-admin.php:813
 #: includes/class-templates.php:215
 msgid "Spotlight"
-msgstr ""
+msgstr "À découvrir"
 
 #: admin/class-admin.php:814
 msgid "Shipping"
-msgstr ""
+msgstr "Livraison"
 
 #: admin/class-admin.php:815
 msgid "Sale"
-msgstr ""
+msgstr "Promotion"
 
 #: admin/class-admin.php:816
 #: includes/class-templates.php:211
 msgid "Popular"
-msgstr ""
+msgstr "Populaire"
 
 #: admin/class-admin.php:844
 #: admin/views/tab-country.php:120
 #: includes/class-frontend.php:190
 msgid "SYNTHETIC PREVIEW — NOT REAL CUSTOMER ACTIVITY"
-msgstr ""
+msgstr "APERÇU SYNTHÉTIQUE — PAS UNE ACTIVITÉ CLIENT RÉELLE"
 
 #: admin/class-admin.php:846
 msgid "Device"
-msgstr ""
+msgstr "Appareil"
 
 #: admin/class-admin.php:847
 #: admin/views/part-funnel.php:93
 msgid "Desktop"
-msgstr ""
+msgstr "Ordinateur"
 
 #: admin/class-admin.php:848
 #: admin/views/part-funnel.php:93
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
 #: admin/class-admin.php:850
 msgid "Notification type"
-msgstr ""
+msgstr "Type de notification"
 
 #: admin/views/page.php:29
 msgid "A live activity layer for your store — privacy-safe by design."
-msgstr ""
+msgstr "Une couche d’activité en direct pour votre boutique — respectueuse de la vie privée par conception."
 
 #: admin/views/page.php:38
 msgid "Notifications off"
-msgstr ""
+msgstr "Notifications désactivées"
 
 #: admin/views/page.php:40
 msgid "Test mode — administrators only"
-msgstr ""
+msgstr "Mode test — administrateurs uniquement"
 
 #: admin/views/page.php:42
 msgid "Live"
-msgstr ""
+msgstr "En ligne"
 
 #: admin/views/page.php:47
 msgid "Settings sections"
-msgstr ""
+msgstr "Sections des réglages"
 
 #: admin/views/page.php:56
 msgid "Notification data was rebuilt from current store activity."
-msgstr ""
+msgstr "Les données des notifications ont été reconstruites à partir de l’activité actuelle de la boutique."
 
 #: admin/views/page.php:58
 msgid "Analytics data was deleted."
-msgstr ""
+msgstr "Les statistiques ont été supprimées."
 
 #: admin/views/part-funnel.php:21
 msgid "Sessions"
-msgstr ""
+msgstr "Sessions"
 
 #: admin/views/part-funnel.php:22
 #: admin/views/tab-conversion.php:61
 msgid "Product views"
-msgstr ""
+msgstr "Vues de produits"
 
 #: admin/views/part-funnel.php:23
 #: admin/views/tab-conversion.php:62
 #: admin/views/tab-conversion.php:121
 #: includes/class-conversion.php:172
 msgid "Add to cart"
-msgstr ""
+msgstr "Ajout au panier"
 
 #: admin/views/part-funnel.php:24
 msgid "Cart views"
-msgstr ""
+msgstr "Vues du panier"
 
 #: admin/views/part-funnel.php:25
 msgid "Checkout starts"
-msgstr ""
+msgstr "Débuts de commande"
 
 #: admin/views/part-funnel.php:27
 msgid "Orders (all WooCommerce orders)"
-msgstr ""
+msgstr "Commandes (toutes les commandes WooCommerce)"
 
 #: admin/views/part-funnel.php:31
 msgid "Conversion funnel"
-msgstr ""
+msgstr "Entonnoir de conversion"
 
 #: admin/views/part-funnel.php:31
 msgid "Store-wide counts come from every visit where WP Live Hype runs (orders come from WooCommerce). \"After a click\" counts the same steps for visitors who clicked a WP Live Hype message within the attribution window. That is an association: it does not show that the message caused the action."
-msgstr ""
+msgstr "Les chiffres « Toute la boutique » couvrent chaque visite où WP Live Hype est actif (les commandes proviennent de WooCommerce). « Après un clic » compte les mêmes étapes pour les visiteurs ayant cliqué sur un message WP Live Hype pendant la fenêtre d’attribution. Il s’agit d’une association : cela ne montre pas que le message a causé l’action."
 
 #: admin/views/part-funnel.php:36
 msgid "Step"
-msgstr ""
+msgstr "Étape"
 
 #: admin/views/part-funnel.php:37
 msgid "Store-wide"
-msgstr ""
+msgstr "Toute la boutique"
 
 #: admin/views/part-funnel.php:38
 msgid "Relative volume"
-msgstr ""
+msgstr "Volume relatif"
 
 #: admin/views/part-funnel.php:39
 msgid "After a click"
-msgstr ""
+msgstr "Après un clic"
 
 #. translators: 1: attributed revenue, 2: number of attributed orders.
 #: admin/views/part-funnel.php:62
 #, php-format
 msgid "Attributed order revenue: %1$s across %2$s orders (orders placed within the attribution window after a click)."
-msgstr ""
+msgstr "Revenu des commandes attribuées : %1$s sur %2$s commandes (passées pendant la fenêtre d’attribution après un clic)."
 
 #: admin/views/part-funnel.php:68
 msgid "Attribution is off (Conversion tab), so \"after a click\" columns stay empty."
-msgstr ""
+msgstr "L’attribution est désactivée (onglet Conversion) : les colonnes « après un clic » restent vides."
 
 #: admin/views/part-funnel.php:74
 msgid "Direct notification metrics"
-msgstr ""
+msgstr "Mesures directes des notifications"
 
 #: admin/views/part-funnel.php:74
 msgid "Counted by the funnel counters, which started with version 1.1, so totals can be lower than \"Notifications shown\" above for earlier periods. Both are anonymous daily counts."
-msgstr ""
+msgstr "Comptés par les compteurs d’entonnoir, introduits avec la version 1.1 ; les totaux peuvent donc être inférieurs à « Notifications affichées » ci-dessus pour les périodes antérieures. Les deux sont des comptes quotidiens anonymes."
 
 #: admin/views/part-funnel.php:79
 #: admin/views/part-funnel.php:95
 msgid "Impressions"
-msgstr ""
+msgstr "Impressions"
 
 #: admin/views/part-funnel.php:80
 #: includes/class-conversion.php:645
 msgid "Context-relevant impressions"
-msgstr ""
+msgstr "Impressions pertinentes au contexte"
 
 #: admin/views/part-funnel.php:81
 msgid "Message clicks"
-msgstr ""
+msgstr "Clics sur le message"
 
 #: admin/views/part-funnel.php:82
 #: admin/views/tab-abtest.php:84
 msgid "Button clicks"
-msgstr ""
+msgstr "Clics sur le bouton"
 
 #: admin/views/part-funnel.php:83
 #: admin/views/tab-abtest.php:85
 msgid "Dismissals"
-msgstr ""
+msgstr "Fermetures"
 
 #: admin/views/part-funnel.php:89
 msgid "Mobile vs desktop"
-msgstr ""
+msgstr "Mobile ou ordinateur"
 
 #: admin/views/part-funnel.php:96
 msgid "Interaction rate"
-msgstr ""
+msgstr "Taux d’interaction"
 
 #: admin/views/part-funnel.php:97
 #: includes/class-conversion.php:629
 msgid "Dismiss rate"
-msgstr ""
+msgstr "Taux de fermeture"
 
 #: admin/views/part-funnel.php:98
 msgid "Add to cart (store-wide)"
-msgstr ""
+msgstr "Ajouts au panier (toute la boutique)"
 
 #: admin/views/part-funnel.php:104
 msgid "Conversion health"
-msgstr ""
+msgstr "Santé de la conversion"
 
 #: admin/views/part-funnel.php:104
 msgid "Observations computed only from the counters above. There is no composite score."
-msgstr ""
+msgstr "Observations calculées uniquement à partir des compteurs ci-dessus. Il n’y a pas de score global."
 
 #: admin/views/part-health.php:15
 msgid "Healthy"
-msgstr ""
+msgstr "Bon"
 
 #: admin/views/part-health.php:16
 msgid "Needs attention"
-msgstr ""
+msgstr "À surveiller"
 
 #: admin/views/part-health.php:17
 msgid "Measured"
-msgstr ""
+msgstr "Mesuré"
 
 #: admin/views/tab-abtest.php:18
 #: admin/views/tab-display.php:24
 #: admin/views/tab-display.php:35
 msgid "Bottom left"
-msgstr ""
+msgstr "En bas à gauche"
 
 #: admin/views/tab-abtest.php:19
 #: admin/views/tab-display.php:25
 msgid "Bottom right"
-msgstr ""
+msgstr "En bas à droite"
 
 #: admin/views/tab-abtest.php:20
 #: admin/views/tab-display.php:26
 msgid "Top left"
-msgstr ""
+msgstr "En haut à gauche"
 
 #: admin/views/tab-abtest.php:21
 #: admin/views/tab-display.php:27
 msgid "Top right"
-msgstr ""
+msgstr "En haut à droite"
 
 #: admin/views/tab-abtest.php:24
 #: admin/views/tab-display.php:49
 #: admin/views/tab-display.php:83
 msgid "None"
-msgstr ""
+msgstr "Aucune"
 
 #: admin/views/tab-abtest.php:25
 #: admin/views/tab-display.php:47
 msgid "Fade"
-msgstr ""
+msgstr "Fondu"
 
 #: admin/views/tab-abtest.php:26
 #: admin/views/tab-display.php:46
 msgid "Slide"
-msgstr ""
+msgstr "Glissement"
 
 #: admin/views/tab-abtest.php:27
 msgid "Slide + fade"
-msgstr ""
+msgstr "Glissement + fondu"
 
 #: admin/views/tab-abtest.php:28
 #: admin/views/tab-display.php:48
 msgid "Scale"
-msgstr ""
+msgstr "Zoom"
 
 #: admin/views/tab-abtest.php:33
 msgid "Experiment"
-msgstr ""
+msgstr "Expérience"
 
 #: admin/views/tab-abtest.php:33
 msgid "Each browser is randomly and anonymously assigned to variant A (your current settings) or B (the change below), 50/50, and keeps its variant. Test one variable at a time; changing the experiment starts fresh results."
-msgstr ""
+msgstr "Chaque navigateur est affecté de façon aléatoire et anonyme à la variante A (vos réglages actuels) ou B (la modification ci-dessous), à 50/50, et la conserve. Testez une seule variable à la fois ; modifier l’expérience redémarre les résultats."
 
 #: admin/views/tab-abtest.php:34
 msgid "Run an A/B test"
-msgstr ""
+msgstr "Lancer un test A/B"
 
 #: admin/views/tab-abtest.php:38
 msgid "Variable to test"
-msgstr ""
+msgstr "Variable à tester"
 
 #: admin/views/tab-abtest.php:40
 msgid "Button text"
-msgstr ""
+msgstr "Texte du bouton"
 
 #: admin/views/tab-abtest.php:40
 msgid "B uses different text on product buttons (View product / Explore / See offer)."
-msgstr ""
+msgstr "B utilise un autre texte sur les boutons produit (Voir le produit / Découvrir / Voir l’offre)."
 
 #: admin/views/tab-abtest.php:41
 msgid "Message copy"
-msgstr ""
+msgstr "Texte du message"
 
 #: admin/views/tab-abtest.php:41
 msgid "B uses different wording for featured and spotlight messages."
-msgstr ""
+msgstr "B utilise une autre formulation pour les messages « en vedette » et « à découvrir »."
 
 #: admin/views/tab-abtest.php:42
 msgid "Position"
-msgstr ""
+msgstr "Position"
 
 #: admin/views/tab-abtest.php:42
 msgid "B appears in a different desktop corner."
-msgstr ""
+msgstr "B apparaît dans un autre coin sur ordinateur."
 
 #: admin/views/tab-abtest.php:43
 #: admin/views/tab-display.php:43
 msgid "Animation"
-msgstr ""
+msgstr "Animation"
 
 #: admin/views/tab-abtest.php:43
 msgid "B uses a different entrance animation."
-msgstr ""
+msgstr "B utilise une autre animation d’entrée."
 
 #: admin/views/tab-abtest.php:44
 msgid "B uses a different intensity preset."
-msgstr ""
+msgstr "B utilise un autre préréglage d’intensité."
 
 #: admin/views/tab-abtest.php:45
 msgid "B reverses the desktop sound setting (on ↔ off)."
-msgstr ""
+msgstr "B inverse le réglage du son sur ordinateur (activé ↔ désactivé)."
 
 #: admin/views/tab-abtest.php:46
 #: admin/views/tab-display.php:97
 msgid "Product image"
-msgstr ""
+msgstr "Image du produit"
 
 #: admin/views/tab-abtest.php:46
 msgid "B reverses the \"show product image\" setting."
-msgstr ""
+msgstr "B inverse le réglage « afficher l’image du produit »."
 
 #: admin/views/tab-abtest.php:50
 msgid "Variant B button text"
-msgstr ""
+msgstr "Texte du bouton de la variante B"
 
 #: admin/views/tab-abtest.php:50
 msgid "Required for this test. Keep it truthful, e.g. \"See details\"."
-msgstr ""
+msgstr "Obligatoire pour ce test. Restez honnête, p. ex. « Voir les détails »."
 
 #: admin/views/tab-abtest.php:50
 msgid "See details"
-msgstr ""
+msgstr "Voir les détails"
 
 #: admin/views/tab-abtest.php:52
 msgid "Variant B wording"
-msgstr ""
+msgstr "Formulation de la variante B"
 
 #: admin/views/tab-abtest.php:52
 msgid "Required for this test. One line per template, each with {product}."
-msgstr ""
+msgstr "Obligatoire pour ce test. Un modèle par ligne, chacun avec {product}."
 
 #: admin/views/tab-abtest.php:54
 msgid "Variant B position"
-msgstr ""
+msgstr "Position de la variante B"
 
 #: admin/views/tab-abtest.php:56
 msgid "Variant B animation"
-msgstr ""
+msgstr "Animation de la variante B"
 
 #: admin/views/tab-abtest.php:60
 msgid "Variant B preset"
-msgstr ""
+msgstr "Préréglage de la variante B"
 
 #: admin/views/tab-abtest.php:62
 #: admin/views/tab-conversion.php:51
 #: admin/views/tab-display.php:80
 #: admin/views/tab-frequency.php:25
 msgid "Soft"
-msgstr ""
+msgstr "Doux"
 
 #: admin/views/tab-abtest.php:63
 #: admin/views/tab-frequency.php:26
 msgid "Balanced"
-msgstr ""
+msgstr "Équilibré"
 
 #: admin/views/tab-abtest.php:64
 #: admin/views/tab-conversion.php:53
 #: admin/views/tab-frequency.php:27
 msgid "Aggressive"
-msgstr ""
+msgstr "Intense"
 
 #: admin/views/tab-abtest.php:69
 msgid "The test is not running: variant B has no value for the selected variable."
-msgstr ""
+msgstr "Le test ne tourne pas : la variante B n’a pas de valeur pour la variable choisie."
 
 #: admin/views/tab-abtest.php:76
 msgid "Results"
-msgstr ""
+msgstr "Résultats"
 
 #: admin/views/tab-abtest.php:76
 msgid "Rates are per notification impression. A difference is marked significant only when both variants have at least 100 impressions and a two-proportion z-test gives p < 0.05. Results show association during the test period; other factors can also play a part."
-msgstr ""
+msgstr "Les taux sont calculés par impression. Une différence n’est marquée significative que si les deux variantes ont au moins 100 impressions et qu’un test z de deux proportions donne p < 0,05. Les résultats montrent une association pendant la période de test ; d’autres facteurs peuvent aussi jouer."
 
 #: admin/views/tab-abtest.php:78
 msgid "No experiment is running."
-msgstr ""
+msgstr "Aucune expérience en cours."
 
 #: admin/views/tab-abtest.php:83
 msgid "Clicks + button clicks"
-msgstr ""
+msgstr "Clics + clics sur le bouton"
 
 #: admin/views/tab-abtest.php:86
 msgid "Add to cart after a click"
-msgstr ""
+msgstr "Ajout au panier après un clic"
 
 #: admin/views/tab-abtest.php:87
 msgid "Checkout after a click"
-msgstr ""
+msgstr "Commande commencée après un clic"
 
 #: admin/views/tab-abtest.php:88
 msgid "Attributed orders"
-msgstr ""
+msgstr "Commandes attribuées"
 
 #. translators: 1: start date, 2: impressions A, 3: impressions B.
 #: admin/views/tab-abtest.php:96
 #, php-format
 msgid "Since %1$s · Impressions: A %2$s, B %3$s"
-msgstr ""
+msgstr "Depuis le %1$s · Impressions : A %2$s, B %3$s"
 
 #: admin/views/tab-abtest.php:106
 msgid "Metric"
-msgstr ""
+msgstr "Mesure"
 
 #: admin/views/tab-abtest.php:107
 msgid "A (current)"
-msgstr ""
+msgstr "A (actuelle)"
 
 #: admin/views/tab-abtest.php:108
 msgid "B (variant)"
-msgstr ""
+msgstr "B (variante)"
 
 #: admin/views/tab-abtest.php:109
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #: admin/views/tab-abtest.php:117
 msgid "Collecting data"
-msgstr ""
+msgstr "Collecte des données"
 
 #: admin/views/tab-abtest.php:120
 msgid "No significant difference yet"
-msgstr ""
+msgstr "Pas encore de différence significative"
 
 #: admin/views/tab-abtest.php:123
 msgid "B higher (significant)"
-msgstr ""
+msgstr "B supérieure (significatif)"
 
 #: admin/views/tab-abtest.php:123
 msgid "A higher (significant)"
-msgstr ""
+msgstr "A supérieure (significatif)"
 
 #: admin/views/tab-advanced.php:20
 msgid "Caching & performance"
-msgstr ""
+msgstr "Cache et performances"
 
 #: admin/views/tab-advanced.php:20
 msgid "Orders are never queried on page load. A sanitized dataset is rebuilt in the background at this interval and served from cache (Redis/Memcached when available)."
-msgstr ""
+msgstr "Les commandes ne sont jamais interrogées au chargement des pages. Un jeu de données nettoyé est reconstruit en arrière-plan à cet intervalle et servi depuis le cache (Redis/Memcached si disponible)."
 
 #: admin/views/tab-advanced.php:23
 msgid "Refresh interval"
-msgstr ""
+msgstr "Intervalle d’actualisation"
 
 #: admin/views/tab-advanced.php:25
 msgid "1 minute"
-msgstr ""
+msgstr "1 minute"
 
 #: admin/views/tab-advanced.php:26
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutes"
 
 #: admin/views/tab-advanced.php:27
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minutes"
 
 #: admin/views/tab-advanced.php:28
 #: admin/views/tab-conversion.php:147
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutes"
 
 #: admin/views/tab-advanced.php:30
 msgid "Cancelled or refunded orders are removed promptly regardless of this interval."
-msgstr ""
+msgstr "Les commandes annulées ou remboursées sont retirées rapidement, quel que soit cet intervalle."
 
 #: admin/views/tab-advanced.php:32
 msgid "Maximum orders scanned per refresh"
-msgstr ""
+msgstr "Nombre maximal de commandes analysées par actualisation"
 
 #: admin/views/tab-advanced.php:32
 msgid "Caps database work on very busy stores. The most recent orders are always scanned first."
-msgstr ""
+msgstr "Limite le travail de la base de données sur les boutiques très actives. Les commandes les plus récentes sont toujours analysées en premier."
 
 #: admin/views/tab-advanced.php:33
 msgid "Cache notification data in the visitor's browser session"
-msgstr ""
+msgstr "Mettre en cache les données des notifications dans la session du navigateur du visiteur"
 
 #: admin/views/tab-advanced.php:33
 msgid "Avoids repeat requests while a visitor browses (up to 5 minutes)."
-msgstr ""
+msgstr "Évite les requêtes répétées pendant la navigation d’un visiteur (jusqu’à 5 minutes)."
 
 #: admin/views/tab-advanced.php:36
 msgid "Debugging"
-msgstr ""
+msgstr "Débogage"
 
 #: admin/views/tab-advanced.php:37
 msgid "Enable debug logging"
-msgstr ""
+msgstr "Activer le journal de débogage"
 
 #: admin/views/tab-advanced.php:37
 msgid "Logs startup, configuration, query counts, cache status and errors to WooCommerce → Status → Logs. Customer data is never logged."
-msgstr ""
+msgstr "Journalise le démarrage, la configuration, le nombre de requêtes, l’état du cache et les erreurs dans WooCommerce → État → Journaux. Les données clients ne sont jamais journalisées."
 
 #: admin/views/tab-advanced.php:38
 msgid "View logs"
-msgstr ""
+msgstr "Voir les journaux"
 
 #: admin/views/tab-advanced.php:41
 msgid "Uninstall"
-msgstr ""
+msgstr "Désinstallation"
 
 #: admin/views/tab-advanced.php:41
 msgid "Choose what is removed when the plugin is deleted. WooCommerce orders, customers, products and product data are never touched."
-msgstr ""
+msgstr "Choisissez ce qui est supprimé lorsque l’extension est supprimée. Les commandes, clients, produits et données produits WooCommerce ne sont jamais modifiés."
 
 #: admin/views/tab-advanced.php:42
 msgid "Delete plugin settings"
-msgstr ""
+msgstr "Supprimer les réglages de l’extension"
 
 #: admin/views/tab-advanced.php:43
 msgid "Delete cached data"
-msgstr ""
+msgstr "Supprimer les données en cache"
 
 #: admin/views/tab-advanced.php:44
 msgid "Delete analytics data"
-msgstr ""
+msgstr "Supprimer les statistiques"
 
 #: admin/views/tab-advanced.php:49
 msgid "System information"
-msgstr ""
+msgstr "Informations système"
 
 #: admin/views/tab-advanced.php:53
 msgid "Plugin version"
-msgstr ""
+msgstr "Version de l’extension"
 
 #: admin/views/tab-advanced.php:54
 msgid "WordPress"
-msgstr ""
+msgstr "WordPress"
 
 #: admin/views/tab-advanced.php:55
 msgid "WooCommerce"
-msgstr ""
+msgstr "WooCommerce"
 
 #: admin/views/tab-advanced.php:56
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: admin/views/tab-advanced.php:57
 msgid "Order storage"
-msgstr ""
+msgstr "Stockage des commandes"
 
 #: admin/views/tab-advanced.php:57
 msgid "High-Performance Order Storage"
-msgstr ""
+msgstr "Stockage des commandes haute performance (HPOS)"
 
 #: admin/views/tab-advanced.php:57
 msgid "WordPress posts (legacy)"
-msgstr ""
+msgstr "Articles WordPress (ancien système)"
 
 #: admin/views/tab-advanced.php:58
 msgid "Object cache"
-msgstr ""
+msgstr "Cache d’objets"
 
 #: admin/views/tab-advanced.php:58
 msgid "Persistent"
-msgstr ""
+msgstr "Persistant"
 
 #: admin/views/tab-advanced.php:58
 msgid "Not persistent (database transients)"
-msgstr ""
+msgstr "Non persistant (transients en base de données)"
 
 #: admin/views/tab-advanced.php:59
 msgid "Last data build"
-msgstr ""
+msgstr "Dernière construction des données"
 
 #. translators: 1: time ago, 2: duration in milliseconds.
 #: admin/views/tab-advanced.php:63
 #, php-format
 msgid "%1$s ago, took %2$d ms"
-msgstr ""
+msgstr "il y a %1$s, durée %2$d ms"
 
 #: admin/views/tab-advanced.php:65
 msgid "Not built yet"
-msgstr ""
+msgstr "Pas encore construit"
 
 #: admin/views/tab-advanced.php:69
 msgid "Orders scanned in last build"
-msgstr ""
+msgstr "Commandes analysées lors de la dernière construction"
 
 #: admin/views/tab-advanced.php:70
 msgid "REST endpoint"
-msgstr ""
+msgstr "Point de terminaison REST"
 
 #: admin/views/tab-advanced.php:77
 msgid "Clear cache and rebuild now"
-msgstr ""
+msgstr "Vider le cache et reconstruire maintenant"
 
 #: admin/views/tab-analytics.php:23
 #: admin/views/tab-notifications.php:32
 msgid "Recent product purchase"
-msgstr ""
+msgstr "Achat récent du produit"
 
 #: admin/views/tab-analytics.php:24
 msgid "Recent purchase"
-msgstr ""
+msgstr "Achat récent"
 
 #: admin/views/tab-analytics.php:25
 #: admin/views/tab-notifications.php:34
 msgid "Active sale"
-msgstr ""
+msgstr "Promotion en cours"
 
 #: admin/views/tab-analytics.php:26
 msgid "Popular product"
-msgstr ""
+msgstr "Produit populaire"
 
 #: admin/views/tab-analytics.php:27
 msgid "Featured product (synthetic)"
-msgstr ""
+msgstr "Produit en vedette (synthétique)"
 
 #: admin/views/tab-analytics.php:28
 msgid "Spotlight (synthetic)"
-msgstr ""
+msgstr "À découvrir (synthétique)"
 
 #: admin/views/tab-analytics.php:29
 msgid "Shipping region (synthetic)"
-msgstr ""
+msgstr "Région de livraison (synthétique)"
 
 #: admin/views/tab-analytics.php:30
 msgid "Sale (synthetic rotation)"
-msgstr ""
+msgstr "Promotion (rotation synthétique)"
 
 #: admin/views/tab-analytics.php:31
 msgid "Product call to action"
-msgstr ""
+msgstr "Appel à l’action produit"
 
 #: admin/views/tab-analytics.php:32
 #: admin/views/tab-dashboard.php:190
 msgid "Recommendation"
-msgstr ""
+msgstr "Recommandation"
 
 #: admin/views/tab-analytics.php:33
 #: admin/views/tab-conversion.php:87
 #: admin/views/tab-conversion.php:160
 msgid "Cart reminder"
-msgstr ""
+msgstr "Rappel de panier"
 
 #: admin/views/tab-analytics.php:34
 #: admin/views/tab-conversion.php:101
 #: admin/views/tab-conversion.php:161
 msgid "Checkout prompt"
-msgstr ""
+msgstr "Invitation à commander"
 
 #: admin/views/tab-analytics.php:35
 #: admin/views/tab-conversion.php:88
 #: admin/views/tab-conversion.php:162
 msgid "Free-shipping progress"
-msgstr ""
+msgstr "Progression vers la livraison gratuite"
 
 #: admin/views/tab-analytics.php:36
 #: admin/views/tab-conversion.php:102
 #: admin/views/tab-conversion.php:164
 msgid "Inactivity message"
-msgstr ""
+msgstr "Message d’inactivité"
 
 #: admin/views/tab-analytics.php:105
 msgid "Anonymous analytics"
-msgstr ""
+msgstr "Statistiques anonymes"
 
 #: admin/views/tab-analytics.php:105
 msgid "Counts notification views, clicks and dismissals per day, by type and product, plus anonymous funnel counters (variant letter and mobile/desktop only). No IP addresses, user IDs or personal data are collected, and nothing is sent to third parties. The optional attribution cookie is described on the Conversion tab."
-msgstr ""
+msgstr "Compte par jour les affichages, clics et fermetures des notifications, par type et par produit, ainsi que des compteurs d’entonnoir anonymes (lettre de variante et mobile/ordinateur uniquement). Aucune adresse IP, aucun identifiant utilisateur ni aucune donnée personnelle n’est collecté, et rien n’est envoyé à des tiers. Le cookie d’attribution facultatif est décrit dans l’onglet Conversion."
 
 #: admin/views/tab-analytics.php:106
 msgid "Collect anonymous analytics"
-msgstr ""
+msgstr "Collecter des statistiques anonymes"
 
 #: admin/views/tab-analytics.php:109
 msgid "Keep data for"
-msgstr ""
+msgstr "Conserver les données pendant"
 
 #: admin/views/tab-analytics.php:111
 #: admin/views/tab-data.php:37
 msgid "30 days"
-msgstr ""
+msgstr "30 jours"
 
 #: admin/views/tab-analytics.php:112
 msgid "90 days"
-msgstr ""
+msgstr "90 jours"
 
 #: admin/views/tab-analytics.php:113
 msgid "180 days"
-msgstr ""
+msgstr "180 jours"
 
 #: admin/views/tab-analytics.php:114
 msgid "1 year"
-msgstr ""
+msgstr "1 an"
 
 #: admin/views/tab-analytics.php:122
 msgid "Reporting period"
-msgstr ""
+msgstr "Période"
 
 #. translators: %d: number of days.
 #: admin/views/tab-analytics.php:127
 #, php-format
 msgid "Last %d days"
-msgstr ""
+msgstr "%d derniers jours"
 
 #: admin/views/tab-analytics.php:134
 msgid "Notifications shown"
-msgstr ""
+msgstr "Notifications affichées"
 
 #: admin/views/tab-analytics.php:135
 #: admin/views/tab-analytics.php:155
 #: admin/views/tab-analytics.php:173
 #: admin/views/tab-analytics.php:201
 msgid "Clicks"
-msgstr ""
+msgstr "Clics"
 
 #: admin/views/tab-analytics.php:136
 msgid "Click-through rate"
-msgstr ""
+msgstr "Taux de clics"
 
 #: admin/views/tab-analytics.php:137
 #: admin/views/tab-analytics.php:173
 msgid "Dismissed"
-msgstr ""
+msgstr "Fermées"
 
 #: admin/views/tab-analytics.php:144
 msgid "Notifications shown per day"
-msgstr ""
+msgstr "Notifications affichées par jour"
 
 #: admin/views/tab-analytics.php:144
 msgid "shown"
-msgstr ""
+msgstr "affichées"
 
 #: admin/views/tab-analytics.php:147
 msgid "Clicks per day"
-msgstr ""
+msgstr "Clics par jour"
 
 #: admin/views/tab-analytics.php:147
 msgid "clicks"
-msgstr ""
+msgstr "clics"
 
 #: admin/views/tab-analytics.php:153
 msgid "View daily data as a table"
-msgstr ""
+msgstr "Voir les données quotidiennes sous forme de tableau"
 
 #: admin/views/tab-analytics.php:155
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: admin/views/tab-analytics.php:155
 #: admin/views/tab-analytics.php:173
 #: admin/views/tab-analytics.php:201
 msgid "Shown"
-msgstr ""
+msgstr "Affichées"
 
 #: admin/views/tab-analytics.php:155
 #: admin/views/tab-analytics.php:173
 #: admin/views/tab-analytics.php:201
 msgid "CTR"
-msgstr ""
+msgstr "Taux de clics"
 
 #: admin/views/tab-analytics.php:171
 msgid "By notification type"
-msgstr ""
+msgstr "Par type de notification"
 
 #: admin/views/tab-analytics.php:173
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: admin/views/tab-analytics.php:196
 msgid "Most clicked products"
-msgstr ""
+msgstr "Produits les plus cliqués"
 
 #: admin/views/tab-analytics.php:198
 msgid "No product activity recorded in this period yet."
-msgstr ""
+msgstr "Aucune activité produit enregistrée sur cette période."
 
 #: admin/views/tab-analytics.php:201
 #: admin/views/tab-conversion.php:186
 #: admin/views/tab-weighting.php:69
 msgid "Product"
-msgstr ""
+msgstr "Produit"
 
 #. translators: %d: product ID.
 #: admin/views/tab-analytics.php:207
 #, php-format
 msgid "Deleted product #%d"
-msgstr ""
+msgstr "Produit supprimé n° %d"
 
 #: admin/views/tab-analytics.php:228
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialisation"
 
 #: admin/views/tab-analytics.php:232
 msgid "Delete all analytics data"
-msgstr ""
+msgstr "Supprimer toutes les statistiques"
 
 #: admin/views/tab-branding.php:16
 msgid "Admin branding"
-msgstr ""
+msgstr "Image de marque dans l’administration"
 
 #: admin/views/tab-branding.php:16
 msgid "ALWAYS FINAL deploys this plugin across many stores. Control how it is presented to each store's team."
-msgstr ""
+msgstr "ALWAYS FINAL déploie cette extension dans de nombreuses boutiques. Choisissez comment elle est présentée à l’équipe de chaque boutique."
 
 #: admin/views/tab-branding.php:17
 msgid "Show ALWAYS FINAL branding"
-msgstr ""
+msgstr "Afficher la marque ALWAYS FINAL"
 
 #: admin/views/tab-branding.php:17
 msgid "Logo in the page header and a subtle \"Developed by\" credit in the admin footer. Turn off to hide developer branding."
-msgstr ""
+msgstr "Logo dans l’en-tête de la page et mention discrète « Développé par » dans le pied de page de l’administration. Désactivez pour masquer la marque du développeur."
 
 #: admin/views/tab-branding.php:18
 msgid "Custom plugin label"
-msgstr ""
+msgstr "Nom personnalisé de l’extension"
 
 #: admin/views/tab-branding.php:18
 msgid "Replaces the menu and page title. Leave empty for \"WP Live Hype\"."
-msgstr ""
+msgstr "Remplace le titre du menu et de la page. Laissez vide pour « WP Live Hype »."
 
 #: admin/views/tab-branding.php:19
 msgid "Developer name"
-msgstr ""
+msgstr "Nom du développeur"
 
 #: admin/views/tab-branding.php:20
 msgid "Support URL"
-msgstr ""
+msgstr "URL d’assistance"
 
 #: admin/views/tab-branding.php:20
 msgid "Linked from the developer credit."
-msgstr ""
+msgstr "Lien ajouté à la mention du développeur."
 
 #: admin/views/tab-branding.php:21
 msgid "Logo URL"
-msgstr ""
+msgstr "URL du logo"
 
 #: admin/views/tab-branding.php:21
 msgid "Leave empty to use the bundled ALWAYS FINAL logo."
-msgstr ""
+msgstr "Laissez vide pour utiliser le logo ALWAYS FINAL fourni."
 
 #: admin/views/tab-branding.php:22
 msgid "Show plugin version"
-msgstr ""
+msgstr "Afficher la version de l’extension"
 
 #: admin/views/tab-branding.php:25
 msgid "Storefront attribution"
-msgstr ""
+msgstr "Mention sur la boutique"
 
 #: admin/views/tab-branding.php:26
 msgid "Show a small developer credit on notifications"
-msgstr ""
+msgstr "Afficher une petite mention du développeur sur les notifications"
 
 #: admin/views/tab-branding.php:26
 msgid "Off by default. Customer-facing notifications carry no developer branding unless you enable this."
-msgstr ""
+msgstr "Désactivé par défaut. Les notifications visibles par les clients n’affichent aucune marque de développeur sauf si vous l’activez."
 
 #. translators: 1: first delay seconds, 2: min interval seconds, 3: max interval seconds, 4: per page, 5: per session.
 #: admin/views/tab-conversion.php:27
 #, php-format
 msgid "First after %1$ds · every %2$d–%3$ds · up to %4$d per page, %5$d per session."
-msgstr ""
+msgstr "Première après %1$d s · toutes les %2$d à %3$d s · jusqu’à %4$d par page, %5$d par session."
 
 #: admin/views/tab-conversion.php:42
 msgid "Conversion strategy"
-msgstr ""
+msgstr "Stratégie de conversion"
 
 #: admin/views/tab-conversion.php:43
 msgid "WP Live Hype adapts to each visitor's stage — browsing, exploring a product, building a cart — using signals that stay in their own browser. It shows the next helpful step, then gets out of the way."
-msgstr ""
+msgstr "WP Live Hype s’adapte à l’étape de chaque visiteur — navigation, découverte d’un produit, constitution d’un panier — grâce à des signaux qui restent dans son propre navigateur. Il propose la prochaine étape utile, puis s’efface."
 
 #: admin/views/tab-conversion.php:49
 msgid "Intensity preset"
-msgstr ""
+msgstr "Préréglage d’intensité"
 
 #: admin/views/tab-conversion.php:52
 msgid "Balanced (recommended)"
-msgstr ""
+msgstr "Équilibré (recommandé)"
 
 #: admin/views/tab-conversion.php:54
 msgid "Custom"
-msgstr ""
+msgstr "Personnalisé"
 
 #: admin/views/tab-conversion.php:54
 msgid "Use the values on the Frequency tab."
-msgstr ""
+msgstr "Utiliser les valeurs de l’onglet Fréquence."
 
 #: admin/views/tab-conversion.php:59
 msgid "Primary goal"
-msgstr ""
+msgstr "Objectif principal"
 
 #: admin/views/tab-conversion.php:61
 msgid "Lead with recommendations and \"View product\" buttons."
-msgstr ""
+msgstr "Mettre en avant les recommandations et les boutons « Voir le produit »."
 
 #: admin/views/tab-conversion.php:62
 msgid "Lead with the product being viewed and an \"Add to cart\" button."
-msgstr ""
+msgstr "Mettre en avant le produit consulté et un bouton « Ajouter au panier »."
 
 #: admin/views/tab-conversion.php:63
 #: admin/views/tab-conversion.php:124
@@ -1189,639 +1191,639 @@ msgstr ""
 #: includes/class-conversion.php:171
 #: includes/class-templates.php:225
 msgid "Checkout"
-msgstr ""
+msgstr "Commander"
 
 #: admin/views/tab-conversion.php:63
 msgid "For visitors with a cart, lead with checkout and free-shipping progress."
-msgstr ""
+msgstr "Pour les visiteurs ayant un panier, mettre en avant la commande et la progression vers la livraison gratuite."
 
 #: admin/views/tab-conversion.php:64
 msgid "Like Checkout; the dashboard highlights attributed purchases."
-msgstr ""
+msgstr "Comme Commander ; le tableau de bord met en avant les achats attribués."
 
 #: admin/views/tab-conversion.php:70
 msgid "Conversion messages only use genuine store facts: your products and their real prices and sales, WooCommerce related products, your configured free-shipping rule and the visitor's own cart. Discounts, coupons, deadlines, stock shortages, viewer counts and customers are never invented. Nothing is shown on the checkout page, and nothing is ever added to the cart without the visitor clicking."
-msgstr ""
+msgstr "Les messages de conversion n’utilisent que des faits réels : vos produits avec leurs vrais prix et promotions, les produits apparentés de WooCommerce, votre règle de livraison gratuite et le panier du visiteur. Aucune remise, aucun code promo, aucune échéance, aucune rupture de stock, aucun nombre de visiteurs ni aucun client n’est inventé. Rien n’est affiché sur la page de commande, et rien n’est jamais ajouté au panier sans un clic du visiteur."
 
 #: admin/views/tab-conversion.php:74
 msgid "Conversion messages"
-msgstr ""
+msgstr "Messages de conversion"
 
 #: admin/views/tab-conversion.php:74
 msgid "Context-aware messages that are chosen before the regular rotation when they are relevant to the visitor."
-msgstr ""
+msgstr "Messages contextuels choisis avant la rotation habituelle lorsqu’ils sont pertinents pour le visiteur."
 
 #: admin/views/tab-conversion.php:75
 #: admin/views/tab-conversion.php:158
 msgid "Product page call to action"
-msgstr ""
+msgstr "Appel à l’action sur la page produit"
 
 #: admin/views/tab-conversion.php:75
 msgid "After the visitor shows interest (scrolling or reading), a message about the product they are viewing with an \"Add to cart\" button (simple products) or \"Choose options\" (which scrolls to the product options)."
-msgstr ""
+msgstr "Lorsque le visiteur montre de l’intérêt (défilement ou lecture), un message sur le produit consulté avec un bouton « Ajouter au panier » (produits simples) ou « Choisir les options » (qui fait défiler jusqu’aux options du produit)."
 
 #: admin/views/tab-conversion.php:76
 #: admin/views/tab-conversion.php:159
 msgid "Recommendations"
-msgstr ""
+msgstr "Recommandations"
 
 #: admin/views/tab-conversion.php:76
 msgid "Products from your own up-sells / cross-sells and WooCommerce related products. No claims are made about why products belong together."
-msgstr ""
+msgstr "Produits issus de vos ventes incitatives / ventes croisées et des produits apparentés de WooCommerce. Aucune affirmation n’est faite sur les raisons de leur association."
 
 #: admin/views/tab-conversion.php:80
 msgid "Recommendation source"
-msgstr ""
+msgstr "Source des recommandations"
 
 #: admin/views/tab-conversion.php:82
 msgid "Up-sells & cross-sells first, then related products"
-msgstr ""
+msgstr "Ventes incitatives et croisées d’abord, puis produits apparentés"
 
 #: admin/views/tab-conversion.php:83
 msgid "Related products only (same categories / tags)"
-msgstr ""
+msgstr "Produits apparentés uniquement (mêmes catégories / étiquettes)"
 
 #: admin/views/tab-conversion.php:87
 msgid "For visitors with items in their cart: their real subtotal and a \"View cart\" button."
-msgstr ""
+msgstr "Pour les visiteurs ayant des articles dans leur panier : leur vrai sous-total et un bouton « Voir le panier »."
 
 #: admin/views/tab-conversion.php:88
 msgid "\"You are $X away from free shipping\" with a \"Continue shopping\" button, calculated exactly like WooCommerce."
-msgstr ""
+msgstr "« Plus que X $ pour la livraison gratuite » avec un bouton « Continuer mes achats », calculé exactement comme WooCommerce."
 
 #. translators: 1: amount, 2: country.
 #: admin/views/tab-conversion.php:93
 #, php-format
 msgid "Detected in WooCommerce: free shipping from %1$s for %2$s."
-msgstr ""
+msgstr "Détecté dans WooCommerce : livraison gratuite dès %1$s pour %2$s."
 
 #: admin/views/tab-conversion.php:99
 msgid "No free-shipping method with a minimum order amount was found for your target country, so free-shipping messages stay off. Configure one under WooCommerce → Settings → Shipping."
-msgstr ""
+msgstr "Aucun mode de livraison gratuite avec montant minimal n’a été trouvé pour votre pays cible ; les messages de livraison gratuite restent donc désactivés. Configurez-en un dans WooCommerce → Réglages → Expédition."
 
 #: admin/views/tab-conversion.php:101
 msgid "For visitors with a cart, when the goal is Checkout or Purchase: \"Ready to check out?\" with a \"Checkout\" button (replaces the cart reminder)."
-msgstr ""
+msgstr "Pour les visiteurs ayant un panier, lorsque l’objectif est Commander ou Achat : « Prêt à commander ? » avec un bouton « Commander » (remplace le rappel de panier)."
 
 #: admin/views/tab-conversion.php:102
 msgid "When a visitor has been inactive for 45 seconds: one final, low-intensity message (no sound), then nothing more on that page."
-msgstr ""
+msgstr "Après 45 secondes d’inactivité du visiteur : un dernier message discret (sans son), puis plus rien sur cette page."
 
 #: admin/views/tab-conversion.php:105
 msgid "Calls to action"
-msgstr ""
+msgstr "Appels à l’action"
 
 #: admin/views/tab-conversion.php:105
 msgid "Buttons are separate from the message link, touch-friendly on mobile, and only navigate when clicked. Leave a text empty to use the translated default."
-msgstr ""
+msgstr "Les boutons sont séparés du lien du message, adaptés au tactile sur mobile, et ne naviguent qu’au clic. Laissez un texte vide pour utiliser la traduction par défaut."
 
 #: admin/views/tab-conversion.php:106
 msgid "Show call-to-action buttons"
-msgstr ""
+msgstr "Afficher les boutons d’appel à l’action"
 
 #: admin/views/tab-conversion.php:110
 #: admin/views/tab-display.php:58
 msgid "Appearance"
-msgstr ""
+msgstr "Apparence"
 
 #: admin/views/tab-conversion.php:112
 msgid "Button (accent colour)"
-msgstr ""
+msgstr "Bouton (couleur d’accent)"
 
 #: admin/views/tab-conversion.php:113
 msgid "Text link with arrow"
-msgstr ""
+msgstr "Lien texte avec flèche"
 
 #: admin/views/tab-conversion.php:117
 #: includes/class-conversion.php:167
 msgid "View product"
-msgstr ""
+msgstr "Voir le produit"
 
 #: admin/views/tab-conversion.php:118
 msgid "Explore (spotlights)"
-msgstr ""
+msgstr "Découvrir (mises en avant)"
 
 #: admin/views/tab-conversion.php:119
 msgid "Offer (genuine sales)"
-msgstr ""
+msgstr "Offre (promotions réelles)"
 
 #: admin/views/tab-conversion.php:120
 msgid "Shop (shipping & inactivity messages)"
-msgstr ""
+msgstr "Boutique (messages de livraison et d’inactivité)"
 
 #: admin/views/tab-conversion.php:122
 #: includes/class-conversion.php:173
 msgid "Choose options"
-msgstr ""
+msgstr "Choisir les options"
 
 #: admin/views/tab-conversion.php:123
 #: includes/class-conversion.php:170
 msgid "View cart"
-msgstr ""
+msgstr "Voir le panier"
 
 #: admin/views/tab-conversion.php:125
 #: includes/class-conversion.php:175
 msgid "Continue shopping"
-msgstr ""
+msgstr "Continuer mes achats"
 
 #: admin/views/tab-conversion.php:135
 msgid "Smart suppression"
-msgstr ""
+msgstr "Retenue intelligente"
 
 #: admin/views/tab-conversion.php:135
 msgid "Always on: nothing on checkout; on the cart page only free-shipping progress; a 20-second pause after an add to cart; never while the visitor is typing; never over add-to-cart, cart, checkout or payment controls (the card moves to the opposite edge or waits)."
-msgstr ""
+msgstr "Toujours actif : rien sur la page de commande ; sur la page panier, uniquement la progression vers la livraison gratuite ; une pause de 20 secondes après un ajout au panier ; jamais pendant la saisie ; jamais par-dessus les boutons d’ajout au panier, de panier, de commande ou de paiement (la carte passe au bord opposé ou attend)."
 
 #: admin/views/tab-conversion.php:136
 msgid "Stop for the session after"
-msgstr ""
+msgstr "Arrêter pour la session après"
 
 #: admin/views/tab-conversion.php:136
 msgid "Closing this many messages silences WP Live Hype for the rest of the visit (the \"Dismiss behaviour\" on the Frequency tab can be stricter)."
-msgstr ""
+msgstr "Fermer ce nombre de messages met WP Live Hype en sourdine pour le reste de la visite (le « Comportement à la fermeture » de l’onglet Fréquence peut être plus strict)."
 
 #: admin/views/tab-conversion.php:136
 msgid "dismissals"
-msgstr ""
+msgstr "fermetures"
 
 #: admin/views/tab-conversion.php:137
 msgid "Calm repeat product views after"
-msgstr ""
+msgstr "Calmer les consultations répétées après"
 
 #: admin/views/tab-conversion.php:137
 msgid "When a visitor returns to the same product this many times, its call to action is no longer shown and that page shows at most one message."
-msgstr ""
+msgstr "Lorsqu’un visiteur revient ce nombre de fois sur le même produit, son appel à l’action n’est plus affiché et la page affiche au plus un message."
 
 #: admin/views/tab-conversion.php:137
 msgid "views"
-msgstr ""
+msgstr "consultations"
 
 #: admin/views/tab-conversion.php:140
 msgid "Attribution"
-msgstr ""
+msgstr "Attribution"
 
 #: admin/views/tab-conversion.php:140
 msgid "When a visitor clicks a message, a first-party cookie (wplh_attr) holding a random ID, the A/B variant letter and a timestamp is set for the window below. If they order within it, the order is flagged as attributed. No personal data is stored, and nothing is sent to third parties."
-msgstr ""
+msgstr "Lorsqu’un visiteur clique sur un message, un cookie interne (wplh_attr) contenant un identifiant aléatoire, la lettre de variante A/B et un horodatage est déposé pour la durée ci-dessous. S’il commande pendant cette période, la commande est marquée comme attribuée. Aucune donnée personnelle n’est enregistrée et rien n’est envoyé à des tiers."
 
 #: admin/views/tab-conversion.php:141
 msgid "Enable anonymous attribution"
-msgstr ""
+msgstr "Activer l’attribution anonyme"
 
 #: admin/views/tab-conversion.php:141
 msgid "Requires Analytics to be enabled. When a consent plugin that supports the WP Consent API is active (e.g. Complianz, CookieYes), the cookie is only set after the visitor allows statistics cookies. Without such a plugin, turn this off if your cookie policy requires consent; funnel counters keep working without it."
-msgstr ""
+msgstr "Nécessite l’activation des statistiques. Si une extension de consentement compatible avec la WP Consent API est active (p. ex. Complianz, CookieYes), le cookie n’est déposé qu’après l’acceptation des cookies statistiques. Sans une telle extension, désactivez cette option si votre politique de cookies exige un consentement ; les compteurs d’entonnoir continuent de fonctionner."
 
 #: admin/views/tab-conversion.php:145
 msgid "Attribution window"
-msgstr ""
+msgstr "Fenêtre d’attribution"
 
 #: admin/views/tab-conversion.php:148
 msgid "1 hour"
-msgstr ""
+msgstr "1 heure"
 
 #: admin/views/tab-conversion.php:149
 msgid "2 hours"
-msgstr ""
+msgstr "2 heures"
 
 #: admin/views/tab-conversion.php:150
 #: admin/views/tab-data.php:33
 msgid "24 hours"
-msgstr ""
+msgstr "24 heures"
 
 #: admin/views/tab-conversion.php:156
 msgid "Conversion message templates"
-msgstr ""
+msgstr "Modèles des messages de conversion"
 
 #: admin/views/tab-conversion.php:156
 msgid "One template per line. Cart values are filled in by the visitor's own browser from their real cart; a line is skipped when any of its tokens has no value. Leave a box empty to restore the defaults."
-msgstr ""
+msgstr "Un modèle par ligne. Les valeurs du panier sont complétées par le navigateur du visiteur à partir de son vrai panier ; une ligne est ignorée si l’un de ses jetons n’a pas de valeur. Laissez un champ vide pour restaurer les valeurs par défaut."
 
 #: admin/views/tab-conversion.php:163
 #: includes/class-templates.php:157
 msgid "Free-shipping minimum reached"
-msgstr ""
+msgstr "Minimum de livraison gratuite atteint"
 
 #: admin/views/tab-conversion.php:171
 msgid "Conversion labels"
-msgstr ""
+msgstr "Libellés de conversion"
 
 #: admin/views/tab-conversion.php:171
 #: admin/views/tab-notifications.php:74
 msgid "The small heading above each message. Leave empty to use the translated default."
-msgstr ""
+msgstr "Le petit titre au-dessus de chaque message. Laissez vide pour utiliser la traduction par défaut."
 
 #: admin/views/tab-conversion.php:181
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 #: admin/views/tab-conversion.php:181
 msgid "Saved settings. Cart amounts in the cart and checkout previews are sample values; the free-shipping minimum is your real one when configured."
-msgstr ""
+msgstr "Réglages enregistrés. Les montants des aperçus panier et commande sont des exemples ; le minimum de livraison gratuite est le vôtre lorsqu’il est configuré."
 
 #: admin/views/tab-conversion.php:187
 msgid "Recommend"
-msgstr ""
+msgstr "Recommandation"
 
 #: admin/views/tab-conversion.php:188
 #: admin/views/tab-products.php:35
 msgid "Cart"
-msgstr ""
+msgstr "Panier"
 
 #: admin/views/tab-conversion.php:189
 #: admin/views/tab-dashboard.php:191
 #: includes/class-templates.php:228
 msgid "Free shipping"
-msgstr ""
+msgstr "Livraison gratuite"
 
 #: admin/views/tab-conversion.php:191
 msgid "Inactive"
-msgstr ""
+msgstr "Inactif"
 
 #: admin/views/tab-country.php:28
 msgid "Country targeting"
-msgstr ""
+msgstr "Ciblage par pays"
 
 #: admin/views/tab-country.php:29
 msgid "Choose the country WP Live Hype targets. Synthetic shipping messages only ever mention places in this country, and in Hybrid or Aggregate mode only this country's real orders are used. Deploy the same plugin anywhere — nothing is hard-coded."
-msgstr ""
+msgstr "Choisissez le pays ciblé par WP Live Hype. Les messages de livraison synthétiques ne mentionnent que des lieux de ce pays et, en mode Hybride ou Agrégé, seules les commandes réelles de ce pays sont utilisées. Déployez la même extension partout — rien n’est codé en dur."
 
 #: admin/views/tab-country.php:33
 msgid "Enable Country Filtering"
-msgstr ""
+msgstr "Activer le filtrage par pays"
 
 #: admin/views/tab-country.php:33
 msgid "When ON, only qualifying WooCommerce orders from the target country are used."
-msgstr ""
+msgstr "Lorsque cette option est activée, seules les commandes WooCommerce admissibles du pays cible sont utilisées."
 
 #: admin/views/tab-country.php:36
 msgid "Target country"
-msgstr ""
+msgstr "Pays cible"
 
 #: admin/views/tab-country.php:36
 msgid "Countries come from WooCommerce's own country list (ISO codes)."
-msgstr ""
+msgstr "Les pays proviennent de la liste de WooCommerce (codes ISO)."
 
 #: admin/views/tab-country.php:43
 msgid "When country filtering is OFF, use…"
-msgstr ""
+msgstr "Lorsque le filtrage par pays est désactivé, utiliser…"
 
 #: admin/views/tab-country.php:45
 msgid "Each notification shows the customer's own country/region."
-msgstr ""
+msgstr "Chaque notification affiche le pays / la région du client."
 
 #. translators: %s: store base country name.
 #: admin/views/tab-country.php:47
 #, php-format
 msgid "Only orders from the store's base country (%s)"
-msgstr ""
+msgstr "Uniquement les commandes du pays de la boutique (%s)"
 
 #. translators: %s: store base country name.
 #: admin/views/tab-country.php:47
 msgid "not set"
-msgstr ""
+msgstr "non défini"
 
 #. translators: %s: store base country name.
 #: admin/views/tab-country.php:47
 msgid "Follows WooCommerce → Settings → General → Store address."
-msgstr ""
+msgstr "Suit WooCommerce → Réglages → Général → Adresse de la boutique."
 
 #: admin/views/tab-country.php:48
 msgid "Only orders from specific countries"
-msgstr ""
+msgstr "Uniquement les commandes de pays précis"
 
 #: admin/views/tab-country.php:48
 msgid "Select one or more countries below."
-msgstr ""
+msgstr "Sélectionnez un ou plusieurs pays ci-dessous."
 
 #: admin/views/tab-country.php:49
 msgid "Require a geographic configuration"
-msgstr ""
+msgstr "Exiger une configuration géographique"
 
 #: admin/views/tab-country.php:49
 msgid "Purchase notifications stay inactive until country filtering is configured."
-msgstr ""
+msgstr "Les notifications d’achat restent inactives tant que le filtrage par pays n’est pas configuré."
 
 #: admin/views/tab-country.php:54
 msgid "Allowed countries"
-msgstr ""
+msgstr "Pays autorisés"
 
 #: admin/views/tab-country.php:61
 msgid "Location display"
-msgstr ""
+msgstr "Affichage du lieu"
 
 #: admin/views/tab-country.php:63
 msgid "Country only"
-msgstr ""
+msgstr "Pays uniquement"
 
 #: admin/views/tab-country.php:66
 msgid "City + province / state"
-msgstr ""
+msgstr "Ville + province / État"
 
 #: admin/views/tab-country.php:67
 msgid "City + country"
-msgstr ""
+msgstr "Ville + pays"
 
 #: admin/views/tab-country.php:68
 msgid "No location"
-msgstr ""
+msgstr "Aucun lieu"
 
 #: admin/views/tab-country.php:70
 msgid "Falls back gracefully when data is missing: City + region → Region → Country → No location. A location is never invented."
-msgstr ""
+msgstr "Repli progressif si une donnée manque : Ville + région → Région → Pays → Aucun lieu. Aucun lieu n’est jamais inventé."
 
 #: admin/views/tab-country.php:75
 msgid "Match the country using"
-msgstr ""
+msgstr "Déterminer le pays à partir de"
 
 #: admin/views/tab-country.php:77
 msgid "Billing address"
-msgstr ""
+msgstr "Adresse de facturation"
 
 #: admin/views/tab-country.php:78
 msgid "Shipping address"
-msgstr ""
+msgstr "Adresse de livraison"
 
 #: admin/views/tab-country.php:79
 msgid "Shipping address, or billing when there is no shipping address"
-msgstr ""
+msgstr "Adresse de livraison, ou de facturation en l’absence d’adresse de livraison"
 
 #: admin/views/tab-country.php:81
 msgid "The same address is used for matching and for the displayed location, so the location shown is always inside the permitted country."
-msgstr ""
+msgstr "La même adresse sert à la vérification et au lieu affiché : le lieu affiché se trouve donc toujours dans le pays autorisé."
 
 #: admin/views/tab-country.php:86
 msgid "Activity area"
-msgstr ""
+msgstr "Zone d’activité"
 
 #: admin/views/tab-country.php:86
 msgid "Eligible orders"
-msgstr ""
+msgstr "Commandes admissibles"
 
 #: admin/views/tab-country.php:93
 msgid "Only qualifying WooCommerce orders from the selected country will be used for purchase notifications."
-msgstr ""
+msgstr "Seules les commandes WooCommerce admissibles du pays sélectionné seront utilisées pour les notifications d’achat."
 
 #: admin/views/tab-country.php:94
 msgid "Orders from other countries are never used as a fallback, and the rule is enforced on the server — not in the browser."
-msgstr ""
+msgstr "Les commandes d’autres pays ne sont jamais utilisées en remplacement, et la règle est appliquée sur le serveur — pas dans le navigateur."
 
 #: admin/views/tab-country.php:101
 msgid "There is currently no qualifying order activity in scope. Purchase notifications will remain inactive until qualifying order activity exists."
-msgstr ""
+msgstr "Aucune activité de commande admissible dans ce périmètre pour le moment. Les notifications d’achat resteront inactives tant qu’il n’y en aura pas."
 
 #: admin/views/tab-country.php:107
 msgid "Country preview"
-msgstr ""
+msgstr "Aperçu par pays"
 
 #: admin/views/tab-country.php:107
 msgid "See how a shipping-region message would read for any country. Sample data only."
-msgstr ""
+msgstr "Voyez comment se lirait un message de région de livraison pour n’importe quel pays. Données d’exemple uniquement."
 
 #: admin/views/tab-country.php:107
 msgid "See how a purchase notification would read for any country. Sample data only."
-msgstr ""
+msgstr "Voyez comment se lirait une notification d’achat pour n’importe quel pays. Données d’exemple uniquement."
 
 #: admin/views/tab-country.php:110
 msgid "Preview country"
-msgstr ""
+msgstr "Pays de l’aperçu"
 
 #: admin/views/tab-dashboard.php:27
 #: admin/views/tab-engine.php:34
 msgid "Synthetic"
-msgstr ""
+msgstr "Synthétique"
 
 #: admin/views/tab-dashboard.php:28
 msgid "Hybrid"
-msgstr ""
+msgstr "Hybride"
 
 #: admin/views/tab-dashboard.php:29
 #: admin/views/tab-engine.php:36
 msgid "Aggregate"
-msgstr ""
+msgstr "Agrégé"
 
 #. translators: %d: number of hours.
 #: admin/views/tab-dashboard.php:36
 #, php-format
 msgid "last %d hour"
 msgid_plural "last %d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dernière %d heure"
+msgstr[1] "dernières %d heures"
 
 #. translators: %s: WooCommerce version.
 #: admin/views/tab-dashboard.php:40
 #, php-format
 msgid "WooCommerce %s detected."
-msgstr ""
+msgstr "WooCommerce %s détecté."
 
 #. translators: %s: WooCommerce version.
 #: admin/views/tab-dashboard.php:41
 msgid "High-Performance Order Storage (HPOS) is active and fully supported."
-msgstr ""
+msgstr "Le stockage des commandes haute performance (HPOS) est actif et entièrement pris en charge."
 
 #. translators: %s: WooCommerce version.
 #: admin/views/tab-dashboard.php:41
 msgid "Legacy order storage is active and fully supported."
-msgstr ""
+msgstr "L’ancien stockage des commandes est actif et entièrement pris en charge."
 
 #: admin/views/tab-dashboard.php:44
 msgid "WooCommerce \"Coming soon\" mode is active, so notifications are hidden from visitors until the store launches. Store managers still see them."
-msgstr ""
+msgstr "Le mode « Bientôt disponible » de WooCommerce est actif : les notifications sont masquées aux visiteurs jusqu’à l’ouverture de la boutique. Les gestionnaires les voient toujours."
 
 #: admin/views/tab-dashboard.php:48
 msgid "No eligible products are available to the engine, so the synthetic rotation is paused. Publish in-stock products (or review exclusions on the Products tab)."
-msgstr ""
+msgstr "Aucun produit admissible n’est disponible pour le moteur : la rotation synthétique est en pause. Publiez des produits en stock (ou vérifiez les exclusions de l’onglet Produits)."
 
 #. translators: %d: number of products.
 #: admin/views/tab-dashboard.php:51
 #, php-format
 msgid "Synthetic rotation active with %d product."
 msgid_plural "Synthetic rotation active with %d products."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Rotation synthétique active avec %d produit."
+msgstr[1] "Rotation synthétique active avec %d produits."
 
 #: admin/views/tab-dashboard.php:55
 msgid "Shipping-region messages are inactive because WooCommerce is not set to ship to the target country."
-msgstr ""
+msgstr "Les messages de région de livraison sont inactifs car WooCommerce n’est pas configuré pour expédier vers le pays cible."
 
 #: admin/views/tab-dashboard.php:59
 msgid "Notifications are switched off (General tab)."
-msgstr ""
+msgstr "Les notifications sont désactivées (onglet Général)."
 
 #: admin/views/tab-dashboard.php:63
 #: includes/class-settings.php:1131
 msgid "Country filtering is ON but no target country is selected. Purchase notifications will remain inactive until a country is chosen."
-msgstr ""
+msgstr "Le filtrage par pays est activé mais aucun pays cible n’est choisi. Les notifications d’achat resteront inactives tant qu’un pays n’est pas choisi."
 
 #: admin/views/tab-dashboard.php:63
 msgid "No geographic scope is configured. Purchase notifications are inactive."
-msgstr ""
+msgstr "Aucun périmètre géographique n’est configuré. Les notifications d’achat sont inactives."
 
 #. translators: 1: geographic scope, 2: time window.
 #: admin/views/tab-dashboard.php:69
 #, php-format
 msgid "No qualifying orders (%1$s) in the %2$s. Purchase notifications will remain inactive until qualifying order activity exists — other countries are never used as a fallback."
-msgstr ""
+msgstr "Aucune commande admissible (%1$s) sur la période : %2$s. Les notifications d’achat resteront inactives tant qu’il n’y aura pas d’activité admissible — les autres pays ne sont jamais utilisés en remplacement."
 
 #. translators: 1: number of orders, 2: geographic scope, 3: time window.
 #: admin/views/tab-dashboard.php:79
 #, php-format
 msgid "%1$d qualifying order (%2$s) in the %3$s."
 msgid_plural "%1$d qualifying orders (%2$s) in the %3$s."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$d commande admissible (%2$s) sur la période : %3$s."
+msgstr[1] "%1$d commandes admissibles (%2$s) sur la période : %3$s."
 
 #. translators: %d: scan limit.
 #: admin/views/tab-dashboard.php:88
 #, php-format
 msgid "The order scan limit (%d orders) was reached; only the most recent orders are used. You can raise it on the Advanced tab."
-msgstr ""
+msgstr "La limite d’analyse des commandes (%d commandes) a été atteinte ; seules les commandes les plus récentes sont utilisées. Vous pouvez l’augmenter dans l’onglet Avancé."
 
 #: admin/views/tab-dashboard.php:91
 msgid "Lifetime best sellers use WooCommerce's store-wide sales counter, which cannot respect country targeting. Popular notifications are inactive; choose a time-based popularity window on the Data tab."
-msgstr ""
+msgstr "Les meilleures ventes de tous les temps utilisent le compteur de ventes global de WooCommerce, qui ne peut pas respecter le ciblage par pays. Les notifications de popularité sont inactives ; choisissez une période de popularité dans l’onglet Données."
 
 #: admin/views/tab-dashboard.php:94
 msgid "The last data refresh failed. Enable debug logging on the Advanced tab for details."
-msgstr ""
+msgstr "La dernière actualisation des données a échoué. Activez le journal de débogage dans l’onglet Avancé pour plus de détails."
 
 #: admin/views/tab-dashboard.php:97
 msgid "WP-Cron is disabled. Make sure a server cron runs wp-cron.php; data is otherwise refreshed on demand."
-msgstr ""
+msgstr "WP-Cron est désactivé. Assurez-vous qu’une tâche cron serveur exécute wp-cron.php ; sinon, les données sont actualisées à la demande."
 
 #: admin/views/tab-dashboard.php:99
 msgid "Persistent object cache detected (e.g. Redis) — cached data is served from memory."
-msgstr ""
+msgstr "Cache d’objets persistant détecté (p. ex. Redis) — les données en cache sont servies depuis la mémoire."
 
 #: admin/views/tab-dashboard.php:99
 msgid "No persistent object cache detected; cached data is stored as transients in the database."
-msgstr ""
+msgstr "Aucun cache d’objets persistant détecté ; les données en cache sont stockées comme transients dans la base de données."
 
 #: admin/views/tab-dashboard.php:101
 msgid "The analytics table is missing. Deactivate and reactivate the plugin to recreate it."
-msgstr ""
+msgstr "La table des statistiques est manquante. Désactivez puis réactivez l’extension pour la recréer."
 
 #: admin/views/tab-dashboard.php:105
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: admin/views/tab-dashboard.php:106
 msgid "Attention"
-msgstr ""
+msgstr "Attention"
 
 #: admin/views/tab-dashboard.php:107
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: admin/views/tab-dashboard.php:112
 #: admin/views/tab-engine.php:25
 msgid "Activity mode"
-msgstr ""
+msgstr "Mode d’activité"
 
 #: admin/views/tab-dashboard.php:116
 msgid "No country configured"
-msgstr ""
+msgstr "Aucun pays configuré"
 
 #: admin/views/tab-dashboard.php:116
 #: includes/class-country.php:261
 msgid "All countries"
-msgstr ""
+msgstr "Tous les pays"
 
 #: admin/views/tab-dashboard.php:122
 msgid "Products in rotation"
-msgstr ""
+msgstr "Produits en rotation"
 
 #: admin/views/tab-dashboard.php:124
 msgid "No order data used"
-msgstr ""
+msgstr "Aucune donnée de commande utilisée"
 
 #: admin/views/tab-dashboard.php:126
 #: admin/views/tab-data.php:25
 msgid "Qualifying orders"
-msgstr ""
+msgstr "Commandes admissibles"
 
 #: admin/views/tab-dashboard.php:132
 msgid "Active sales"
-msgstr ""
+msgstr "Promotions actives"
 
 #: admin/views/tab-dashboard.php:134
 msgid "Sale notifications on"
-msgstr ""
+msgstr "Notifications de promotion activées"
 
 #: admin/views/tab-dashboard.php:134
 msgid "Sale notifications off"
-msgstr ""
+msgstr "Notifications de promotion désactivées"
 
 #: admin/views/tab-dashboard.php:137
 msgid "Shown (7 days)"
-msgstr ""
+msgstr "Affichées (7 jours)"
 
 #. translators: 1: clicks, 2: click-through rate.
 #: admin/views/tab-dashboard.php:142
 #, php-format
 msgid "%1$s clicks · %2$s%% CTR"
-msgstr ""
+msgstr "%1$s clics · %2$s %% de taux de clics"
 
 #: admin/views/tab-dashboard.php:150
 msgid "Health & status"
-msgstr ""
+msgstr "Santé et état"
 
 #. translators: %s: human time difference.
 #: admin/views/tab-dashboard.php:166
 #, php-format
 msgid "Data refreshed %s ago"
-msgstr ""
+msgstr "Données actualisées il y a %s"
 
 #: admin/views/tab-dashboard.php:167
 msgid "Data not built yet"
-msgstr ""
+msgstr "Données pas encore construites"
 
 #. translators: %s: human time difference.
 #: admin/views/tab-dashboard.php:172
 #, php-format
 msgid "next refresh in %s"
-msgstr ""
+msgstr "prochaine actualisation dans %s"
 
 #: admin/views/tab-dashboard.php:180
 msgid "Refresh data now"
-msgstr ""
+msgstr "Actualiser les données maintenant"
 
 #: admin/views/tab-dashboard.php:185
 msgid "Preview on your storefront"
-msgstr ""
+msgstr "Aperçu sur votre boutique"
 
 #: admin/views/tab-dashboard.php:185
 msgid "Opens your homepage with a sample notification that only you can see. It is clearly labelled as a preview and never shown to customers."
-msgstr ""
+msgstr "Ouvre votre page d’accueil avec une notification d’exemple visible par vous seul. Elle est clairement signalée comme un aperçu et n’est jamais montrée aux clients."
 
 #: admin/views/tab-dashboard.php:189
 msgid "Product CTA"
-msgstr ""
+msgstr "Appel à l’action produit"
 
 #: admin/views/tab-dashboard.php:195
 msgid "(opens in a new tab)"
-msgstr ""
+msgstr "(s’ouvre dans un nouvel onglet)"
 
 #: admin/views/tab-dashboard.php:202
 #: admin/views/tab-display.php:129
 msgid "Live preview"
-msgstr ""
+msgstr "Aperçu en direct"
 
 #: admin/views/tab-dashboard.php:202
 msgid "How notifications look with your saved display settings."
-msgstr ""
+msgstr "Apparence des notifications avec vos réglages d’affichage enregistrés."
 
 #: admin/views/tab-dashboard.php:206
 msgid "Conversion health (7 days)"
-msgstr ""
+msgstr "Santé de la conversion (7 jours)"
 
 #: admin/views/tab-dashboard.php:206
 msgid "Measured from anonymous funnel counters only. Details on the Analytics tab."
-msgstr ""
+msgstr "Mesurée uniquement à partir de compteurs d’entonnoir anonymes. Détails dans l’onglet Statistiques."
 
 #: admin/views/tab-data.php:15
 msgid "Pending payment"
-msgstr ""
+msgstr "En attente de paiement"
 
 #: admin/views/tab-data.php:15
 #: admin/views/tab-data.php:16
@@ -1830,1087 +1832,1087 @@ msgstr ""
 #: admin/views/tab-data.php:19
 #: admin/views/tab-data.php:20
 msgid "never used"
-msgstr ""
+msgstr "jamais utilisé"
 
 #: admin/views/tab-data.php:16
 msgid "Failed"
-msgstr ""
+msgstr "Échouée"
 
 #: admin/views/tab-data.php:17
 msgid "Cancelled"
-msgstr ""
+msgstr "Annulée"
 
 #: admin/views/tab-data.php:18
 msgid "Refunded"
-msgstr ""
+msgstr "Remboursée"
 
 #: admin/views/tab-data.php:19
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #: admin/views/tab-data.php:20
 msgid "Trash"
-msgstr ""
+msgstr "Corbeille"
 
 #: admin/views/tab-data.php:25
 msgid "Only orders with these statuses, within the lookback period and your geographic scope, can appear as purchases."
-msgstr ""
+msgstr "Seules les commandes ayant ces états, dans la période de référence et votre périmètre géographique, peuvent apparaître comme achats."
 
 #: admin/views/tab-data.php:26
 msgid "Qualifying order statuses"
-msgstr ""
+msgstr "États de commande admissibles"
 
 #: admin/views/tab-data.php:26
 msgid "\"On hold\" orders are placed but not yet paid; enable with care."
-msgstr ""
+msgstr "Les commandes « En attente » sont passées mais pas encore payées ; activez avec prudence."
 
 #: admin/views/tab-data.php:29
 msgid "Lookback period"
-msgstr ""
+msgstr "Période de référence"
 
 #: admin/views/tab-data.php:31
 msgid "6 hours"
-msgstr ""
+msgstr "6 heures"
 
 #: admin/views/tab-data.php:32
 msgid "12 hours"
-msgstr ""
+msgstr "12 heures"
 
 #: admin/views/tab-data.php:34
 msgid "3 days"
-msgstr ""
+msgstr "3 jours"
 
 #: admin/views/tab-data.php:35
 msgid "7 days"
-msgstr ""
+msgstr "7 jours"
 
 #: admin/views/tab-data.php:36
 msgid "14 days"
-msgstr ""
+msgstr "14 jours"
 
 #: admin/views/tab-data.php:39
 msgid "Only orders placed within this period count as \"recent\"."
-msgstr ""
+msgstr "Seules les commandes passées pendant cette période comptent comme « récentes »."
 
 #: admin/views/tab-data.php:41
 msgid "Maximum recent purchases kept"
-msgstr ""
+msgstr "Nombre maximal d’achats récents conservés"
 
 #: admin/views/tab-data.php:41
 msgid "The most recent qualifying purchases kept in the cached dataset."
-msgstr ""
+msgstr "Les achats admissibles les plus récents conservés dans le jeu de données en cache."
 
 #: admin/views/tab-data.php:44
 msgid "Popular products"
-msgstr ""
+msgstr "Produits populaires"
 
 #: admin/views/tab-data.php:44
 msgid "A product is only called popular when real orders support it. Numbers shown are real and never invented."
-msgstr ""
+msgstr "Un produit n’est qualifié de populaire que si de vraies commandes le confirment. Les nombres affichés sont réels et ne sont jamais inventés."
 
 #: admin/views/tab-data.php:47
 msgid "Popularity based on"
-msgstr ""
+msgstr "Popularité basée sur"
 
 #: admin/views/tab-data.php:49
 msgid "Sales in the last 24 hours"
-msgstr ""
+msgstr "Ventes des dernières 24 heures"
 
 #: admin/views/tab-data.php:50
 msgid "Sales in the last 7 days"
-msgstr ""
+msgstr "Ventes des 7 derniers jours"
 
 #: admin/views/tab-data.php:51
 msgid "Sales in the last 30 days"
-msgstr ""
+msgstr "Ventes des 30 derniers jours"
 
 #: admin/views/tab-data.php:52
 msgid "Lifetime sales (WooCommerce total sales)"
-msgstr ""
+msgstr "Ventes de tous les temps (ventes totales WooCommerce)"
 
 #: admin/views/tab-data.php:54
 msgid "Time-based windows respect country targeting. Lifetime sales are store-wide, so they are only used when no geographic restriction applies."
-msgstr ""
+msgstr "Les périodes respectent le ciblage par pays. Les ventes de tous les temps couvrent toute la boutique : elles ne sont utilisées qu’en l’absence de restriction géographique."
 
 #: admin/views/tab-data.php:56
 msgid "Minimum qualifying orders"
-msgstr ""
+msgstr "Nombre minimal de commandes admissibles"
 
 #: admin/views/tab-data.php:56
 msgid "A product needs at least this many qualifying orders in the window to be described as popular. The notice itself shows units sold (\"37 sold\"), which can be higher than the number of orders because one order can contain several units."
-msgstr ""
+msgstr "Un produit doit avoir au moins ce nombre de commandes admissibles sur la période pour être qualifié de populaire. La notification affiche les unités vendues (« 37 vendus »), qui peuvent dépasser le nombre de commandes car une commande peut contenir plusieurs unités."
 
 #: admin/views/tab-data.php:57
 msgid "Maximum popular products"
-msgstr ""
+msgstr "Nombre maximal de produits populaires"
 
 #: admin/views/tab-data.php:58
 msgid "Manual product selection (optional)"
-msgstr ""
+msgstr "Sélection manuelle de produits (facultatif)"
 
 #: admin/views/tab-data.php:58
 msgid "Limit popular notifications to these products. They are still only shown when real sales data meets the threshold."
-msgstr ""
+msgstr "Limite les notifications de popularité à ces produits. Elles ne s’affichent que si les vraies ventes atteignent le seuil."
 
 #: admin/views/tab-display.php:19
 msgid "Placement & motion"
-msgstr ""
+msgstr "Position et mouvement"
 
 #: admin/views/tab-display.php:22
 msgid "Desktop position"
-msgstr ""
+msgstr "Position sur ordinateur"
 
 #: admin/views/tab-display.php:32
 msgid "Mobile position"
-msgstr ""
+msgstr "Position sur mobile"
 
 #: admin/views/tab-display.php:34
 msgid "Bottom center"
-msgstr ""
+msgstr "En bas au centre"
 
 #: admin/views/tab-display.php:36
 msgid "Top center"
-msgstr ""
+msgstr "En haut au centre"
 
 #: admin/views/tab-display.php:37
 msgid "Hidden on mobile"
-msgstr ""
+msgstr "Masqué sur mobile"
 
 #: admin/views/tab-display.php:39
 msgid "Applies to screens 600px wide or less."
-msgstr ""
+msgstr "S’applique aux écrans de 600 px de large ou moins."
 
 #: admin/views/tab-display.php:45
 msgid "Slide + fade (recommended)"
-msgstr ""
+msgstr "Glissement + fondu (recommandé)"
 
 #: admin/views/tab-display.php:51
 msgid "Visitors who prefer reduced motion always get a simple fade."
-msgstr ""
+msgstr "Les visiteurs qui préfèrent réduire les animations obtiennent toujours un simple fondu."
 
 #: admin/views/tab-display.php:53
 msgid "Horizontal offset"
-msgstr ""
+msgstr "Décalage horizontal"
 
 #: admin/views/tab-display.php:54
 msgid "Vertical offset"
-msgstr ""
+msgstr "Décalage vertical"
 
 #: admin/views/tab-display.php:55
 msgid "Stacking order (z-index)"
-msgstr ""
+msgstr "Ordre d’empilement (z-index)"
 
 #: admin/views/tab-display.php:55
 msgid "Raise if a sticky header or chat widget covers notifications."
-msgstr ""
+msgstr "Augmentez si un en-tête fixe ou un widget de discussion recouvre les notifications."
 
 #: admin/views/tab-display.php:61
 msgid "Theme"
-msgstr ""
+msgstr "Thème"
 
 #: admin/views/tab-display.php:63
 msgid "Light"
-msgstr ""
+msgstr "Clair"
 
 #: admin/views/tab-display.php:64
 msgid "Dark"
-msgstr ""
+msgstr "Sombre"
 
 #: admin/views/tab-display.php:65
 msgid "Automatic (follows the visitor's light/dark preference)"
-msgstr ""
+msgstr "Automatique (suit la préférence clair/sombre du visiteur)"
 
 #: admin/views/tab-display.php:66
 msgid "Custom colors"
-msgstr ""
+msgstr "Couleurs personnalisées"
 
 #: admin/views/tab-display.php:69
 msgid "Accent color"
-msgstr ""
+msgstr "Couleur d’accent"
 
 #: admin/views/tab-display.php:71
 msgid "Background color"
-msgstr ""
+msgstr "Couleur de fond"
 
 #: admin/views/tab-display.php:72
 msgid "Text color"
-msgstr ""
+msgstr "Couleur du texte"
 
 #: admin/views/tab-display.php:74
 msgid "Corner radius"
-msgstr ""
+msgstr "Arrondi des coins"
 
 #: admin/views/tab-display.php:75
 msgid "Width (desktop)"
-msgstr ""
+msgstr "Largeur (ordinateur)"
 
 #: admin/views/tab-display.php:78
 msgid "Shadow"
-msgstr ""
+msgstr "Ombre"
 
 #: admin/views/tab-display.php:81
 msgid "Medium"
-msgstr ""
+msgstr "Moyenne"
 
 #: admin/views/tab-display.php:82
 msgid "Strong"
-msgstr ""
+msgstr "Forte"
 
 #: admin/views/tab-display.php:88
 msgid "Font"
-msgstr ""
+msgstr "Police"
 
 #: admin/views/tab-display.php:90
 msgid "Use my theme's font"
-msgstr ""
+msgstr "Utiliser la police de mon thème"
 
 #: admin/views/tab-display.php:91
 msgid "System font"
-msgstr ""
+msgstr "Police du système"
 
 #: admin/views/tab-display.php:96
 msgid "Content"
-msgstr ""
+msgstr "Contenu"
 
 #: admin/views/tab-display.php:97
 msgid "Products without an image show a neutral icon."
-msgstr ""
+msgstr "Les produits sans image affichent une icône neutre."
 
 #: admin/views/tab-display.php:100
 msgid "Image shape"
-msgstr ""
+msgstr "Forme de l’image"
 
 #: admin/views/tab-display.php:102
 msgid "Rounded"
-msgstr ""
+msgstr "Arrondie"
 
 #: admin/views/tab-display.php:103
 msgid "Square"
-msgstr ""
+msgstr "Carrée"
 
 #: admin/views/tab-display.php:104
 msgid "Circle"
-msgstr ""
+msgstr "Ronde"
 
 #: admin/views/tab-display.php:107
 msgid "Type label"
-msgstr ""
+msgstr "Libellé du type"
 
 #: admin/views/tab-display.php:107
 msgid "e.g. \"Just bought!\" above the message."
-msgstr ""
+msgstr "p. ex. « Vient d’être acheté ! » au-dessus du message."
 
 #: admin/views/tab-display.php:108
 msgid "Time of purchase"
-msgstr ""
+msgstr "Heure de l’achat"
 
 #: admin/views/tab-display.php:108
 msgid "Real purchases only (Hybrid/Aggregate). Synthetic events never show a time."
-msgstr ""
+msgstr "Achats réels uniquement (Hybride/Agrégé). Les événements synthétiques n’affichent jamais d’heure."
 
 #: admin/views/tab-display.php:111
 msgid "Time format"
-msgstr ""
+msgstr "Format de l’heure"
 
 #: admin/views/tab-display.php:113
 msgid "Relative — \"2 hours ago\""
-msgstr ""
+msgstr "Relatif — « il y a 2 heures »"
 
 #: admin/views/tab-display.php:114
 msgid "Approximate — \"In the last few hours\""
-msgstr ""
+msgstr "Approximatif — « Au cours des dernières heures »"
 
 #: admin/views/tab-display.php:115
 msgid "Simply \"Recently\""
-msgstr ""
+msgstr "Simplement « Récemment »"
 
 #: admin/views/tab-display.php:117
 msgid "Order times are rounded down to 5 minutes before leaving the server. \"Recently\" sends no time at all."
-msgstr ""
+msgstr "Les heures de commande sont arrondies à 5 minutes avant de quitter le serveur. « Récemment » n’envoie aucune heure."
 
 #: admin/views/tab-display.php:119
 msgid "Verification badge on purchases"
-msgstr ""
+msgstr "Badge de vérification sur les achats"
 
 #: admin/views/tab-display.php:119
 msgid "Shows \"Verified purchase\" — accurate because every purchase notification comes from a real order."
-msgstr ""
+msgstr "Affiche « Achat vérifié » — exact, car chaque notification d’achat provient d’une vraie commande."
 
 #: admin/views/tab-display.php:120
 msgid "Sale price & discount on sale notifications"
-msgstr ""
+msgstr "Prix soldé et remise sur les notifications de promotion"
 
 #: admin/views/tab-display.php:121
 msgid "Close button"
-msgstr ""
+msgstr "Bouton de fermeture"
 
 #: admin/views/tab-display.php:122
 msgid "Link notifications to the product"
-msgstr ""
+msgstr "Lier les notifications au produit"
 
 #: admin/views/tab-display.php:123
 msgid "Announce politely to screen readers"
-msgstr ""
+msgstr "Annoncer poliment aux lecteurs d’écran"
 
 #: admin/views/tab-display.php:123
 msgid "Uses a polite live region so assistive technology users get the same information without interruption."
-msgstr ""
+msgstr "Utilise une région dynamique polie pour que les utilisateurs de technologies d’assistance reçoivent la même information sans interruption."
 
 #: admin/views/tab-display.php:129
 msgid "Updates as you change settings. Save to apply."
-msgstr ""
+msgstr "Se met à jour pendant vos modifications. Enregistrez pour appliquer."
 
 #: admin/views/tab-engine.php:26
 msgid "Choose what powers the live activity layer. Every mode is privacy-safe: visitors never receive customer or order information."
-msgstr ""
+msgstr "Choisissez ce qui alimente la couche d’activité en direct. Tous les modes respectent la vie privée : les visiteurs ne reçoivent jamais d’informations sur les clients ou les commandes."
 
 #: admin/views/tab-engine.php:32
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 #: admin/views/tab-engine.php:34
 msgid "A continuous, weighted rotation built from your catalogue: featured products, spotlights, shipping-region messages and genuine sales. Works on a brand-new store. These events never claim that someone bought or viewed something."
-msgstr ""
+msgstr "Une rotation continue et pondérée tirée de votre catalogue : produits en vedette, mises en avant, messages de région de livraison et vraies promotions. Fonctionne sur une boutique toute neuve. Ces événements ne prétendent jamais que quelqu’un a acheté ou consulté quelque chose."
 
 #: admin/views/tab-engine.php:35
 msgid "Hybrid (default)"
-msgstr ""
+msgstr "Hybride (par défaut)"
 
 #: admin/views/tab-engine.php:35
 msgid "Real store activity (\"Just bought!\" purchases, units sold, genuine sales) leads; the synthetic rotation fills the quiet periods in between. On a store without orders yet, it behaves like Synthetic."
-msgstr ""
+msgstr "L’activité réelle de la boutique (achats « Vient d’être acheté ! », unités vendues, vraies promotions) passe en premier ; la rotation synthétique comble les périodes calmes. Sur une boutique sans commande, le mode se comporte comme Synthétique."
 
 #: admin/views/tab-engine.php:36
 msgid "Only activity supported by your real WooCommerce data. Silent when there is none."
-msgstr ""
+msgstr "Uniquement l’activité confirmée par vos vraies données WooCommerce. Silencieux en l’absence de données."
 
 #: admin/views/tab-engine.php:42
 msgid "Activity wording (\"Recent activity\", \"popular\", \"2 min ago\") is only used for events backed by real store data. Synthetic events use promotional wording and carry no times, so the layer stays lively without telling shoppers anything untrue."
-msgstr ""
+msgstr "Le vocabulaire d’activité (« Activité récente », « populaire », « il y a 2 min ») est réservé aux événements appuyés par de vraies données. Les événements synthétiques utilisent un ton promotionnel, sans heure : la couche reste vivante sans rien affirmer de faux aux clients."
 
 #: admin/views/tab-engine.php:46
 msgid "Synthetic rotation"
-msgstr ""
+msgstr "Rotation synthétique"
 
 #: admin/views/tab-engine.php:46
 msgid "Event types the engine mixes together. Types alternate so the same kind never appears twice in a row."
-msgstr ""
+msgstr "Types d’événements mélangés par le moteur. Les types alternent pour ne jamais apparaître deux fois de suite."
 
 #: admin/views/tab-engine.php:47
 msgid "Featured products"
-msgstr ""
+msgstr "Produits en vedette"
 
 #: admin/views/tab-engine.php:47
 msgid "e.g. \"Retatrutide — featured in our store\". Uses products weighted High or Featured first."
-msgstr ""
+msgstr "p. ex. « Retatrutide — en vedette dans notre boutique ». Utilise d’abord les produits pondérés Élevé ou En vedette."
 
 #: admin/views/tab-engine.php:48
 msgid "Product spotlights"
-msgstr ""
+msgstr "Mises en avant de produits"
 
 #: admin/views/tab-engine.php:48
 msgid "e.g. \"Explore BPC-157\"."
-msgstr ""
+msgstr "p. ex. « Découvrez BPC-157 »."
 
 #: admin/views/tab-engine.php:51
 msgid "Shipping-region messages"
-msgstr ""
+msgstr "Messages de région de livraison"
 
 #: admin/views/tab-engine.php:53
 msgid "e.g. \"Ships across Ontario\". Locations come from the Country and Weighting tabs."
-msgstr ""
+msgstr "p. ex. « Livraison partout en Ontario ». Les lieux proviennent des onglets Pays et Pondération."
 
 #: admin/views/tab-engine.php:54
 msgid "Inactive: your WooCommerce shipping settings do not include the target country, so these messages would not be true."
-msgstr ""
+msgstr "Inactif : vos réglages d’expédition WooCommerce n’incluent pas le pays cible, ces messages seraient donc faux."
 
 #: admin/views/tab-engine.php:56
 msgid "Genuine sales"
-msgstr ""
+msgstr "Vraies promotions"
 
 #: admin/views/tab-engine.php:56
 msgid "Products with a real, active WooCommerce sale price. Discounts are never invented."
-msgstr ""
+msgstr "Produits ayant un vrai prix soldé WooCommerce actif. Aucune remise n’est inventée."
 
 #: admin/views/tab-engine.php:58
 msgid "Real events per synthetic event (Hybrid)"
-msgstr ""
+msgstr "Événements réels par événement synthétique (Hybride)"
 
 #: admin/views/tab-engine.php:58
 msgid "How many real activity events appear before a synthetic event fills the gap. When real activity runs out, the synthetic rotation continues on its own."
-msgstr ""
+msgstr "Nombre d’événements d’activité réelle affichés avant qu’un événement synthétique ne comble le vide. Lorsque l’activité réelle est épuisée, la rotation synthétique continue seule."
 
 #: admin/views/tab-engine.php:60
 msgid "Repeat cooldown"
-msgstr ""
+msgstr "Délai avant répétition"
 
 #: admin/views/tab-engine.php:60
 msgid "The same product/location/message combination is not shown to a visitor again within this time."
-msgstr ""
+msgstr "La même combinaison produit/lieu/message n’est pas remontrée à un visiteur pendant ce délai."
 
 #: admin/views/tab-engine.php:60
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 #: admin/views/tab-engine.php:63
 msgid "Aggregate WooCommerce data"
-msgstr ""
+msgstr "Données WooCommerce agrégées"
 
 #: admin/views/tab-engine.php:64
 msgid "Use Aggregate WooCommerce Data"
-msgstr ""
+msgstr "Utiliser les données WooCommerce agrégées"
 
 #: admin/views/tab-engine.php:64
 msgid "Aggregate store statistics may influence synthetic activity frequency. Individual customer and order information is never displayed."
-msgstr ""
+msgstr "Les statistiques globales de la boutique peuvent influencer la fréquence de l’activité synthétique. Les informations individuelles des clients et des commandes ne sont jamais affichées."
 
 #. translators: %d: number of products.
 #: admin/views/tab-engine.php:72
 #, php-format
 msgid "%d product is currently available to the engine."
 msgid_plural "%d products are currently available to the engine."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d produit est actuellement disponible pour le moteur."
+msgstr[1] "%d produits sont actuellement disponibles pour le moteur."
 
 #: admin/views/tab-frequency.php:14
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
 #. translators: %d: number of seconds.
 #: admin/views/tab-frequency.php:17
 #, php-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d seconde"
+msgstr[1] "%d secondes"
 
 #. translators: %s: preset name.
 #: admin/views/tab-frequency.php:37
 #, php-format
 msgid "The \"%s\" conversion preset currently controls the first delay, interval range and per-page/per-session limits. Choose \"Custom\" on the Conversion tab to use the values below instead. Duration, random timing and dismissal behaviour always apply."
-msgstr ""
+msgstr "Le préréglage de conversion « %s » contrôle actuellement le premier délai, la plage d’intervalle et les limites par page/par session. Choisissez « Personnalisé » dans l’onglet Conversion pour utiliser plutôt les valeurs ci-dessous. La durée, le minutage aléatoire et le comportement à la fermeture s’appliquent toujours."
 
 #: admin/views/tab-frequency.php:42
 msgid "Open Conversion settings"
-msgstr ""
+msgstr "Ouvrir les réglages de conversion"
 
 #: admin/views/tab-frequency.php:48
 msgid "Timing"
-msgstr ""
+msgstr "Minutage"
 
 #: admin/views/tab-frequency.php:48
 msgid "Tasteful pacing builds trust. Notifications pause while the visitor hovers or focuses them, and never run in a background tab."
-msgstr ""
+msgstr "Un rythme mesuré inspire confiance. Les notifications se mettent en pause au survol ou au focus, et ne s’exécutent jamais dans un onglet en arrière-plan."
 
 #: admin/views/tab-frequency.php:51
 msgid "First notification delay"
-msgstr ""
+msgstr "Délai avant la première notification"
 
 #: admin/views/tab-frequency.php:58
 msgid "Wait after the page loads before the first notification."
-msgstr ""
+msgstr "Attente après le chargement de la page avant la première notification."
 
 #: admin/views/tab-frequency.php:63
 msgid "Notification duration"
-msgstr ""
+msgstr "Durée d’affichage"
 
 #: admin/views/tab-frequency.php:70
 msgid "How long each notification stays visible."
-msgstr ""
+msgstr "Durée pendant laquelle chaque notification reste visible."
 
 #: admin/views/tab-frequency.php:75
 msgid "Minimum interval between notifications"
-msgstr ""
+msgstr "Intervalle minimal entre les notifications"
 
 #: admin/views/tab-frequency.php:83
 msgid "Measured from one notification appearing to the next, across pages."
-msgstr ""
+msgstr "Mesuré entre l’apparition d’une notification et la suivante, d’une page à l’autre."
 
 #: admin/views/tab-frequency.php:86
 msgid "Randomized timing"
-msgstr ""
+msgstr "Minutage aléatoire"
 
 #: admin/views/tab-frequency.php:86
 msgid "Each gap is chosen at random between the minimum and maximum (e.g. 27s, 41s, 18s, 73s…) so the layer never feels mechanical."
-msgstr ""
+msgstr "Chaque intervalle est choisi au hasard entre le minimum et le maximum (p. ex. 27 s, 41 s, 18 s, 73 s…) pour que la couche ne paraisse jamais mécanique."
 
 #: admin/views/tab-frequency.php:90
 msgid "Maximum interval between notifications"
-msgstr ""
+msgstr "Intervalle maximal entre les notifications"
 
 #: admin/views/tab-frequency.php:97
 msgid "Never shorter than the minimum interval."
-msgstr ""
+msgstr "Jamais inférieur à l’intervalle minimal."
 
 #: admin/views/tab-frequency.php:101
 msgid "Pause while hovered"
-msgstr ""
+msgstr "Pause au survol"
 
 #: admin/views/tab-frequency.php:104
 msgid "Limits"
-msgstr ""
+msgstr "Limites"
 
 #: admin/views/tab-frequency.php:104
 msgid "The same notification is never repeated within a browsing session."
-msgstr ""
+msgstr "La même notification n’est jamais répétée pendant une session de navigation."
 
 #: admin/views/tab-frequency.php:107
 msgid "Maximum notifications per session"
-msgstr ""
+msgstr "Nombre maximal de notifications par session"
 
 #: admin/views/tab-frequency.php:112
 msgid "Unlimited"
-msgstr ""
+msgstr "Illimité"
 
 #: admin/views/tab-frequency.php:114
 msgid "A session ends after 30 minutes of inactivity. 0 = unlimited."
-msgstr ""
+msgstr "Une session se termine après 30 minutes d’inactivité. 0 = illimité."
 
 #: admin/views/tab-frequency.php:118
 msgid "Maximum notifications per page"
-msgstr ""
+msgstr "Nombre maximal de notifications par page"
 
 #: admin/views/tab-frequency.php:128
 msgid "When a visitor closes a notification"
-msgstr ""
+msgstr "Lorsqu’un visiteur ferme une notification"
 
 #: admin/views/tab-frequency.php:130
 msgid "Stop for the rest of the session"
-msgstr ""
+msgstr "Arrêter pour le reste de la session"
 
 #: admin/views/tab-frequency.php:131
 msgid "Stop on the current page"
-msgstr ""
+msgstr "Arrêter sur la page actuelle"
 
 #: admin/views/tab-frequency.php:132
 msgid "Continue as normal"
-msgstr ""
+msgstr "Continuer normalement"
 
 #: admin/views/tab-general.php:16
 msgid "Main switches"
-msgstr ""
+msgstr "Interrupteurs principaux"
 
 #: admin/views/tab-general.php:17
 msgid "Enable WP Live Hype"
-msgstr ""
+msgstr "Activer WP Live Hype"
 
 #: admin/views/tab-general.php:17
 msgid "Master switch. When off, nothing is loaded on your storefront."
-msgstr ""
+msgstr "Interrupteur général. Désactivé, rien n’est chargé sur votre boutique."
 
 #: admin/views/tab-general.php:18
 msgid "Test mode — show to administrators only"
-msgstr ""
+msgstr "Mode test — afficher aux administrateurs uniquement"
 
 #: admin/views/tab-general.php:18
 msgid "Useful while configuring: notifications appear only for logged-in store managers."
-msgstr ""
+msgstr "Pratique pendant la configuration : les notifications n’apparaissent qu’aux gestionnaires connectés."
 
 #: admin/views/tab-general.php:21
 msgid "Our promise to your customers"
-msgstr ""
+msgstr "Notre engagement envers vos clients"
 
 #: admin/views/tab-general.php:24
 msgid "Synthetic events use promotional wording only — no invented buyers, purchases, visitor counts or times."
-msgstr ""
+msgstr "Les événements synthétiques n’utilisent qu’un ton promotionnel — aucun acheteur, achat, nombre de visiteurs ou heure inventé."
 
 #: admin/views/tab-general.php:25
 msgid "Purchase notifications are generated only from real WooCommerce orders with qualifying statuses."
-msgstr ""
+msgstr "Les notifications d’achat proviennent uniquement de vraies commandes WooCommerce ayant un état admissible."
 
 #: admin/views/tab-general.php:26
 msgid "Sale notifications appear only for products with a genuine, active WooCommerce sale price."
-msgstr ""
+msgstr "Les notifications de promotion n’apparaissent que pour les produits ayant un vrai prix soldé WooCommerce actif."
 
 #: admin/views/tab-general.php:27
 msgid "Popularity claims are made only when real sales data substantiates them. No visitor counts, scarcity or invented numbers."
-msgstr ""
+msgstr "La popularité n’est affirmée que si de vraies données de vente la confirment. Aucun nombre de visiteurs, aucune rareté, aucun chiffre inventé."
 
 #: admin/views/tab-general.php:28
 msgid "Customers stay anonymous: names, emails, phone numbers, street addresses, postcodes, order numbers and payment details never leave your server."
-msgstr ""
+msgstr "Les clients restent anonymes : noms, courriels, numéros de téléphone, adresses, codes postaux, numéros de commande et données de paiement ne quittent jamais votre serveur."
 
 #: admin/views/tab-general.php:29
 msgid "Country targeting is enforced on the server and never falls back to another country."
-msgstr ""
+msgstr "Le ciblage par pays est appliqué sur le serveur et ne se rabat jamais sur un autre pays."
 
 #: admin/views/tab-notifications.php:16
 msgid "Recent purchase templates"
-msgstr ""
+msgstr "Modèles d’achat récent"
 
 #: admin/views/tab-notifications.php:17
 msgid "Sale templates"
-msgstr ""
+msgstr "Modèles de promotion"
 
 #: admin/views/tab-notifications.php:18
 msgid "Popular product templates (time-based)"
-msgstr ""
+msgstr "Modèles de produit populaire (par période)"
 
 #: admin/views/tab-notifications.php:19
 msgid "Best-seller templates (lifetime sales)"
-msgstr ""
+msgstr "Modèles de meilleure vente (ventes de tous les temps)"
 
 #: admin/views/tab-notifications.php:20
 msgid "Featured product templates (synthetic)"
-msgstr ""
+msgstr "Modèles de produit en vedette (synthétique)"
 
 #: admin/views/tab-notifications.php:21
 msgid "Spotlight templates (synthetic)"
-msgstr ""
+msgstr "Modèles de mise en avant (synthétique)"
 
 #: admin/views/tab-notifications.php:22
 msgid "Shipping-region templates (synthetic)"
-msgstr ""
+msgstr "Modèles de région de livraison (synthétique)"
 
 #: admin/views/tab-notifications.php:27
 msgid "Real-data notification types"
-msgstr ""
+msgstr "Types de notifications à données réelles"
 
 #: admin/views/tab-notifications.php:27
 msgid "Used in Hybrid and Aggregate modes. Every type is built from real store data and stays silent when there is none. Synthetic event types are configured on the Live Hype tab."
-msgstr ""
+msgstr "Utilisés en modes Hybride et Agrégé. Chaque type est construit à partir de vraies données de la boutique et reste silencieux en leur absence. Les types d’événements synthétiques se configurent dans l’onglet Live Hype."
 
 #: admin/views/tab-notifications.php:32
 msgid "On product and category pages, real purchases of the product (or category) being viewed are shown first."
-msgstr ""
+msgstr "Sur les pages produit et catégorie, les vrais achats du produit (ou de la catégorie) consulté s’affichent en premier."
 
 #: admin/views/tab-notifications.php:33
 #: includes/class-templates.php:207
 msgid "Just bought!"
-msgstr ""
+msgstr "Vient d’être acheté !"
 
 #: admin/views/tab-notifications.php:33
 msgid "Real qualifying orders from your geographic scope: product, real quantity, location and time."
-msgstr ""
+msgstr "Vraies commandes admissibles de votre périmètre géographique : produit, quantité réelle, lieu et heure."
 
 #: admin/views/tab-notifications.php:34
 msgid "Products with a genuine, currently active WooCommerce sale price."
-msgstr ""
+msgstr "Produits ayant un vrai prix soldé WooCommerce actuellement actif."
 
 #: admin/views/tab-notifications.php:35
 msgid "Popular product / units sold"
-msgstr ""
+msgstr "Produit populaire / unités vendues"
 
 #: admin/views/tab-notifications.php:35
 msgid "e.g. \"38 sold in the last 7 days: BPC-157\" — only when real sales substantiate it (minimum and window on the Data tab). The number is the real count of units in qualifying orders."
-msgstr ""
+msgstr "p. ex. « 38 vendus au cours des 7 derniers jours : BPC-157 » — seulement si de vraies ventes le confirment (minimum et période dans l’onglet Données). Le nombre est le vrai total d’unités des commandes admissibles."
 
 #: admin/views/tab-notifications.php:42
 #: admin/views/tab-weighting.php:69
 msgid "Weight"
-msgstr ""
+msgstr "Poids"
 
 #: admin/views/tab-notifications.php:51
 msgid "Ordering"
-msgstr ""
+msgstr "Ordre"
 
 #: admin/views/tab-notifications.php:53
 msgid "Strict priority"
-msgstr ""
+msgstr "Priorité stricte"
 
 #: admin/views/tab-notifications.php:53
 msgid "Product-specific purchase → recent purchase → sale → popular product."
-msgstr ""
+msgstr "Achat du produit consulté → achat récent → promotion → produit populaire."
 
 #: admin/views/tab-notifications.php:54
 msgid "Weighted mix"
-msgstr ""
+msgstr "Mélange pondéré"
 
 #: admin/views/tab-notifications.php:54
 msgid "Interleave types randomly in proportion to their weights (1–10)."
-msgstr ""
+msgstr "Alterner les types au hasard selon leurs poids (1 à 10)."
 
 #: admin/views/tab-notifications.php:59
 msgid "Message templates"
-msgstr ""
+msgstr "Modèles de messages"
 
 #: admin/views/tab-notifications.php:59
 msgid "One template per line. A template is only used when every token in it has real data — otherwise the next line is tried, ending with a product-only message. Leave a box empty to restore the defaults."
-msgstr ""
+msgstr "Un modèle par ligne. Un modèle n’est utilisé que si chacun de ses jetons a de vraies données — sinon la ligne suivante est essayée, jusqu’à un message ne contenant que le produit. Laissez un champ vide pour restaurer les valeurs par défaut."
 
 #: admin/views/tab-notifications.php:62
 msgid "Template selection"
-msgstr ""
+msgstr "Choix du modèle"
 
 #: admin/views/tab-notifications.php:64
 msgid "First eligible template (most informative first)"
-msgstr ""
+msgstr "Premier modèle admissible (le plus informatif d’abord)"
 
 #: admin/views/tab-notifications.php:65
 msgid "Random eligible template (more variety)"
-msgstr ""
+msgstr "Modèle admissible au hasard (plus de variété)"
 
 #: admin/views/tab-notifications.php:74
 msgid "Labels"
-msgstr ""
+msgstr "Libellés"
 
 #: admin/views/tab-notifications.php:75
 msgid "Purchase label"
-msgstr ""
+msgstr "Libellé d’achat"
 
 #: admin/views/tab-notifications.php:76
 msgid "Sale label"
-msgstr ""
+msgstr "Libellé de promotion"
 
 #: admin/views/tab-notifications.php:77
 msgid "Popular label"
-msgstr ""
+msgstr "Libellé de popularité"
 
 #: admin/views/tab-notifications.php:78
 msgid "Featured label"
-msgstr ""
+msgstr "Libellé « en vedette »"
 
 #: admin/views/tab-notifications.php:79
 msgid "Spotlight label"
-msgstr ""
+msgstr "Libellé de mise en avant"
 
 #: admin/views/tab-notifications.php:80
 msgid "Shipping label"
-msgstr ""
+msgstr "Libellé de livraison"
 
 #: admin/views/tab-products.php:16
 msgid "Where notifications appear"
-msgstr ""
+msgstr "Où les notifications apparaissent"
 
 #: admin/views/tab-products.php:19
 msgid "Show notifications on"
-msgstr ""
+msgstr "Afficher les notifications sur"
 
 #: admin/views/tab-products.php:21
 msgid "Entire website"
-msgstr ""
+msgstr "Tout le site"
 
 #: admin/views/tab-products.php:21
 msgid "Every front-end page, minus the exclusions below."
-msgstr ""
+msgstr "Toutes les pages publiques, moins les exclusions ci-dessous."
 
 #: admin/views/tab-products.php:22
 msgid "Selected page types only"
-msgstr ""
+msgstr "Types de pages sélectionnés uniquement"
 
 #: admin/views/tab-products.php:28
 msgid "Page types"
-msgstr ""
+msgstr "Types de pages"
 
 #: admin/views/tab-products.php:30
 msgid "Homepage"
-msgstr ""
+msgstr "Page d’accueil"
 
 #: admin/views/tab-products.php:31
 msgid "Shop page"
-msgstr ""
+msgstr "Page boutique"
 
 #: admin/views/tab-products.php:32
 msgid "Product pages"
-msgstr ""
+msgstr "Pages produit"
 
 #: admin/views/tab-products.php:33
 msgid "Product category pages"
-msgstr ""
+msgstr "Pages de catégorie de produits"
 
 #: admin/views/tab-products.php:34
 msgid "Product tag pages"
-msgstr ""
+msgstr "Pages d’étiquette de produits"
 
 #: admin/views/tab-products.php:37
 msgid "Other pages"
-msgstr ""
+msgstr "Autres pages"
 
 #: admin/views/tab-products.php:38
 msgid "Blog posts & archives"
-msgstr ""
+msgstr "Articles et archives du blog"
 
 #: admin/views/tab-products.php:39
 msgid "Everything else (search, custom templates…)"
-msgstr ""
+msgstr "Tout le reste (recherche, modèles personnalisés…)"
 
 #: admin/views/tab-products.php:45
 msgid "Exclusions"
-msgstr ""
+msgstr "Exclusions"
 
 #: admin/views/tab-products.php:45
 msgid "Exclusions always win over the rules above."
-msgstr ""
+msgstr "Les exclusions l’emportent toujours sur les règles ci-dessus."
 
 #: admin/views/tab-products.php:46
 msgid "Never on checkout"
-msgstr ""
+msgstr "Jamais sur la page de commande"
 
 #: admin/views/tab-products.php:46
 msgid "Recommended: keeps the payment step free of distractions."
-msgstr ""
+msgstr "Recommandé : garde l’étape de paiement sans distraction."
 
 #: admin/views/tab-products.php:47
 msgid "Never on the cart"
-msgstr ""
+msgstr "Jamais sur le panier"
 
 #: admin/views/tab-products.php:48
 msgid "Never on account pages"
-msgstr ""
+msgstr "Jamais sur les pages de compte"
 
 #: admin/views/tab-products.php:49
 msgid "Never on login, registration or password-reset screens"
-msgstr ""
+msgstr "Jamais sur les écrans de connexion, d’inscription ou de réinitialisation du mot de passe"
 
 #: admin/views/tab-products.php:50
 msgid "Do not show on these product pages"
-msgstr ""
+msgstr "Ne pas afficher sur ces pages produit"
 
 #: admin/views/tab-products.php:51
 msgid "Do not show on these categories"
-msgstr ""
+msgstr "Ne pas afficher sur ces catégories"
 
 #: admin/views/tab-products.php:51
 msgid "Applies to the category archive and to product pages in that category (including sub-categories)."
-msgstr ""
+msgstr "S’applique à l’archive de la catégorie et aux pages produit de cette catégorie (sous-catégories comprises)."
 
 #: admin/views/tab-products.php:54
 msgid "Do not show on these URLs"
-msgstr ""
+msgstr "Ne pas afficher sur ces URL"
 
 #: admin/views/tab-products.php:55
 msgid "One path per line. Use * as a wildcard, e.g. /landing/* or /promo?ref=*"
-msgstr ""
+msgstr "Un chemin par ligne. Utilisez * comme joker, p. ex. /landing/* ou /promo?ref=*"
 
 #: admin/views/tab-products.php:62
 msgid "Which products may be featured"
-msgstr ""
+msgstr "Produits pouvant être mis en avant"
 
 #: admin/views/tab-products.php:62
 msgid "Private, draft, password-protected and catalog-hidden products are never featured."
-msgstr ""
+msgstr "Les produits privés, brouillons, protégés par mot de passe ou masqués du catalogue ne sont jamais mis en avant."
 
 #: admin/views/tab-products.php:63
 msgid "Never feature these products"
-msgstr ""
+msgstr "Ne jamais mettre en avant ces produits"
 
 #: admin/views/tab-products.php:64
 msgid "Never feature products from these categories"
-msgstr ""
+msgstr "Ne jamais mettre en avant les produits de ces catégories"
 
 #: admin/views/tab-products.php:65
 msgid "Only feature products from these categories"
-msgstr ""
+msgstr "Mettre en avant uniquement les produits de ces catégories"
 
 #: admin/views/tab-products.php:65
 msgid "Leave empty to allow all categories."
-msgstr ""
+msgstr "Laissez vide pour autoriser toutes les catégories."
 
 #: admin/views/tab-products.php:66
 msgid "Skip out-of-stock products"
-msgstr ""
+msgstr "Ignorer les produits en rupture de stock"
 
 #: admin/views/tab-sound.php:16
 msgid "Notification sound"
-msgstr ""
+msgstr "Son des notifications"
 
 #: admin/views/tab-sound.php:16
 msgid "A subtle sound as each notification appears. Browsers only allow audio after the visitor has interacted with the page; until then notifications simply stay silent."
-msgstr ""
+msgstr "Un son discret à l’apparition de chaque notification. Les navigateurs n’autorisent le son qu’après une interaction du visiteur avec la page ; d’ici là, les notifications restent silencieuses."
 
 #: admin/views/tab-sound.php:17
 msgid "Play sound on desktop"
-msgstr ""
+msgstr "Jouer le son sur ordinateur"
 
 #: admin/views/tab-sound.php:18
 msgid "Play sound on mobile"
-msgstr ""
+msgstr "Jouer le son sur mobile"
 
 #: admin/views/tab-sound.php:19
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 #: admin/views/tab-sound.php:22
 msgid "Soft Chime"
-msgstr ""
+msgstr "Carillon doux"
 
 #: admin/views/tab-sound.php:23
 msgid "Modern Notification"
-msgstr ""
+msgstr "Notification moderne"
 
 #: admin/views/tab-sound.php:24
 msgid "Subtle Pop"
-msgstr ""
+msgstr "Pop discret"
 
 #: admin/views/tab-sound.php:25
 msgid "Clean Alert"
-msgstr ""
+msgstr "Alerte nette"
 
 #. translators: %s: sound name.
 #: admin/views/tab-sound.php:35
 #, php-format
 msgid "Play %s"
-msgstr ""
+msgstr "Écouter %s"
 
 #: admin/views/tab-weighting.php:15
 #: admin/views/tab-weighting.php:22
 msgid "Low"
-msgstr ""
+msgstr "Faible"
 
 #: admin/views/tab-weighting.php:16
 #: admin/views/tab-weighting.php:23
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: admin/views/tab-weighting.php:17
 #: admin/views/tab-weighting.php:24
 msgid "High"
-msgstr ""
+msgstr "Élevé"
 
 #: admin/views/tab-weighting.php:21
 msgid "Off"
-msgstr ""
+msgstr "Désactivé"
 
 #: admin/views/tab-weighting.php:63
 msgid "Product weighting"
-msgstr ""
+msgstr "Pondération des produits"
 
 #: admin/views/tab-weighting.php:63
 msgid "How often each product appears in the synthetic rotation. Featured products appear most often; the engine still alternates products so none becomes repetitive. The bar shows each product's approximate share."
-msgstr ""
+msgstr "Fréquence d’apparition de chaque produit dans la rotation synthétique. Les produits en vedette apparaissent le plus souvent ; le moteur alterne toutefois les produits pour éviter les répétitions. La barre indique la part approximative de chaque produit."
 
 #: admin/views/tab-weighting.php:65
 msgid "No published products yet. The activity layer stays silent until products are available."
-msgstr ""
+msgstr "Aucun produit publié pour l’instant. La couche d’activité reste silencieuse jusqu’à ce que des produits soient disponibles."
 
 #: admin/views/tab-weighting.php:69
 msgid "Share"
-msgstr ""
+msgstr "Part"
 
 #: admin/views/tab-weighting.php:83
 msgid "Not eligible (hidden, out of stock or excluded)"
-msgstr ""
+msgstr "Non admissible (masqué, en rupture ou exclu)"
 
 #. translators: %s: country name.
 #: admin/views/tab-weighting.php:101
 #, php-format
 msgid "Locations — %s"
-msgstr ""
+msgstr "Lieux — %s"
 
 #. translators: %s: country name.
 #: admin/views/tab-weighting.php:101
 msgid "Regions come from WooCommerce; cities from the bundled list. Turning a region Off also turns off its cities. Only locations in this country are ever used."
-msgstr ""
+msgstr "Les régions proviennent de WooCommerce ; les villes de la liste fournie. Désactiver une région désactive aussi ses villes. Seuls des lieux de ce pays sont utilisés."
 
 #: admin/views/tab-weighting.php:104
 msgid "Provinces / states / regions"
-msgstr ""
+msgstr "Provinces / États / régions"
 
 #: admin/views/tab-weighting.php:115
 msgid "Cities"
-msgstr ""
+msgstr "Villes"
 
 #: admin/views/tab-weighting.php:128
 msgid "No bundled city list for this country — regions are used instead. Cities are never invented."
-msgstr ""
+msgstr "Pas de liste de villes fournie pour ce pays — les régions sont utilisées à la place. Aucune ville n’est inventée."
 
 #: admin/views/tab-weighting.php:134
 msgid "Locations"
-msgstr ""
+msgstr "Lieux"
 
 #: admin/views/tab-weighting.php:135
 msgid "Configure a country on the Country tab to weight regions and cities."
-msgstr ""
+msgstr "Configurez un pays dans l’onglet Pays pour pondérer les régions et les villes."
 
 #. translators: %d: number of minutes.
 #: includes/class-cache.php:363
 #, php-format
 msgid "Every %d minute (WP Live Hype)"
 msgid_plural "Every %d minutes (WP Live Hype)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Toutes les %d minute (WP Live Hype)"
+msgstr[1] "Toutes les %d minutes (WP Live Hype)"
 
 #: includes/class-conversion.php:168
 msgid "Explore"
-msgstr ""
+msgstr "Découvrir"
 
 #: includes/class-conversion.php:169
 msgid "Shop now"
-msgstr ""
+msgstr "Voir la boutique"
 
 #: includes/class-conversion.php:174
 msgid "See offer"
-msgstr ""
+msgstr "Voir l’offre"
 
 #. translators: 1: impressions collected, 2: impressions needed.
 #: includes/class-conversion.php:599
 #, php-format
 msgid "Not enough data yet (%1$s of %2$s impressions)."
-msgstr ""
+msgstr "Pas encore assez de données (%1$s impressions sur %2$s)."
 
 #: includes/class-conversion.php:610
 msgid "Visitors regularly act on messages."
-msgstr ""
+msgstr "Les visiteurs agissent régulièrement sur les messages."
 
 #: includes/class-conversion.php:610
 msgid "Few visitors act on messages. Consider testing button text or enabling product calls to action."
-msgstr ""
+msgstr "Peu de visiteurs agissent sur les messages. Essayez de tester le texte des boutons ou d’activer les appels à l’action produit."
 
 #: includes/class-conversion.php:613
 msgid "Interaction rate (clicks + button clicks per impression)"
-msgstr ""
+msgstr "Taux d’interaction (clics + clics sur le bouton par impression)"
 
 #: includes/class-conversion.php:626
 msgid "Dismissals are low."
-msgstr ""
+msgstr "Les fermetures sont rares."
 
 #: includes/class-conversion.php:626
 msgid "Many messages are closed. A softer preset or longer intervals may reduce fatigue."
-msgstr ""
+msgstr "Beaucoup de messages sont fermés. Un préréglage plus doux ou des intervalles plus longs peuvent réduire la lassitude."
 
 #: includes/class-conversion.php:642
 msgid "A healthy share of messages relate to what the visitor is viewing or has in their cart."
-msgstr ""
+msgstr "Une bonne part des messages concerne ce que le visiteur consulte ou a dans son panier."
 
 #: includes/class-conversion.php:642
 msgid "Most messages are general. Recommendations, product calls to action and up-sells / cross-sells on your products increase relevance."
-msgstr ""
+msgstr "La plupart des messages sont généraux. Les recommandations, les appels à l’action produit et les ventes incitatives / croisées de vos produits augmentent la pertinence."
 
 #: includes/class-conversion.php:653
 msgid "Add to cart after a click (per click)"
-msgstr ""
+msgstr "Ajout au panier après un clic (par clic)"
 
 #: includes/class-conversion.php:656
 msgid "Share of interactions followed by an add to cart within the attribution window. Association only."
-msgstr ""
+msgstr "Part des interactions suivies d’un ajout au panier pendant la fenêtre d’attribution. Association uniquement."
 
 #: includes/class-conversion.php:656
 msgid "No interactions recorded yet."
-msgstr ""
+msgstr "Aucune interaction enregistrée pour l’instant."
 
 #: includes/class-conversion.php:667
 msgid "Needs at least 100 impressions on each device type."
-msgstr ""
+msgstr "Nécessite au moins 100 impressions par type d’appareil."
 
 #: includes/class-conversion.php:671
 msgid "Mobile and desktop perform similarly."
-msgstr ""
+msgstr "Mobile et ordinateur obtiennent des résultats comparables."
 
 #: includes/class-conversion.php:671
 msgid "Mobile visitors interact much less. Check the mobile position and preview on a phone."
-msgstr ""
+msgstr "Les visiteurs sur mobile interagissent beaucoup moins. Vérifiez la position mobile et l’aperçu sur un téléphone."
 
 #: includes/class-conversion.php:671
 msgid "Desktop visitors interact much less. Check the desktop position."
-msgstr ""
+msgstr "Les visiteurs sur ordinateur interagissent beaucoup moins. Vérifiez la position sur ordinateur."
 
 #: includes/class-conversion.php:674
 msgid "Mobile vs desktop interaction"
-msgstr ""
+msgstr "Interaction mobile et ordinateur"
 
 #: includes/class-country.php:184
 msgid "Yukon"
-msgstr ""
+msgstr "Yukon"
 
 #: includes/class-country.php:258
 msgid "None — purchase notifications are inactive until a geographic configuration is completed."
-msgstr ""
+msgstr "Aucune — les notifications d’achat sont inactives tant qu’une configuration géographique n’est pas terminée."
 
 #. translators: %s: comma separated list of country names.
 #: includes/class-country.php:265
 #, php-format
 msgid "%s only"
-msgstr ""
+msgstr "%s uniquement"
 
 #. translators: 1: city, 2: region/state/province.
 #: includes/class-country.php:307
@@ -2918,411 +2920,412 @@ msgstr ""
 #, php-format
 msgctxt "city, region"
 msgid "%1$s, %2$s"
-msgstr ""
+msgstr "%1$s, %2$s"
 
 #: includes/class-country.php:337
 msgid "Toronto"
-msgstr ""
+msgstr "Toronto"
 
 #: includes/class-country.php:338
 msgid "Los Angeles"
-msgstr ""
+msgstr "Los Angeles"
 
 #: includes/class-country.php:339
 msgid "London"
-msgstr ""
+msgstr "Londres"
 
 #: includes/class-country.php:340
 msgid "Sydney"
-msgstr ""
+msgstr "Sydney"
 
 #: includes/class-country.php:341
 msgid "Auckland"
-msgstr ""
+msgstr "Auckland"
 
 #: includes/class-country.php:342
 msgid "Berlin"
-msgstr ""
+msgstr "Berlin"
 
 #: includes/class-country.php:343
 msgid "Paris"
-msgstr ""
+msgstr "Paris"
 
 #: includes/class-country.php:344
 msgid "Dublin"
-msgstr ""
+msgstr "Dublin"
 
 #: includes/class-frontend.php:175
 msgid "Store activity notifications"
-msgstr ""
+msgstr "Notifications d’activité de la boutique"
 
 #: includes/class-frontend.php:176
 msgid "Close notification"
-msgstr ""
+msgstr "Fermer la notification"
 
 #: includes/class-frontend.php:177
 msgid "Verified purchase"
-msgstr ""
+msgstr "Achat vérifié"
 
 #: includes/class-frontend.php:178
 #: includes/class-notifications.php:424
 msgid "Just now"
-msgstr ""
+msgstr "À l’instant"
 
 #: includes/class-frontend.php:179
 #: includes/class-notifications.php:405
 msgid "Recently"
-msgstr ""
+msgstr "Récemment"
 
 #: includes/class-frontend.php:186
 msgid "Sale price"
-msgstr ""
+msgstr "Prix soldé"
 
 #: includes/class-frontend.php:187
 msgid "Save"
-msgstr ""
+msgstr "Économisez"
 
 #: includes/class-frontend.php:189
 msgid "Shopping assistance"
-msgstr ""
+msgstr "Aide aux achats"
 
 #. translators: %s: developer name.
 #: includes/class-frontend.php:192
 #, php-format
 msgid "by %s"
-msgstr ""
+msgstr "par %s"
 
 #. translators: 1: city, 2: country.
 #: includes/class-locations.php:303
 #, php-format
 msgctxt "city, country"
 msgid "%1$s, %2$s"
-msgstr ""
+msgstr "%1$s, %2$s"
 
 #: includes/class-notifications.php:364
 msgid "in the last 24 hours"
-msgstr ""
+msgstr "au cours des dernières 24 heures"
 
 #: includes/class-notifications.php:365
 msgid "in the last 7 days"
-msgstr ""
+msgstr "au cours des 7 derniers jours"
 
 #: includes/class-notifications.php:366
 msgid "in the last 30 days"
-msgstr ""
+msgstr "au cours des 30 derniers jours"
 
 #. translators: %s: human-readable time difference, e.g. "5 mins".
 #: includes/class-notifications.php:427
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "il y a %s"
 
 #: includes/class-notifications.php:437
 msgid "Within the last hour"
-msgstr ""
+msgstr "Au cours de la dernière heure"
 
 #: includes/class-notifications.php:438
 msgid "In the last few hours"
-msgstr ""
+msgstr "Au cours des dernières heures"
 
 #: includes/class-notifications.php:439
 msgid "In the last 24 hours"
-msgstr ""
+msgstr "Au cours des dernières 24 heures"
 
 #: includes/class-notifications.php:440
 msgid "In the last week"
-msgstr ""
+msgstr "Au cours de la dernière semaine"
 
 #: includes/class-notifications.php:441
 msgid "In the last 30 days"
-msgstr ""
+msgstr "Au cours des 30 derniers jours"
 
 #: includes/class-notifications.php:466
 #: includes/class-synthetic-engine.php:376
 msgid "Sample Product"
-msgstr ""
+msgstr "Produit d’exemple"
 
 #: includes/class-plugin.php:223
 msgid "Up to 24 hours (set on the Conversion tab)"
-msgstr ""
+msgstr "Jusqu’à 24 heures (réglable dans l’onglet Conversion)"
 
 #: includes/class-plugin.php:224
 msgid "Set only when the visitor clicks a store message. Holds a random ID, an A/B test letter, a mobile/desktop flag and a timestamp, so an order placed shortly afterwards can be counted as following that click."
-msgstr ""
+msgstr "Déposé uniquement lorsque le visiteur clique sur un message de la boutique. Contient un identifiant aléatoire, une lettre de test A/B, un indicateur mobile/ordinateur et un horodatage, afin qu’une commande passée peu après puisse être comptée comme faisant suite à ce clic."
 
 #: includes/class-plugin.php:238
 msgid "Suggested text, adjust it to your settings."
-msgstr ""
+msgstr "Texte suggéré, à adapter à vos réglages."
 
 #: includes/class-plugin.php:239
 msgid "Suggested text:"
-msgstr ""
+msgstr "Texte suggéré :"
 
 #: includes/class-plugin.php:240
 msgid "This store shows short messages about its products and its real recent sales. Those messages never contain customer names, contact details, addresses or order numbers; at most they mention a product, a region or city, a quantity and an approximate time."
-msgstr ""
+msgstr "Cette boutique affiche de courts messages sur ses produits et ses vraies ventes récentes. Ces messages ne contiennent jamais de nom de client, de coordonnées, d’adresse ni de numéro de commande ; ils mentionnent tout au plus un produit, une région ou une ville, une quantité et une heure approximative."
 
 #: includes/class-plugin.php:241
 msgid "To improve these messages we count, without identifying anyone, how often they are shown, clicked or closed, and how many visits reach product pages, the cart and checkout. Only daily totals are stored, together with an A/B test letter and whether the device was a phone or a computer. No IP address or user ID is stored and nothing is shared with third parties."
-msgstr ""
+msgstr "Pour améliorer ces messages, nous comptons, sans identifier personne, combien de fois ils sont affichés, cliqués ou fermés, et combien de visites atteignent les pages produit, le panier et la commande. Seuls des totaux quotidiens sont conservés, avec une lettre de test A/B et le type d’appareil (téléphone ou ordinateur). Aucune adresse IP ni aucun identifiant utilisateur n’est conservé et rien n’est partagé avec des tiers."
 
 #: includes/class-plugin.php:242
 msgid "If you click one of these messages, a cookie named wplh_attr is stored in your browser for a limited time (between 30 minutes and 24 hours). It contains a random ID, an A/B test letter, a device-type flag and a timestamp, and lets us count an order placed shortly afterwards as following that click. The order is marked only with the test letter. When a cookie-consent tool is used on this site, the cookie is set only after you allow statistics cookies."
-msgstr ""
+msgstr "Si vous cliquez sur l’un de ces messages, un cookie nommé wplh_attr est enregistré dans votre navigateur pour une durée limitée (de 30 minutes à 24 heures). Il contient un identifiant aléatoire, une lettre de test A/B, un indicateur de type d’appareil et un horodatage, et nous permet de compter une commande passée peu après comme faisant suite à ce clic. La commande est seulement marquée de la lettre de test. Lorsqu’un outil de consentement aux cookies est utilisé sur ce site, le cookie n’est déposé qu’après votre acceptation des cookies statistiques."
 
 #: includes/class-plugin.php:243
 msgid "Your browser also keeps a small local record (localStorage) of which messages it has already shown and how far you have browsed, so messages are not repeated. This record never leaves your device."
-msgstr ""
+msgstr "Votre navigateur conserve aussi un petit enregistrement local (localStorage) des messages déjà affichés et de votre progression de navigation, pour éviter les répétitions. Cet enregistrement ne quitte jamais votre appareil."
 
 #: includes/class-plugin.php:266
 msgid "WP Live Hype requires WooCommerce."
-msgstr ""
+msgstr "WP Live Hype nécessite WooCommerce."
 
 #. translators: %s: minimum WooCommerce version.
 #: includes/class-plugin.php:279
 #, php-format
 msgid "WP Live Hype requires WooCommerce %s or newer. The plugin is inactive until WooCommerce is updated."
-msgstr ""
+msgstr "WP Live Hype nécessite WooCommerce %s ou une version plus récente. L’extension reste inactive jusqu’à la mise à jour de WooCommerce."
 
 #. translators: %s: lowest sale price of a variable product.
 #: includes/class-products.php:276
 #, php-format
 msgid "from %s"
-msgstr ""
+msgstr "à partir de %s"
 
 #. translators: %d: discount percentage.
 #: includes/class-products.php:282
 #, php-format
 msgctxt "discount percentage"
 msgid "%d%%"
-msgstr ""
+msgstr "%d %%"
 
 #. translators: %s: maximum discount such as 25%.
 #: includes/class-products.php:285
 #, php-format
 msgid "up to %s"
-msgstr ""
+msgstr "jusqu’à %s"
 
 #: includes/class-rest-api.php:97
 msgid "Notifications are currently limited to administrators."
-msgstr ""
+msgstr "Les notifications sont actuellement réservées aux administrateurs."
 
 #: includes/class-rest-api.php:218
 msgid "Payload too large."
-msgstr ""
+msgstr "Données trop volumineuses."
 
 #: includes/class-rest-api.php:223
 msgid "Invalid payload."
-msgstr ""
+msgstr "Données invalides."
 
 #: includes/class-rest-api.php:233
 msgid "Too many events."
-msgstr ""
+msgstr "Trop d’événements."
 
 #: includes/class-settings.php:1134
 msgid "No countries were selected for the \"specific countries\" scope. Purchase notifications will remain inactive until at least one country is selected."
-msgstr ""
+msgstr "Aucun pays n’a été choisi pour l’option « pays précis ». Les notifications d’achat resteront inactives tant qu’au moins un pays n’est pas choisi."
 
 #: includes/class-settings.php:1219
 msgid "At least one qualifying order status is required. The previous selection was kept."
-msgstr ""
+msgstr "Au moins un état de commande admissible est requis. La sélection précédente a été conservée."
 
 #: includes/class-templates.php:88
 msgid "A customer from {location} bought {quantity} × {product}"
-msgstr ""
+msgstr "Un client de {location} a acheté {quantity} × {product}"
 
 #: includes/class-templates.php:89
 msgid "A customer from {location} bought {product}"
-msgstr ""
+msgstr "Un client de {location} a acheté {product}"
 
 #: includes/class-templates.php:90
 msgid "Someone bought {quantity} × {product}"
-msgstr ""
+msgstr "Quelqu’un a acheté {quantity} × {product}"
 
 #: includes/class-templates.php:91
 #: includes/class-templates.php:176
 msgid "Someone bought {product}"
-msgstr ""
+msgstr "Quelqu’un a acheté {product}"
 
 #: includes/class-templates.php:95
 #: includes/class-templates.php:178
 msgid "{product} is currently on sale"
-msgstr ""
+msgstr "{product} est actuellement en promotion"
 
 #: includes/class-templates.php:96
 msgid "Sale available on {product}"
-msgstr ""
+msgstr "Promotion disponible sur {product}"
 
 #: includes/class-templates.php:97
 msgid "{product} — now {sale_price}"
-msgstr ""
+msgstr "{product} — maintenant {sale_price}"
 
 #: includes/class-templates.php:101
 msgid "{count} sold {period}: {product}"
-msgstr ""
+msgstr "{count} vendus {period} : {product}"
 
 #: includes/class-templates.php:102
 #: includes/class-templates.php:180
 msgid "{product} has been popular recently"
-msgstr ""
+msgstr "{product} a été populaire récemment"
 
 #: includes/class-templates.php:106
 msgid "{product} — {count} sold so far"
-msgstr ""
+msgstr "{product} — {count} vendus à ce jour"
 
 #: includes/class-templates.php:107
 #: includes/class-templates.php:182
 msgid "{product} is one of our best sellers"
-msgstr ""
+msgstr "{product} fait partie de nos meilleures ventes"
 
 #: includes/class-templates.php:111
 #: includes/class-templates.php:184
 msgid "{product} — featured in our store"
-msgstr ""
+msgstr "{product} — en vedette dans notre boutique"
 
 #: includes/class-templates.php:112
 msgid "Handpicked for you: {product}"
-msgstr ""
+msgstr "Sélectionné pour vous : {product}"
 
 #: includes/class-templates.php:113
 msgid "Our pick: {product}"
-msgstr ""
+msgstr "Notre choix : {product}"
 
 #: includes/class-templates.php:117
 #: includes/class-templates.php:186
 msgid "Explore {product}"
-msgstr ""
+msgstr "Découvrez {product}"
 
 #: includes/class-templates.php:118
 msgid "Take a closer look at {product}"
-msgstr ""
+msgstr "Regardez de plus près {product}"
 
 #: includes/class-templates.php:119
 msgid "Discover {product}"
-msgstr ""
+msgstr "À découvrir : {product}"
 
 #: includes/class-templates.php:123
 msgid "Ships across {region}"
-msgstr ""
+msgstr "Livraison partout en {region}"
 
 #: includes/class-templates.php:124
 msgid "Now shipping to {city}"
-msgstr ""
+msgstr "Livraison maintenant à {city}"
 
 #: includes/class-templates.php:125
 msgid "Available across {country}"
-msgstr ""
+msgstr "Disponible partout au {country}"
 
 #: includes/class-templates.php:129
 msgid "{product} is on sale — now {sale_price}"
-msgstr ""
+msgstr "{product} est en promotion — maintenant {sale_price}"
 
 #: includes/class-templates.php:130
 #: includes/class-templates.php:190
 msgid "{product} is ready when you are"
-msgstr ""
+msgstr "{product} vous attend quand vous êtes prêt"
 
 #: includes/class-templates.php:131
 msgid "Interested in {product}? Add it to your cart anytime"
-msgstr ""
+msgstr "{product} vous intéresse ? Ajoutez-le à votre panier quand vous voulez"
 
 #: includes/class-templates.php:135
 #: includes/class-templates.php:192
 msgid "You may also like {product}"
-msgstr ""
+msgstr "Vous aimerez peut-être {product}"
 
 #: includes/class-templates.php:136
 msgid "Related to {current}: {product}"
-msgstr ""
+msgstr "En lien avec {current} : {product}"
 
 #: includes/class-templates.php:137
 msgid "Also in our store: {product}"
-msgstr ""
+msgstr "Aussi dans notre boutique : {product}"
 
 #: includes/class-templates.php:141
 msgid "Your cart is saved — subtotal {cart_total}"
-msgstr ""
+msgstr "Votre panier est enregistré — sous-total {cart_total}"
 
 #: includes/class-templates.php:142
 msgid "Items in your cart: {cart_count}"
-msgstr ""
+msgstr "Articles dans votre panier : {cart_count}"
 
 #: includes/class-templates.php:146
 msgid "Ready to check out? Cart subtotal: {cart_total}"
-msgstr ""
+msgstr "Prêt à commander ? Sous-total du panier : {cart_total}"
 
 #: includes/class-templates.php:147
 msgid "Complete your order whenever you are ready"
-msgstr ""
+msgstr "Finalisez votre commande quand vous êtes prêt"
 
 #: includes/class-templates.php:151
 msgid "You are {amount_remaining} away from free shipping"
-msgstr ""
+msgstr "Plus que {amount_remaining} pour la livraison gratuite"
 
 #: includes/class-templates.php:152
 msgid "Add {amount_remaining} more to qualify for free shipping"
-msgstr ""
+msgstr "Ajoutez {amount_remaining} de plus pour bénéficier de la livraison gratuite"
 
 #: includes/class-templates.php:156
 msgid "Your cart has reached the free-shipping minimum of {threshold}"
-msgstr ""
+msgstr "Votre panier a atteint le minimum de {threshold} pour la livraison gratuite"
 
 #: includes/class-templates.php:161
 msgid "Take your time — the full collection is here when you are ready"
-msgstr ""
+msgstr "Prenez votre temps — toute la collection vous attend quand vous êtes prêt"
 
 #: includes/class-templates.php:188
 msgid "Now shipping across {location}"
-msgstr ""
+msgstr "Livraison maintenant partout : {location}"
 
 #: includes/class-templates.php:209
 msgid "On sale"
-msgstr ""
+msgstr "En promotion"
 
 #: includes/class-templates.php:217
 msgid "Now shipping"
-msgstr ""
+msgstr "Livraison disponible"
 
 #: includes/class-templates.php:219
 msgid "This product"
-msgstr ""
+msgstr "Ce produit"
 
 #: includes/class-templates.php:221
 msgid "You may also like"
-msgstr ""
+msgstr "Vous aimerez peut-être"
 
 #: includes/class-templates.php:223
 msgid "Your cart"
-msgstr ""
+msgstr "Votre panier"
 
 #: includes/class-templates.php:230
 msgid "Still browsing?"
-msgstr ""
+msgstr "Toujours en train de regarder ?"
 
 #: includes/class-templates.php:274
 msgid "Shipping templates must include a location token such as {region}."
-msgstr ""
+msgstr "Les modèles de livraison doivent contenir un jeton de lieu comme {region}."
 
 #: includes/class-templates.php:277
 msgid "Free-shipping progress templates must include the {amount_remaining} token."
-msgstr ""
+msgstr "Les modèles de progression vers la livraison gratuite doivent contenir le jeton {amount_remaining}."
 
 #: includes/class-templates.php:279
 msgid "Every template must include the {product} token."
-msgstr ""
+msgstr "Chaque modèle doit contenir le jeton {product}."
 
 #. translators: %s: token name such as {city}.
 #: includes/class-templates.php:286
 #, php-format
 msgid "The token {%s} is not available for this notification type."
-msgstr ""
+msgstr "Le jeton {%s} n’est pas disponible pour ce type de notification."
 
 #: includes/class-templates.php:292
 msgid "The template contains an unrecognised or malformed token. Tokens look like {product}."
-msgstr ""
+msgstr "Le modèle contient un jeton non reconnu ou mal formé. Les jetons ressemblent à {product}."
 
 #. translators: 1: template text, 2: reason it was rejected.
 #: includes/class-templates.php:329
 #, php-format
 msgid "Template \"%1$s\" was not saved: %2$s"
-msgstr ""
+
+msgstr "Le modèle « %1$s » n’a pas été enregistré : %2$s"

@@ -104,7 +104,7 @@ Admin::form_start( 'display' );
 				'circle'  => __( 'Circle', 'wp-live-hype' ),
 			)
 		);
-		Admin::toggle( 'show_label', __( 'Type label', 'wp-live-hype' ), __( 'e.g. "Recent purchase" above the message.', 'wp-live-hype' ) );
+		Admin::toggle( 'show_label', __( 'Type label', 'wp-live-hype' ), __( 'e.g. "Just bought!" above the message.', 'wp-live-hype' ) );
 		Admin::toggle( 'show_time', __( 'Time of purchase', 'wp-live-hype' ), __( 'Real purchases only (Hybrid/Aggregate). Synthetic events never show a time.', 'wp-live-hype' ) );
 		Admin::select(
 			'time_display',

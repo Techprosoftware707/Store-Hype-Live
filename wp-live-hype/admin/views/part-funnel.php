@@ -71,7 +71,7 @@ Admin::card_end();
 ?>
 <div class="wplh-grid wplh-grid--2">
 	<?php
-	Admin::card_start( __( 'Direct notification metrics', 'wp-live-hype' ) );
+	Admin::card_start( __( 'Direct notification metrics', 'wp-live-hype' ), __( 'Counted by the funnel counters, which started with version 1.1, so totals can be lower than "Notifications shown" above for earlier periods. Both are anonymous daily counts.', 'wp-live-hype' ) );
 	$wplh_imp = (int) $wplh_e['impression'];
 	?>
 	<table class="widefat striped wplh-table">

@@ -31,8 +31,8 @@ Admin::form_start( 'engine' );
 		'activity_mode',
 		__( 'Mode', 'wp-live-hype' ),
 		array(
-			'synthetic' => array( __( 'Synthetic (default)', 'wp-live-hype' ), __( 'A continuous, weighted rotation built from your catalogue: featured products, spotlights, shipping-region messages and genuine sales. Works on a brand-new store. These events never claim that someone bought or viewed something.', 'wp-live-hype' ) ),
-			'hybrid'    => array( __( 'Hybrid', 'wp-live-hype' ), __( 'Real store activity (recent purchases, popular products, from aggregate order data) leads; the synthetic rotation fills the quiet periods in between.', 'wp-live-hype' ) ),
+			'synthetic' => array( __( 'Synthetic', 'wp-live-hype' ), __( 'A continuous, weighted rotation built from your catalogue: featured products, spotlights, shipping-region messages and genuine sales. Works on a brand-new store. These events never claim that someone bought or viewed something.', 'wp-live-hype' ) ),
+			'hybrid'    => array( __( 'Hybrid (default)', 'wp-live-hype' ), __( 'Real store activity ("Just bought!" purchases, units sold, genuine sales) leads; the synthetic rotation fills the quiet periods in between. On a store without orders yet, it behaves like Synthetic.', 'wp-live-hype' ) ),
 			'aggregate' => array( __( 'Aggregate', 'wp-live-hype' ), __( 'Only activity supported by your real WooCommerce data. Silent when there is none.', 'wp-live-hype' ) ),
 		)
 	);
