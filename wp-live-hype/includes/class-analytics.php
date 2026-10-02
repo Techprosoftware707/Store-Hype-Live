@@ -2,7 +2,7 @@
 /**
  * Anonymous, aggregate, local analytics.
  *
- * Stores only daily counters: date, event (view/click/dismiss), notification
+ * Stores only daily counters: date, event (view/click/cta/dismiss), notification
  * type and the public product ID. No IP addresses, user IDs, cookies, names,
  * emails, addresses or payment data are stored or processed.
  *
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Analytics {
 
-	const EVENTS         = array( 'view', 'click', 'dismiss' );
+	const EVENTS         = array( 'view', 'click', 'cta', 'dismiss' );
 	const MAX_PER_BATCH  = 25;
 	const RATE_LIMIT_KEY = 'wplh_evt_rate_';
 

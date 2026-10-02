@@ -23,6 +23,11 @@ final class Frontend {
 	const HANDLE = 'wplh-notifications';
 
 	/**
+	 * Types an administrator can preview on the storefront.
+	 */
+	const PREVIEW_TYPES = array( 'purchase', 'sale', 'popular', 'featured', 'explore', 'location', 'product_cta', 'recommend', 'cart', 'promotion', 'checkout', 'nudge' );
+
+	/**
 	 * Hook into WordPress.
 	 */
 	public static function init(): void {
@@ -33,8 +38,10 @@ final class Frontend {
 	 * Enqueue the frontend script when appropriate.
 	 */
 	public static function enqueue(): void {
-		$preview = self::requested_preview();
-		if ( '' === $preview && ! Targeting::should_display() ) {
+		$preview    = self::requested_preview();
+		$display    = '' !== $preview || Targeting::should_display();
+		$track_only = ! $display && Targeting::should_track();
+		if ( ! $display && ! $track_only ) {
 			return;
 		}
 
@@ -51,8 +58,11 @@ final class Frontend {
 		);
 
 		$config = self::config();
+		if ( $track_only ) {
+			$config['trackOnly'] = true;
+		}
 		if ( '' !== $preview ) {
-			$config['preview']       = array_values( array_filter( array( array_merge( Notifications::preview_items(), Synthetic_Engine::preview_items() )[ $preview ] ?? null ) ) );
+			$config['preview']       = array_values( array_filter( array( array_merge( Notifications::preview_items(), Synthetic_Engine::preview_items(), Conversion::preview_items() )[ $preview ] ?? null ) ) );
 			$config['freq']['first'] = 1;
 		}
 
@@ -71,7 +81,7 @@ final class Frontend {
 	private static function requested_preview(): string {
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only, capability-gated display toggle.
 		$type = isset( $_GET['wplh_preview'] ) ? sanitize_key( wp_unslash( $_GET['wplh_preview'] ) ) : '';
-		if ( '' === $type || ! in_array( $type, array( 'purchase', 'sale', 'popular', 'featured', 'explore', 'location' ), true ) || ! Security::can_manage() ) {
+		if ( '' === $type || ! in_array( $type, self::PREVIEW_TYPES, true ) || ! Security::can_manage() ) {
 			return '';
 		}
 		return $type;
@@ -103,6 +113,7 @@ final class Frontend {
 		$context = Targeting::context();
 		$locale  = str_replace( '_', '-', determine_locale() );
 		$approx  = Notifications::approximate_labels();
+		$timing  = Conversion::timing( (string) Settings::get( 'conversion_preset' ) );
 
 		return array(
 			'rest'        => esc_url_raw( rest_url( Rest_Api::NAMESPACE_V1 . '/activity' ) ),
@@ -113,6 +124,8 @@ final class Frontend {
 				't' => in_array( $context['type'], Rest_Api::CONTEXTS, true ) ? $context['type'] : 'other',
 				'p' => (int) $context['product_id'],
 				'c' => (int) $context['term_id'],
+				// Order-received ("thank you") page: never counted as a checkout visit.
+				'o' => function_exists( 'is_order_received_page' ) && is_order_received_page(),
 			),
 			'locale'      => $locale,
 			'version'     => WPLH_VERSION . '.' . (int) get_option( Cache::VERSION_OPTION, 1 ),
@@ -146,14 +159,15 @@ final class Frontend {
 				'announce'    => (bool) Settings::get( 'a11y_announce' ),
 				'attribution' => Settings::get( 'frontend_attribution' ) ? Branding::developer_name() : '',
 			),
+			'conv'        => Conversion::client_config(),
 			'freq'        => array(
-				'first'       => (int) Settings::get( 'first_delay' ),
+				'first'       => $timing['first'],
 				'duration'    => (int) Settings::get( 'duration' ),
-				'interval'    => (int) Settings::get( 'interval' ),
-				'intervalMax' => (int) Settings::get( 'interval_max' ),
+				'interval'    => $timing['interval'],
+				'intervalMax' => $timing['intervalMax'],
 				'random'      => (bool) Settings::get( 'random_timing' ),
-				'maxSession'  => (int) Settings::get( 'max_per_session' ),
-				'maxPage'     => (int) Settings::get( 'max_per_page' ),
+				'maxSession'  => $timing['maxSession'],
+				'maxPage'     => $timing['maxPage'],
 				'dismiss'     => (string) Settings::get( 'dismiss_behavior' ),
 				'hover'       => (bool) Settings::get( 'pause_on_hover' ),
 			),
@@ -171,7 +185,8 @@ final class Frontend {
 				'was'       => __( 'Regular price', 'wp-live-hype' ),
 				'now'       => __( 'Sale price', 'wp-live-hype' ),
 				'save'      => __( 'Save', 'wp-live-hype' ),
-				'view'      => __( 'View product', 'wp-live-hype' ),
+				'view'      => Conversion::cta_text( 'view' ),
+				'stage'     => __( 'Shopping assistance', 'wp-live-hype' ),
 				'preview'   => __( 'SYNTHETIC PREVIEW — NOT REAL CUSTOMER ACTIVITY', 'wp-live-hype' ),
 				/* translators: %s: developer name. */
 				'poweredBy' => __( 'by %s', 'wp-live-hype' ),

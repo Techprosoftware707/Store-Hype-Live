@@ -62,6 +62,7 @@ final class Plugin {
 		add_action( Cache::CRON_HOOK, array( Cache::class, 'refresh' ) );
 		add_action( Cache::SOON_HOOK, array( Cache::class, 'refresh_soon' ) );
 		add_action( Installer::MAINTENANCE_HOOK, array( Analytics::class, 'purge_old' ) );
+		add_action( Installer::MAINTENANCE_HOOK, array( Conversion::class, 'purge_old' ) );
 		add_action( 'init', array( __CLASS__, 'on_init' ), 20 );
 
 		// Settings lifecycle.
@@ -77,6 +78,16 @@ final class Plugin {
 		add_action( 'woocommerce_product_set_stock_status', array( Cache::class, 'schedule_soon' ), 10, 0 );
 		add_action( 'woocommerce_variation_set_stock_status', array( Cache::class, 'schedule_soon' ), 10, 0 );
 		add_action( 'transition_post_status', array( __CLASS__, 'on_post_status' ), 10, 3 );
+
+		// Free-shipping messages follow the live WooCommerce shipping rules.
+		add_action( 'woocommerce_after_shipping_zone_object_save', array( Cache::class, 'schedule_soon' ), 10, 0 );
+		add_action( 'woocommerce_shipping_zone_method_added', array( Cache::class, 'schedule_soon' ), 10, 0 );
+		add_action( 'woocommerce_shipping_zone_method_deleted', array( Cache::class, 'schedule_soon' ), 10, 0 );
+		add_action( 'woocommerce_shipping_zone_method_status_toggled', array( Cache::class, 'schedule_soon' ), 10, 0 );
+		add_action( 'updated_option', array( __CLASS__, 'on_option_updated' ), 10, 1 );
+
+		// Conversion attribution (order hooks).
+		Conversion::init();
 
 		// REST API.
 		add_action( 'rest_api_init', array( Rest_Api::class, 'register_routes' ) );
@@ -150,6 +161,7 @@ final class Plugin {
 	public static function on_settings_updated( $old_value, $new_value ): void {
 		Settings::flush();
 		Cache::invalidate();
+		Conversion::track_experiment();
 		$old_ttl = is_array( $old_value ) && isset( $old_value['cache_ttl'] ) ? (int) $old_value['cache_ttl'] : 0;
 		$new_ttl = is_array( $new_value ) && isset( $new_value['cache_ttl'] ) ? (int) $new_value['cache_ttl'] : 0;
 		if ( $old_ttl !== $new_ttl ) {
@@ -188,6 +200,18 @@ final class Plugin {
 	 */
 	public static function on_post_status( $new_status, $old_status, $post ): void {
 		if ( $new_status !== $old_status && $post instanceof \WP_Post && 'product' === $post->post_type && ( 'publish' === $new_status || 'publish' === $old_status ) ) {
+			Cache::schedule_soon();
+		}
+	}
+
+	/**
+	 * A free-shipping method's settings changed (option
+	 * woocommerce_free_shipping_{instance}_settings): refresh soon.
+	 *
+	 * @param string $option Option name.
+	 */
+	public static function on_option_updated( $option ): void {
+		if ( is_string( $option ) && 0 === strpos( $option, 'woocommerce_free_shipping_' ) ) {
 			Cache::schedule_soon();
 		}
 	}

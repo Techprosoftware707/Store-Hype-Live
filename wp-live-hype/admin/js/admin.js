@@ -128,6 +128,7 @@
 
 	function validateTemplate( textarea ) {
 		var allowed = ( textarea.getAttribute( 'data-tokens' ) || '' ).split( ',' );
+		var required = textarea.hasAttribute( 'data-required' ) ? textarea.getAttribute( 'data-required' ) : 'product';
 		var warning = textarea.parentNode.querySelector( '.wplh-template-warning' );
 		if ( ! warning ) {
 			return;
@@ -137,8 +138,12 @@
 			if ( ! line.trim() ) {
 				return;
 			}
-			if ( line.indexOf( '{product}' ) === -1 ) {
-				problems.push( '"' + line.trim() + '" — {product}' );
+			if ( required === 'location' ) {
+				if ( ! /\{(location|country|region|province|state|city)\}/.test( line ) ) {
+					problems.push( '"' + line.trim() + '" — {region}' );
+				}
+			} else if ( required && line.indexOf( '{' + required + '}' ) === -1 ) {
+				problems.push( '"' + line.trim() + '" — {' + required + '}' );
 			}
 			var match;
 			var re = /\{([a-z_]+)\}/g;

@@ -11,18 +11,19 @@ namespace AlwaysFinal\LiveHype;
 
 defined( 'ABSPATH' ) || exit;
 
-$wplh_data      = Cache::get_dataset();
-$wplh_stats     = (array) ( $wplh_data['stats'] ?? array() );
-$wplh_allowed   = Country::allowed_countries();
-$wplh_totals    = Analytics::totals( 7 );
-$wplh_lookback  = (int) $settings['lookback_hours'];
-$wplh_purchases = (int) ( $wplh_stats['in_lookback'] ?? 0 );
-$wplh_next      = wp_next_scheduled( Cache::CRON_HOOK );
-$wplh_hpos      = class_exists( '\Automattic\WooCommerce\Utilities\OrderUtil' ) && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled();
-$wplh_mode      = (string) $settings['activity_mode'];
-$wplh_want_buy  = 'synthetic' !== $wplh_mode && ( $settings['type_purchase'] || $settings['type_product_purchase'] );
-$wplh_pool      = count( (array) ( $wplh_data['pool']['products'] ?? array() ) );
-$wplh_modes     = array(
+$wplh_data        = Cache::get_dataset();
+$wplh_stats       = (array) ( $wplh_data['stats'] ?? array() );
+$wplh_allowed     = Country::allowed_countries();
+$wplh_totals      = Analytics::totals( 7 );
+$wplh_lookback    = (int) $settings['lookback_hours'];
+$wplh_purchases   = (int) ( $wplh_stats['in_lookback'] ?? 0 );
+$wplh_next        = wp_next_scheduled( Cache::CRON_HOOK );
+$wplh_hpos        = class_exists( '\Automattic\WooCommerce\Utilities\OrderUtil' ) && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled();
+$wplh_mode        = (string) $settings['activity_mode'];
+$wplh_want_buy    = 'synthetic' !== $wplh_mode && ( $settings['type_purchase'] || $settings['type_product_purchase'] );
+$wplh_pool        = count( (array) ( $wplh_data['pool']['products'] ?? array() ) );
+$wplh_conv_report = Conversion::report( 7 );
+$wplh_modes       = array(
 	'synthetic' => __( 'Synthetic', 'wp-live-hype' ),
 	'hybrid'    => __( 'Hybrid', 'wp-live-hype' ),
 	'aggregate' => __( 'Aggregate', 'wp-live-hype' ),
@@ -184,7 +185,12 @@ $wplh_icons = array(
 		<?php Admin::card_start( __( 'Preview on your storefront', 'wp-live-hype' ), __( 'Opens your homepage with a sample notification that only you can see. It is clearly labelled as a preview and never shown to customers.', 'wp-live-hype' ) ); ?>
 		<p class="wplh-actions">
 			<?php
-			foreach ( Admin::preview_types() as $wplh_type => $wplh_label ) :
+			$wplh_conv_previews = array(
+				'product_cta' => __( 'Product CTA', 'wp-live-hype' ),
+				'recommend'   => __( 'Recommendation', 'wp-live-hype' ),
+				'promotion'   => __( 'Free shipping', 'wp-live-hype' ),
+			);
+			foreach ( array_merge( Admin::preview_types(), $wplh_conv_previews ) as $wplh_type => $wplh_label ) :
 				?>
 				<a class="button" href="<?php echo esc_url( add_query_arg( 'wplh_preview', $wplh_type, home_url( '/' ) ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $wplh_label ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens in a new tab)', 'wp-live-hype' ); ?></span></a>
 			<?php endforeach; ?>
@@ -195,6 +201,10 @@ $wplh_icons = array(
 	<div>
 		<?php Admin::card_start( __( 'Live preview', 'wp-live-hype' ), __( 'How notifications look with your saved display settings.', 'wp-live-hype' ) ); ?>
 		<?php Admin::preview_panel( 'wplh-preview-dashboard' ); ?>
+		<?php Admin::card_end(); ?>
+
+		<?php Admin::card_start( __( 'Conversion health (7 days)', 'wp-live-hype' ), __( 'Measured from anonymous funnel counters only. Details on the Analytics tab.', 'wp-live-hype' ) ); ?>
+		<?php require __DIR__ . '/part-health.php'; ?>
 		<?php Admin::card_end(); ?>
 	</div>
 </div>

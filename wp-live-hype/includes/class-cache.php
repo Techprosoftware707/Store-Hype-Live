@@ -25,7 +25,7 @@ final class Cache {
 	const SOON_HOOK      = 'wplh_refresh_dataset_soon';
 	const GROUP          = 'wplh';
 	const LOCK_TIMEOUT   = 120;
-	const DATASET_FORMAT = 3;
+	const DATASET_FORMAT = 4;
 
 	/**
 	 * Request memo.
@@ -59,20 +59,21 @@ final class Cache {
 	 */
 	public static function empty_dataset(): array {
 		return array(
-			'format'    => self::DATASET_FORMAT,
-			'generated' => 0,
-			'purchases' => array(),
-			'sales'     => array(),
-			'popular'   => array(
+			'format'        => self::DATASET_FORMAT,
+			'generated'     => 0,
+			'purchases'     => array(),
+			'sales'         => array(),
+			'popular'       => array(
 				'mode' => '',
 				'ids'  => array(),
 			),
-			'products'  => array(),
-			'pool'      => array(
+			'products'      => array(),
+			'pool'          => array(
 				'products'  => array(),
 				'max_sales' => 0,
 			),
-			'stats'     => array(),
+			'stats'         => array(),
+			'free_shipping' => null,
 		);
 	}
 
@@ -217,6 +218,8 @@ final class Cache {
 			$data['purchases'] = $orders['purchases'];
 			$data['stats']     = $orders['stats'];
 			$data['pool']      = Synthetic_Engine::build_pool();
+			// Genuine WooCommerce free-shipping rule (never a hard-coded amount).
+			$data['free_shipping'] = Conversion::free_shipping();
 
 			if ( Settings::get( 'type_sale' ) || Settings::get( 'promo_sale' ) ) {
 				$data['sales'] = Products::sales( 30 );

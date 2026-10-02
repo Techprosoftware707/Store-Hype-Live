@@ -104,6 +104,27 @@ final class Targeting {
 	}
 
 	/**
+	 * Whether the script should load in tracking-only mode on a page where
+	 * notifications are not displayed (e.g. checkout), so the anonymous
+	 * funnel (product view → cart → checkout) stays complete. Nothing is
+	 * shown in this mode.
+	 *
+	 * @return bool
+	 */
+	public static function should_track(): bool {
+		if ( ! Settings::get( 'enabled' ) || ! Settings::get( 'analytics_enabled' ) ) {
+			return false;
+		}
+		if ( is_admin() || wp_doing_ajax() || wp_doing_cron() || is_feed() || is_embed() || is_404() ) {
+			return false;
+		}
+		if ( Settings::get( 'admin_only' ) && ! Security::can_manage() ) {
+			return false;
+		}
+		return (bool) array_intersect( self::context()['types'], array( 'product', 'cart', 'checkout' ) );
+	}
+
+	/**
 	 * Evaluate the configured rules.
 	 *
 	 * @return bool

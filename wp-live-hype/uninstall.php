@@ -5,7 +5,7 @@
  * Removes only what the administrator chose on the Advanced tab:
  *  - plugin settings,
  *  - cached notification data,
- *  - anonymous analytics.
+ *  - anonymous analytics and conversion funnel counters.
  *
  * WooCommerce orders, customers, products and product metadata are never
  * touched. Scheduled events are always removed.
@@ -51,15 +51,18 @@ function wplh_uninstall_site() {
 	}
 
 	if ( $delete_analytics ) {
-		$table = $wpdb->prefix . 'wplh_analytics';
-		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
-		$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
+		foreach ( array( 'wplh_analytics', 'wplh_funnel' ) as $name ) {
+			$table = $wpdb->prefix . $name;
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+			$wpdb->query( "DROP TABLE IF EXISTS {$table}" );
+		}
 	}
 
 	if ( $delete_settings ) {
 		delete_option( 'wplh_settings' );
 		delete_option( 'wplh_db_version' );
 		delete_option( 'wplh_activation_notice' );
+		delete_option( 'wplh_ab_experiment' );
 	}
 }
 

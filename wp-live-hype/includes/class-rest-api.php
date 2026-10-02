@@ -106,7 +106,8 @@ final class Rest_Api {
 	 * @return \WP_REST_Response
 	 */
 	public static function get_activity( \WP_REST_Request $request ): \WP_REST_Response {
-		$items = array();
+		$items   = array();
+		$context = null;
 		try {
 			if ( Settings::get( 'enabled' ) ) {
 				$items = Synthetic_Engine::generate(
@@ -117,6 +118,14 @@ final class Rest_Api {
 					),
 					(int) $request->get_param( 'seed' )
 				);
+				// Product-page context: a CTA for this product and genuine related products.
+				if ( 'product' === $request->get_param( 'ctx' ) && (int) $request->get_param( 'pid' ) > 0 ) {
+					$raw     = Conversion::product_context( (int) $request->get_param( 'pid' ) );
+					$context = array(
+						'product' => $raw['product'] ? self::public_fields( $raw['product'] ) : null,
+						'related' => array_map( array( __CLASS__, 'public_fields' ), $raw['related'] ),
+					);
+				}
 			}
 			Logger::debug(
 				'Notifications generated.',
@@ -133,6 +142,7 @@ final class Rest_Api {
 		$response = new \WP_REST_Response(
 			array(
 				'items'     => array_map( array( __CLASS__, 'public_fields' ), $items ),
+				'context'   => $context,
 				'generated' => gmdate( 'Y-m-d\TH:i:s\Z' ),
 			),
 			200
@@ -156,11 +166,11 @@ final class Rest_Api {
 	 */
 	public static function public_fields( $item ): array {
 		$item    = is_array( $item ) ? $item : array();
-		$strings = array( 'id', 'type', 'product', 'url', 'image', 'message', 'label', 'location', 'country', 'region', 'city', 'timestamp', 'time_ago' );
+		$strings = array( 'id', 'type', 'product', 'url', 'image', 'message', 'label', 'location', 'country', 'region', 'city', 'timestamp', 'time_ago', 'addUrl' );
 		$out     = array();
 		foreach ( $strings as $key ) {
 			if ( isset( $item[ $key ] ) && is_scalar( $item[ $key ] ) && '' !== (string) $item[ $key ] ) {
-				$out[ $key ] = in_array( $key, array( 'url', 'image' ), true ) ? esc_url_raw( (string) $item[ $key ] ) : Security::clean_text( (string) $item[ $key ], 300 );
+				$out[ $key ] = in_array( $key, array( 'url', 'image', 'addUrl' ), true ) ? esc_url_raw( (string) $item[ $key ] ) : Security::clean_text( (string) $item[ $key ], 300 );
 			}
 		}
 		$out['product_id'] = isset( $item['product_id'] ) ? absint( $item['product_id'] ) : 0;
@@ -172,6 +182,9 @@ final class Rest_Api {
 			$out['verified'] = (bool) $item['verified'];
 		}
 		$out['synthetic'] = ! empty( $item['synthetic'] );
+		if ( isset( $item['onSale'] ) ) {
+			$out['onSale'] = (bool) $item['onSale'];
+		}
 		if ( isset( $item['price'] ) && is_array( $item['price'] ) ) {
 			$out['price'] = array();
 			foreach ( array( 'sale', 'regular', 'discount' ) as $key ) {
@@ -187,7 +200,10 @@ final class Rest_Api {
 	 * POST analytics events.
 	 *
 	 * Accepts a small JSON payload (also as text/plain so it can be sent with
-	 * navigator.sendBeacon) of the form {"events":[{"e":"view","t":"sale","p":12}]}.
+	 * navigator.sendBeacon) of the form
+	 * {"events":[{"e":"view","t":"sale","p":12}],"funnel":[{"e":"cta","v":"a","d":"m"}]}.
+	 * Funnel events carry only the event name, the A/B variant letter and a
+	 * mobile/desktop flag.
 	 *
 	 * @param \WP_REST_Request $request Request.
 	 * @return \WP_REST_Response|\WP_Error
@@ -208,16 +224,18 @@ final class Rest_Api {
 		}
 
 		$aggregated = Analytics::validate_batch( $payload );
-		if ( empty( $aggregated ) ) {
+		$funnel     = Conversion::validate_batch( $payload );
+		if ( empty( $aggregated ) && empty( $funnel ) ) {
 			return new \WP_REST_Response( null, 204 );
 		}
 
-		if ( ! Analytics::within_rate_limit( (int) array_sum( $aggregated ) ) ) {
+		if ( ! Analytics::within_rate_limit( (int) array_sum( $aggregated ) + (int) array_sum( $funnel ) ) ) {
 			return new \WP_Error( 'wplh_rate_limited', __( 'Too many events.', 'wp-live-hype' ), array( 'status' => 429 ) );
 		}
 
 		try {
 			Analytics::record( $aggregated );
+			Conversion::record( $funnel );
 		} catch ( \Throwable $e ) {
 			Logger::error( 'REST events error: ' . get_class( $e ) );
 		}

@@ -19,6 +19,32 @@ $wplh_s   = static function ( $n ) {
 
 Admin::form_start( 'frequency' );
 
+$wplh_preset = (string) Settings::get( 'conversion_preset' );
+if ( 'custom' !== $wplh_preset ) :
+	$wplh_names = array(
+		'soft'       => __( 'Soft', 'wp-live-hype' ),
+		'balanced'   => __( 'Balanced', 'wp-live-hype' ),
+		'aggressive' => __( 'Aggressive', 'wp-live-hype' ),
+	);
+	?>
+	<div class="wplh-callout wplh-callout--info">
+		<span class="dashicons dashicons-info" aria-hidden="true"></span>
+		<p>
+			<?php
+			echo esc_html(
+				sprintf(
+					/* translators: %s: preset name. */
+					__( 'The "%s" conversion preset currently controls the first delay, interval range and per-page/per-session limits. Choose "Custom" on the Conversion tab to use the values below instead. Duration, random timing and dismissal behaviour always apply.', 'wp-live-hype' ),
+					$wplh_names[ $wplh_preset ] ?? $wplh_preset
+				)
+			);
+			?>
+			<a href="<?php echo esc_url( Admin::url( 'conversion' ) ); ?>"><?php esc_html_e( 'Open Conversion settings', 'wp-live-hype' ); ?></a>
+		</p>
+	</div>
+	<?php
+endif;
+
 Admin::card_start( __( 'Timing', 'wp-live-hype' ), __( 'Tasteful pacing builds trust. Notifications pause while the visitor hovers or focuses them, and never run in a background tab.', 'wp-live-hype' ) );
 Admin::preset(
 	'first_delay',

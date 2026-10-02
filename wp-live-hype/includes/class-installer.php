@@ -47,6 +47,7 @@ final class Installer {
 	 */
 	public static function install_site(): void {
 		Analytics::create_table();
+		Conversion::create_table();
 		update_option( self::DB_VERSION_OPTION, WPLH_DB_VERSION, false );
 
 		if ( false === get_option( Settings::OPTION, false ) ) {

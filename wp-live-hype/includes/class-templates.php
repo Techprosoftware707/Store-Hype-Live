@@ -29,14 +29,50 @@ final class Templates {
 	 */
 	public static function allowed_tokens(): array {
 		return array(
-			'purchase'   => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city', 'time_ago' ),
-			'sale'       => array( 'product', 'sale_price', 'regular_price', 'discount_percent' ),
-			'popular'    => array( 'product', 'period' ),
-			'bestseller' => array( 'product' ),
-			'featured'   => array( 'product' ),
-			'explore'    => array( 'product' ),
-			'location'   => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city' ),
+			'purchase'       => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city', 'time_ago' ),
+			'sale'           => array( 'product', 'sale_price', 'regular_price', 'discount_percent' ),
+			'popular'        => array( 'product', 'period' ),
+			'bestseller'     => array( 'product' ),
+			'featured'       => array( 'product' ),
+			'explore'        => array( 'product' ),
+			'location'       => array( 'product', 'location', 'country', 'region', 'province', 'state', 'city' ),
+			// Conversion messages. Cart values are read by the visitor's own browser from the Store API.
+			'product_cta'    => array( 'product', 'sale_price', 'regular_price', 'discount_percent' ),
+			'recommend'      => array( 'product', 'current' ),
+			'cart'           => array( 'cart_count', 'cart_total' ),
+			'checkout'       => array( 'cart_count', 'cart_total' ),
+			'promotion'      => array( 'amount_remaining', 'threshold', 'cart_total' ),
+			'promotion_done' => array( 'threshold', 'cart_total' ),
+			'nudge'          => array(),
+			'ab_copy'        => array( 'product' ),
 		);
+	}
+
+	/**
+	 * Conversion template types rendered in the browser (they use the
+	 * visitor's live cart values, which the server never sees).
+	 */
+	const CLIENT_TYPES = array( 'cart', 'checkout', 'promotion', 'promotion_done', 'nudge' );
+
+	/**
+	 * Token a template type must contain ('' = none required).
+	 *
+	 * @param string $type Template type.
+	 * @return string
+	 */
+	public static function required_token( string $type ): string {
+		switch ( $type ) {
+			case 'location':
+				return 'location';
+			case 'promotion':
+				return 'amount_remaining';
+			case 'cart':
+			case 'checkout':
+			case 'promotion_done':
+			case 'nudge':
+				return '';
+		}
+		return 'product';
 	}
 
 	/**
@@ -85,6 +121,42 @@ final class Templates {
 					__( 'Now shipping to {city}', 'wp-live-hype' ),
 					__( 'Available across {country}', 'wp-live-hype' ),
 				);
+			case 'product_cta':
+				return array(
+					__( '{product} is on sale — now {sale_price}', 'wp-live-hype' ),
+					__( '{product} is ready when you are', 'wp-live-hype' ),
+					__( 'Interested in {product}? Add it to your cart anytime', 'wp-live-hype' ),
+				);
+			case 'recommend':
+				return array(
+					__( 'You may also like {product}', 'wp-live-hype' ),
+					__( 'Related to {current}: {product}', 'wp-live-hype' ),
+					__( 'Also in our store: {product}', 'wp-live-hype' ),
+				);
+			case 'cart':
+				return array(
+					__( 'Your cart is saved — subtotal {cart_total}', 'wp-live-hype' ),
+					__( 'Items in your cart: {cart_count}', 'wp-live-hype' ),
+				);
+			case 'checkout':
+				return array(
+					__( 'Ready to check out? Cart subtotal: {cart_total}', 'wp-live-hype' ),
+					__( 'Complete your order whenever you are ready', 'wp-live-hype' ),
+				);
+			case 'promotion':
+				return array(
+					__( 'You are {amount_remaining} away from free shipping', 'wp-live-hype' ),
+					__( 'Add {amount_remaining} more to qualify for free shipping', 'wp-live-hype' ),
+				);
+			case 'promotion_done':
+				return array(
+					__( 'Your cart has reached the free-shipping minimum of {threshold}', 'wp-live-hype' ),
+					__( 'Free-shipping minimum reached', 'wp-live-hype' ),
+				);
+			case 'nudge':
+				return array(
+					__( 'Take your time — the full collection is here when you are ready', 'wp-live-hype' ),
+				);
 		}
 		return array();
 	}
@@ -111,8 +183,13 @@ final class Templates {
 				return __( 'Explore {product}', 'wp-live-hype' );
 			case 'location':
 				return __( 'Now shipping across {location}', 'wp-live-hype' );
+			case 'product_cta':
+				return __( '{product} is ready when you are', 'wp-live-hype' );
+			case 'recommend':
+				return __( 'You may also like {product}', 'wp-live-hype' );
 		}
-		return '{product}';
+		$defaults = self::default_templates( $type );
+		return $defaults ? (string) end( $defaults ) : '{product}';
 	}
 
 	/**
@@ -135,6 +212,19 @@ final class Templates {
 				return __( 'Spotlight', 'wp-live-hype' );
 			case 'location':
 				return __( 'Now shipping', 'wp-live-hype' );
+			case 'product_cta':
+				return __( 'This product', 'wp-live-hype' );
+			case 'recommend':
+				return __( 'You may also like', 'wp-live-hype' );
+			case 'cart':
+				return __( 'Your cart', 'wp-live-hype' );
+			case 'checkout':
+				return __( 'Checkout', 'wp-live-hype' );
+			case 'promotion':
+			case 'promotion_done':
+				return __( 'Free shipping', 'wp-live-hype' );
+			case 'nudge':
+				return __( 'Still browsing?', 'wp-live-hype' );
 		}
 		return '';
 	}
@@ -173,13 +263,16 @@ final class Templates {
 	 * @return true|string True when valid, otherwise a translated reason.
 	 */
 	public static function validate_line( string $type, string $line ) {
-		$allowed = self::allowed_tokens()[ $type ] ?? array();
+		$allowed  = self::allowed_tokens()[ $type ] ?? array();
+		$required = self::required_token( $type );
 
-		if ( 'location' === $type ) {
+		if ( 'location' === $required ) {
 			if ( ! preg_match( '/\{(location|country|region|province|state|city)\}/', $line ) ) {
 				return __( 'Shipping templates must include a location token such as {region}.', 'wp-live-hype' );
 			}
-		} elseif ( false === strpos( $line, '{product}' ) ) {
+		} elseif ( 'amount_remaining' === $required && false === strpos( $line, '{amount_remaining}' ) ) {
+			return __( 'Free-shipping progress templates must include the {amount_remaining} token.', 'wp-live-hype' );
+		} elseif ( 'product' === $required && false === strpos( $line, '{product}' ) ) {
 			return __( 'Every template must include the {product} token.', 'wp-live-hype' );
 		}
 
@@ -263,9 +356,7 @@ final class Templates {
 	public static function render( string $template, array $values ): ?string {
 		$template = str_replace( '{discount_percent}%', '{discount_percent}', $template );
 
-		if ( ! preg_match_all( '/\{([a-z_]+)\}/', $template, $matches ) ) {
-			return null;
-		}
+		preg_match_all( '/\{([a-z_]+)\}/', $template, $matches );
 
 		$replace = array();
 		foreach ( array_unique( $matches[1] ) as $token ) {

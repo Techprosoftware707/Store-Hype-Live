@@ -48,7 +48,7 @@ final class Synthetic_Engine {
 	 * @return string[]
 	 */
 	public static function types(): array {
-		return array_merge( Notifications::TYPES, self::PROMO_TYPES );
+		return array_merge( Notifications::TYPES, self::PROMO_TYPES, Conversion::CLIENT_TYPES );
 	}
 
 	/**

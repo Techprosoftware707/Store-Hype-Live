@@ -12,13 +12,14 @@ namespace AlwaysFinal\LiveHype;
 defined( 'ABSPATH' ) || exit;
 
 // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only report filter.
-$wplh_period = isset( $_GET['period'] ) ? absint( $_GET['period'] ) : 30;
-$wplh_period = in_array( $wplh_period, array( 7, 30, 90 ), true ) ? $wplh_period : 30;
-$wplh_totals = Analytics::totals( $wplh_period );
-$wplh_types  = Analytics::by_type( $wplh_period );
-$wplh_top    = Analytics::top_products( $wplh_period, 10 );
-$wplh_daily  = Analytics::daily( $wplh_period );
-$wplh_names  = array(
+$wplh_period      = isset( $_GET['period'] ) ? absint( $_GET['period'] ) : 30;
+$wplh_period      = in_array( $wplh_period, array( 7, 30, 90 ), true ) ? $wplh_period : 30;
+$wplh_totals      = Analytics::totals( $wplh_period );
+$wplh_types       = Analytics::by_type( $wplh_period );
+$wplh_top         = Analytics::top_products( $wplh_period, 10 );
+$wplh_daily       = Analytics::daily( $wplh_period );
+$wplh_conv_report = Conversion::report( $wplh_period );
+$wplh_names       = array(
 	'product_purchase' => __( 'Recent product purchase', 'wp-live-hype' ),
 	'purchase'         => __( 'Recent purchase', 'wp-live-hype' ),
 	'sale'             => __( 'Active sale', 'wp-live-hype' ),
@@ -27,8 +28,14 @@ $wplh_names  = array(
 	'explore'          => __( 'Spotlight (synthetic)', 'wp-live-hype' ),
 	'location'         => __( 'Shipping region (synthetic)', 'wp-live-hype' ),
 	'sale_promo'       => __( 'Sale (synthetic rotation)', 'wp-live-hype' ),
+	'product_cta'      => __( 'Product call to action', 'wp-live-hype' ),
+	'recommend'        => __( 'Recommendation', 'wp-live-hype' ),
+	'cart'             => __( 'Cart reminder', 'wp-live-hype' ),
+	'checkout'         => __( 'Checkout prompt', 'wp-live-hype' ),
+	'promotion'        => __( 'Free-shipping progress', 'wp-live-hype' ),
+	'nudge'            => __( 'Inactivity message', 'wp-live-hype' ),
 );
-$wplh_ctr    = static function ( $clicks, $views ) {
+$wplh_ctr         = static function ( $clicks, $views ) {
 	return $views > 0 ? number_format_i18n( $clicks / $views * 100, 1 ) . '%' : '—';
 };
 
@@ -95,7 +102,7 @@ $wplh_chart = static function ( array $daily, string $metric, string $title, str
 	<?php settings_fields( Settings::GROUP ); ?>
 	<input type="hidden" name="<?php echo esc_attr( Admin::name( '_tab' ) ); ?>" value="analytics" />
 	<?php
-	Admin::card_start( __( 'Anonymous analytics', 'wp-live-hype' ), __( 'Counts notification views, clicks and dismissals per day, by type and product. No IP addresses, cookies, user IDs or personal data are collected, and nothing is sent to third parties.', 'wp-live-hype' ) );
+	Admin::card_start( __( 'Anonymous analytics', 'wp-live-hype' ), __( 'Counts notification views, clicks and dismissals per day, by type and product, plus anonymous funnel counters (variant letter and mobile/desktop only). No IP addresses, user IDs or personal data are collected, and nothing is sent to third parties. The optional attribution cookie is described on the Conversion tab.', 'wp-live-hype' ) );
 	Admin::toggle( 'analytics_enabled', __( 'Collect anonymous analytics', 'wp-live-hype' ) );
 	Admin::select(
 		'analytics_retention',
@@ -129,6 +136,8 @@ $wplh_chart = static function ( array $daily, string $metric, string $title, str
 	<div class="wplh-kpi" role="listitem"><span class="wplh-kpi__label"><?php esc_html_e( 'Click-through rate', 'wp-live-hype' ); ?></span><span class="wplh-kpi__value"><?php echo esc_html( $wplh_ctr( $wplh_totals['click'], $wplh_totals['view'] ) ); ?></span></div>
 	<div class="wplh-kpi" role="listitem"><span class="wplh-kpi__label"><?php esc_html_e( 'Dismissed', 'wp-live-hype' ); ?></span><span class="wplh-kpi__value"><?php echo esc_html( number_format_i18n( $wplh_totals['dismiss'] ) ); ?></span></div>
 </div>
+
+<?php require __DIR__ . '/part-funnel.php'; ?>
 
 <div class="wplh-grid wplh-grid--2">
 	<?php Admin::card_start( '' ); ?>

@@ -11,20 +11,6 @@ namespace AlwaysFinal\LiveHype;
 
 defined( 'ABSPATH' ) || exit;
 
-$wplh_tokens = array(
-	'product'          => __( 'Product name', 'wp-live-hype' ),
-	'location'         => __( 'Location at the configured level', 'wp-live-hype' ),
-	'country'          => __( 'Country', 'wp-live-hype' ),
-	'region'           => __( 'Province / state / region', 'wp-live-hype' ),
-	'province'         => __( 'Alias of {region}', 'wp-live-hype' ),
-	'state'            => __( 'Alias of {region}', 'wp-live-hype' ),
-	'city'             => __( 'City', 'wp-live-hype' ),
-	'time_ago'         => __( 'Elapsed time, e.g. "2 hours ago"', 'wp-live-hype' ),
-	'sale_price'       => __( 'Current sale price ("from" for variable products)', 'wp-live-hype' ),
-	'regular_price'    => __( 'Regular price', 'wp-live-hype' ),
-	'discount_percent' => __( 'Real discount, e.g. "25%" or "up to 30%"', 'wp-live-hype' ),
-	'period'           => __( 'Popularity window, e.g. "in the last 7 days"', 'wp-live-hype' ),
-);
 
 $wplh_types = array(
 	'purchase'   => array( __( 'Recent purchase templates', 'wp-live-hype' ), 'tpl_purchase' ),
@@ -80,21 +66,9 @@ Admin::select(
 	)
 );
 
-$wplh_allowed_tokens = Templates::allowed_tokens();
-foreach ( $wplh_types as $wplh_type => $wplh_meta ) :
-	$wplh_value = implode( "\n", Templates::templates( $wplh_type ) );
-	Admin::row_start( $wplh_meta[1], $wplh_meta[0] );
-	?>
-	<textarea class="large-text code wplh-template" id="wplh-<?php echo esc_attr( $wplh_meta[1] ); ?>" name="<?php echo esc_attr( Admin::name( $wplh_meta[1] ) ); ?>" rows="3" data-tokens="<?php echo esc_attr( implode( ',', $wplh_allowed_tokens[ $wplh_type ] ) ); ?>"><?php echo esc_textarea( $wplh_value ); ?></textarea>
-	<div class="wplh-tokens" role="group" aria-label="<?php esc_attr_e( 'Insert token', 'wp-live-hype' ); ?>">
-		<?php foreach ( $wplh_allowed_tokens[ $wplh_type ] as $wplh_token ) : ?>
-			<button type="button" class="wplh-token" data-target="wplh-<?php echo esc_attr( $wplh_meta[1] ); ?>" data-token="{<?php echo esc_attr( $wplh_token ); ?>}" title="<?php echo esc_attr( $wplh_tokens[ $wplh_token ] ?? '' ); ?>">{<?php echo esc_html( $wplh_token ); ?>}</button>
-		<?php endforeach; ?>
-	</div>
-	<p class="wplh-template-warning" hidden></p>
-	<?php
-	Admin::row_end();
-endforeach;
+foreach ( $wplh_types as $wplh_type => $wplh_meta ) {
+	Admin::template_editor( $wplh_type, $wplh_meta[1], $wplh_meta[0], implode( "\n", Templates::templates( $wplh_type ) ) );
+}
 Admin::card_end();
 
 Admin::card_start( __( 'Labels', 'wp-live-hype' ), __( 'The small heading above each message. Leave empty to use the translated default.', 'wp-live-hype' ) );

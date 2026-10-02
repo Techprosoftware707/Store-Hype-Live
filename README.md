@@ -16,6 +16,10 @@ A polished, privacy-safe live activity layer for WooCommerce, developed by **ALW
 
 Activity wording is reserved for real data; customer and order information never leaves the server.
 
+## Conversion assistant (1.1)
+
+A visitor-local decision engine (stages: new → engaged → product explorer → cart builder → checkout) chooses the most relevant next step: product calls to action, WooCommerce recommendations, cart reminders, checkout prompts and free-shipping progress computed from the visitor's real cart and the store's real free-shipping rule. Presets, primary goal, smart suppression, collision avoidance, A/B testing, an anonymous funnel with first-party attribution and a measured-only Conversion Health panel complete it. Nothing is invented — no discounts, deadlines, stock shortages, viewer counts or customers — and the checkout page stays quiet.
+
 ## Architecture highlights
 
 ```
@@ -29,9 +33,10 @@ wp-live-hype/
 │   ├── class-orders.php            HPOS-safe, country-filtered order aggregation
 │   ├── class-products.php          Eligibility, real sale maths, popularity
 │   ├── class-cache.php             Cached dataset + product pool, cron refresh, lock
+│   ├── class-conversion.php        Product context, recommendations, free shipping, funnel, A/B, attribution
 │   ├── class-rest-api.php          GET /activity, POST /events
 │   └── …                           settings, templates, analytics, targeting, frontend, branding
-├── admin/                        WooCommerce → WP Live Hype (14 tabs, live previews)
+├── admin/                        WooCommerce → WP Live Hype (16 tabs, live previews)
 ├── public/                       Vanilla JS activity layer + CSS
 └── assets/audio/                 Four bundled notification sounds
 ```

@@ -64,6 +64,8 @@ final class Admin {
 			'dashboard'     => __( 'Dashboard', 'wp-live-hype' ),
 			'general'       => __( 'General', 'wp-live-hype' ),
 			'engine'        => __( 'Live Hype', 'wp-live-hype' ),
+			'conversion'    => __( 'Conversion', 'wp-live-hype' ),
+			'abtest'        => __( 'A/B testing', 'wp-live-hype' ),
 			'weighting'     => __( 'Weighting', 'wp-live-hype' ),
 			'country'       => __( 'Country', 'wp-live-hype' ),
 			'notifications' => __( 'Notifications', 'wp-live-hype' ),
@@ -164,6 +166,7 @@ final class Admin {
 			'window.wplhConfig = ' . wp_json_encode(
 				array(
 					'adminPreview' => true,
+					'conv'         => $frontend['conv'],
 					'display'      => $frontend['display'],
 					'i18n'         => $frontend['i18n'],
 					'locale'       => $frontend['locale'],
@@ -183,7 +186,7 @@ final class Admin {
 			static function ( $item ) {
 				return is_array( $item ) ? array_merge( Rest_Api::public_fields( $item ), array( 'preview' => true ) ) : null;
 			},
-			array_merge( Notifications::preview_items(), Synthetic_Engine::preview_items() )
+			array_merge( Notifications::preview_items(), Synthetic_Engine::preview_items(), Conversion::preview_items() )
 		);
 
 		wp_localize_script(
@@ -209,6 +212,7 @@ final class Admin {
 					'confirmReset'   => __( 'Delete all analytics data? This cannot be undone.', 'wp-live-hype' ),
 					'previewFailed'  => __( 'Preview could not be loaded.', 'wp-live-hype' ),
 					'previewHidden'  => __( 'Notifications are hidden on mobile with the current settings.', 'wp-live-hype' ),
+					'missingToken'   => __( 'missing', 'wp-live-hype' ),
 					'previewMissing' => __( 'No preview available for this type yet — it needs published products (and, for shipping messages, a country your store ships to).', 'wp-live-hype' ),
 				),
 			)
@@ -251,6 +255,7 @@ final class Admin {
 		}
 		check_admin_referer( 'wplh_reset_analytics' );
 		Analytics::reset();
+		Conversion::reset();
 		wp_safe_redirect( self::url( 'analytics', array( 'wplh_msg' => 'analytics_reset' ) ) );
 		exit;
 	}
@@ -743,6 +748,58 @@ final class Admin {
 	}
 
 	/**
+	 * Help text for every template token.
+	 *
+	 * @return array<string,string>
+	 */
+	public static function token_help(): array {
+		return array(
+			'product'          => __( 'Product name', 'wp-live-hype' ),
+			'location'         => __( 'Location at the configured level', 'wp-live-hype' ),
+			'country'          => __( 'Country', 'wp-live-hype' ),
+			'region'           => __( 'Province / state / region', 'wp-live-hype' ),
+			'province'         => __( 'Alias of {region}', 'wp-live-hype' ),
+			'state'            => __( 'Alias of {region}', 'wp-live-hype' ),
+			'city'             => __( 'City', 'wp-live-hype' ),
+			'time_ago'         => __( 'Elapsed time, e.g. "2 hours ago"', 'wp-live-hype' ),
+			'sale_price'       => __( 'Current sale price ("from" for variable products)', 'wp-live-hype' ),
+			'regular_price'    => __( 'Regular price', 'wp-live-hype' ),
+			'discount_percent' => __( 'Real discount, e.g. "25%" or "up to 30%"', 'wp-live-hype' ),
+			'period'           => __( 'Popularity window, e.g. "in the last 7 days"', 'wp-live-hype' ),
+			'current'          => __( 'Name of the product being viewed', 'wp-live-hype' ),
+			'cart_count'       => __( 'Number of items in the visitor\'s cart', 'wp-live-hype' ),
+			'cart_total'       => __( 'Visitor\'s cart subtotal', 'wp-live-hype' ),
+			'threshold'        => __( 'Your WooCommerce free-shipping minimum', 'wp-live-hype' ),
+			'amount_remaining' => __( 'Amount still needed for free shipping', 'wp-live-hype' ),
+		);
+	}
+
+	/**
+	 * Template editor (textarea + token buttons + live validation).
+	 *
+	 * @param string $type  Template type.
+	 * @param string $key   Setting key.
+	 * @param string $label Row label.
+	 * @param string $value Current lines.
+	 * @param string $help  Optional help text.
+	 */
+	public static function template_editor( string $type, string $key, string $label, string $value, string $help = '' ): void {
+		$allowed = Templates::allowed_tokens()[ $type ] ?? array();
+		$tokens  = self::token_help();
+		self::row_start( $key, $label, $help );
+		echo '<textarea class="large-text code wplh-template" id="wplh-' . esc_attr( $key ) . '" name="' . esc_attr( self::name( $key ) ) . '" rows="3" data-tokens="' . esc_attr( implode( ',', $allowed ) ) . '" data-required="' . esc_attr( Templates::required_token( $type ) ) . '"' . ( '' !== $help ? ' aria-describedby="wplh-' . esc_attr( $key ) . '-help"' : '' ) . '>' . esc_textarea( $value ) . '</textarea>';
+		if ( $allowed ) {
+			echo '<div class="wplh-tokens" role="group" aria-label="' . esc_attr__( 'Insert token', 'wp-live-hype' ) . '">';
+			foreach ( $allowed as $token ) {
+				echo '<button type="button" class="wplh-token" data-target="wplh-' . esc_attr( $key ) . '" data-token="{' . esc_attr( $token ) . '}" title="' . esc_attr( $tokens[ $token ] ?? '' ) . '">{' . esc_html( $token ) . '}</button>';
+			}
+			echo '</div>';
+		}
+		echo '<p class="wplh-template-warning" hidden></p>';
+		self::row_end();
+	}
+
+	/**
 	 * Preview types the current activity mode can actually produce.
 	 *
 	 * @return array<string,string> type => label.
@@ -773,11 +830,12 @@ final class Admin {
 	 * Preview panel markup (filled by admin.js), limited to the types the
 	 * current activity mode can produce.
 	 *
-	 * @param string $id   Panel id.
-	 * @param bool   $live Whether it follows unsaved Display form fields.
+	 * @param string     $id    Panel id.
+	 * @param bool       $live  Whether it follows unsaved Display form fields.
+	 * @param array|null $types type => label (defaults to the activity-mode types).
 	 */
-	public static function preview_panel( string $id, bool $live = false ): void {
-		$types = self::preview_types();
+	public static function preview_panel( string $id, bool $live = false, ?array $types = null ): void {
+		$types = null === $types ? self::preview_types() : $types;
 		$first = (string) key( $types );
 		?>
 		<div class="wplh-preview" id="<?php echo esc_attr( $id ); ?>" data-live="<?php echo $live ? '1' : '0'; ?>" data-type="<?php echo esc_attr( $first ); ?>">
