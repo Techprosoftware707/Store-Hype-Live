@@ -193,7 +193,7 @@ $wplh_chart = static function ( array $daily, string $metric, string $title, str
 			<tbody>
 				<?php foreach ( $wplh_top as $wplh_row ) : ?>
 					<?php
-					$wplh_title = 'product' === get_post_type( $wplh_row['product_id'] ) ? get_the_title( $wplh_row['product_id'] ) : '';
+					$wplh_title = 'product' === get_post_type( $wplh_row['product_id'] ) ? wp_strip_all_tags( get_the_title( $wplh_row['product_id'] ) ) : '';
 					/* translators: %d: product ID. */
 					$wplh_title = '' !== $wplh_title ? $wplh_title : sprintf( __( 'Deleted product #%d', 'wp-live-hype' ), $wplh_row['product_id'] );
 					?>

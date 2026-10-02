@@ -38,7 +38,7 @@ $wplh_types = array(
 
 Admin::form_start( 'notifications' );
 
-Admin::card_start( __( 'Notification types', 'wp-live-hype' ), __( 'Every type is built from real store data. Types with no qualifying data simply stay silent.', 'wp-live-hype' ) );
+Admin::card_start( __( 'Real-data notification types', 'wp-live-hype' ), __( 'Used in Hybrid and Aggregate modes. Every type is built from real store data and stays silent when there is none. Synthetic event types are configured on the Live Hype tab.', 'wp-live-hype' ) );
 ?>
 <div class="wplh-type-grid">
 	<?php

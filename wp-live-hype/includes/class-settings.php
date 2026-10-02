@@ -973,7 +973,12 @@ final class Settings {
 						if ( ! preg_match( $field['key'], $map_key ) || ! is_scalar( $level ) || ! is_numeric( $level ) ) {
 							continue;
 						}
-						$map[ $map_key ] = max( (int) $field['min'], min( (int) $field['max'], (int) $level ) );
+						$level = max( (int) $field['min'], min( (int) $field['max'], (int) $level ) );
+						if ( Locations::default_level_for_key( $key, $map_key ) === $level ) {
+							unset( $map[ $map_key ] ); // Normal is the default: keep the option small.
+						} else {
+							$map[ $map_key ] = $level;
+						}
 					}
 				}
 				return array_slice( $map, -3000, null, true );

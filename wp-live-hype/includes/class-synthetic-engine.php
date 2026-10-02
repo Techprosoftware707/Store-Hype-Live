@@ -310,19 +310,41 @@ final class Synthetic_Engine {
 	 * @return array
 	 */
 	private static function location_item( array $location, string $level, array $product ): array {
-		$label            = Locations::label( $location, $level );
-		$message          = Templates::render_for(
-			'location',
-			array(
-				'product'  => $product['name'],
-				'location' => $label,
-				'country'  => Country::name( $location['country'] ),
-				'region'   => $location['region'],
-				'province' => $location['region'],
-				'state'    => $location['region'],
-				'city'     => $location['city'],
-			)
+		$label  = Locations::label( $location, $level );
+		$tokens = array(
+			'product'  => $product['name'],
+			'location' => $label,
+			'country'  => Country::name( $location['country'] ),
+			'region'   => $location['region'],
+			'province' => $location['region'],
+			'state'    => $location['region'],
+			'city'     => $location['city'],
 		);
+
+		// Pick an eligible template ourselves so we know which place it names.
+		$templates = Templates::templates( 'location' );
+		shuffle( $templates );
+		$templates[] = Templates::fallback_template( 'location' );
+		$message     = '';
+		$used        = '';
+		foreach ( $templates as $template ) {
+			$rendered = Templates::render( $template, $tokens );
+			if ( null !== $rendered ) {
+				$message = $rendered;
+				preg_match( '/\{(city|region|province|state|country|location)\}/', $template, $m );
+				$used = $m[1] ?? 'location';
+				break;
+			}
+		}
+
+		// The pin line only adds detail that is more specific than the message.
+		$detail = '';
+		if ( 'region' === $used || 'province' === $used || 'state' === $used ) {
+			$detail = '' !== $location['city'] ? Locations::label( $location, 'city_region' ) : '';
+		} elseif ( 'city' === $used ) {
+			$detail = '' !== $location['region'] ? Locations::label( $location, 'city_region' ) : '';
+		}
+
 		$mentions_product = '' !== $product['name'] && false !== strpos( $message, $product['name'] );
 		$item             = Notifications::base_item( $product, 'location', '' );
 		if ( ! $mentions_product ) {
@@ -335,7 +357,38 @@ final class Synthetic_Engine {
 		}
 		$item['label']    = Templates::label( 'location' );
 		$item['message']  = $message;
-		$item['location'] = $label;
+		$item['location'] = $detail;
+		return $item;
+	}
+
+	/**
+	 * Sample shipping-region event for one country (admin country preview).
+	 *
+	 * @param string $country Country code.
+	 * @param string $level   Location display level.
+	 * @return array|null
+	 */
+	public static function preview_location( string $country, string $level ): ?array {
+		$dataset  = Cache::get_dataset(); // Admin only.
+		$products = (array) ( $dataset['products'] ?? array() );
+		$product  = $products ? reset( $products ) : array(
+			'id'    => 0,
+			'name'  => __( 'Sample Product', 'wp-live-hype' ),
+			'url'   => '',
+			'image' => '',
+			'img_w' => 0,
+			'img_h' => 0,
+			'cats'  => array(),
+		);
+		$level    = in_array( $level, array( 'country', 'region', 'city', 'city_region', 'city_country' ), true ) ? $level : 'region';
+		$location = Locations::pick( new Rng( crc32( $country ) ), $country, $level );
+		if ( null === $location ) {
+			return null;
+		}
+		$item              = self::location_item( $location, $level, $product );
+		$item['id']        = 'preview-location';
+		$item['synthetic'] = true;
+		$item['type']      = 'location';
 		return $item;
 	}
 

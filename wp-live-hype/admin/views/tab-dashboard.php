@@ -184,11 +184,7 @@ $wplh_icons = array(
 		<?php Admin::card_start( __( 'Preview on your storefront', 'wp-live-hype' ), __( 'Opens your homepage with a sample notification that only you can see. It is clearly labelled as a preview and never shown to customers.', 'wp-live-hype' ) ); ?>
 		<p class="wplh-actions">
 			<?php
-			foreach ( array(
-				'purchase' => __( 'Purchase preview', 'wp-live-hype' ),
-				'sale'     => __( 'Sale preview', 'wp-live-hype' ),
-				'popular'  => __( 'Popular preview', 'wp-live-hype' ),
-			) as $wplh_type => $wplh_label ) :
+			foreach ( Admin::preview_types() as $wplh_type => $wplh_label ) :
 				?>
 				<a class="button" href="<?php echo esc_url( add_query_arg( 'wplh_preview', $wplh_type, home_url( '/' ) ) ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $wplh_label ); ?><span class="screen-reader-text"> <?php esc_html_e( '(opens in a new tab)', 'wp-live-hype' ); ?></span></a>
 			<?php endforeach; ?>

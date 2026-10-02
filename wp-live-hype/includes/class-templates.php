@@ -69,9 +69,9 @@ final class Templates {
 				);
 			case 'featured':
 				return array(
-					__( 'Featured — {product}', 'wp-live-hype' ),
-					__( 'Spotlight: {product}', 'wp-live-hype' ),
 					__( '{product} — featured in our store', 'wp-live-hype' ),
+					__( 'Handpicked for you: {product}', 'wp-live-hype' ),
+					__( 'Our pick: {product}', 'wp-live-hype' ),
 				);
 			case 'explore':
 				return array(
@@ -106,7 +106,7 @@ final class Templates {
 			case 'bestseller':
 				return __( '{product} is one of our best sellers', 'wp-live-hype' );
 			case 'featured':
-				return __( 'Featured — {product}', 'wp-live-hype' );
+				return __( '{product} — featured in our store', 'wp-live-hype' );
 			case 'explore':
 				return __( 'Explore {product}', 'wp-live-hype' );
 			case 'location':

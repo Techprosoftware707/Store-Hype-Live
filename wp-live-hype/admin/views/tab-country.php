@@ -16,7 +16,7 @@ $wplh_in_scope = (int) ( $wplh_data['stats']['in_lookback'] ?? 0 );
 $wplh_target   = (string) $settings['target_country'];
 $wplh_base     = Country::base_country();
 $wplh_eligible = $settings['country_filter']
-	? ( Country::is_valid( $wplh_target ) ? sprintf( /* translators: %s: country name. */ __( '%s orders only', 'wp-live-hype' ), Country::name( $wplh_target ) ) : __( 'None — select a target country', 'wp-live-hype' ) )
+	? ( Country::is_valid( $wplh_target ) ? ( 'synthetic' === $settings['activity_mode'] ? Country::name( $wplh_target ) : sprintf( /* translators: %s: country name. */ __( '%s orders only', 'wp-live-hype' ), Country::name( $wplh_target ) ) ) : __( 'None — select a target country', 'wp-live-hype' ) )
 	: Country::scope_description();
 
 Admin::form_start( 'country' );
@@ -26,7 +26,7 @@ Admin::form_start( 'country' );
 		<span class="dashicons dashicons-admin-site-alt3" aria-hidden="true"></span>
 		<div>
 			<h2 class="wplh-card__title"><?php esc_html_e( 'Country targeting', 'wp-live-hype' ); ?></h2>
-			<p class="wplh-card__intro"><?php esc_html_e( 'Choose which country\'s real orders may power purchase notifications. Deploy the same plugin anywhere — nothing is hard-coded.', 'wp-live-hype' ); ?></p>
+			<p class="wplh-card__intro"><?php esc_html_e( 'Choose the country WP Live Hype targets. Synthetic shipping messages only ever mention places in this country, and in Hybrid or Aggregate mode only this country\'s real orders are used. Deploy the same plugin anywhere — nothing is hard-coded.', 'wp-live-hype' ); ?></p>
 		</div>
 	</div>
 
@@ -83,7 +83,7 @@ Admin::form_start( 'country' );
 	?>
 
 	<div class="wplh-eligible" aria-live="polite">
-		<span class="wplh-eligible__label"><?php esc_html_e( 'Eligible orders', 'wp-live-hype' ); ?></span>
+		<span class="wplh-eligible__label"><?php echo 'synthetic' === $settings['activity_mode'] ? esc_html__( 'Activity area', 'wp-live-hype' ) : esc_html__( 'Eligible orders', 'wp-live-hype' ); ?></span>
 		<strong class="wplh-eligible__value" id="wplh-eligible-value"><?php echo esc_html( $wplh_eligible ); ?></strong>
 	</div>
 
@@ -95,7 +95,7 @@ Admin::form_start( 'country' );
 		</p>
 	</div>
 
-	<?php if ( 0 === $wplh_in_scope && ( $settings['type_purchase'] || $settings['type_product_purchase'] ) ) : ?>
+	<?php if ( 'synthetic' !== $settings['activity_mode'] && 0 === $wplh_in_scope && ( $settings['type_purchase'] || $settings['type_product_purchase'] ) ) : ?>
 		<div class="wplh-callout wplh-callout--warn">
 			<span class="dashicons dashicons-warning" aria-hidden="true"></span>
 			<p><?php esc_html_e( 'There is currently no qualifying order activity in scope. Purchase notifications will remain inactive until qualifying order activity exists.', 'wp-live-hype' ); ?></p>
@@ -104,7 +104,7 @@ Admin::form_start( 'country' );
 </section>
 <?php Admin::form_end(); ?>
 
-<?php Admin::card_start( __( 'Country preview', 'wp-live-hype' ), __( 'See how a purchase notification would read for any country. Sample data only.', 'wp-live-hype' ) ); ?>
+<?php Admin::card_start( __( 'Country preview', 'wp-live-hype' ), ( 'synthetic' === $settings['activity_mode'] ? __( 'See how a shipping-region message would read for any country. Sample data only.', 'wp-live-hype' ) : __( 'See how a purchase notification would read for any country. Sample data only.', 'wp-live-hype' ) ) ); ?>
 <div class="wplh-country-preview" id="wplh-country-preview">
 	<div class="wplh-country-preview__controls">
 		<label for="wplh-preview-country"><?php esc_html_e( 'Preview country', 'wp-live-hype' ); ?></label>

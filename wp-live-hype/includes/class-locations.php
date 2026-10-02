@@ -24,6 +24,13 @@ final class Locations {
 	const HIGH   = 3;
 
 	/**
+	 * Region data memo.
+	 *
+	 * @var array|null
+	 */
+	private static $regions_data = null;
+
+	/**
 	 * Raw city data memo.
 	 *
 	 * @var array|null
@@ -97,6 +104,84 @@ final class Locations {
 	}
 
 	/**
+	 * Bundled region defaults / exclusions.
+	 *
+	 * @return array
+	 */
+	private static function regions_data(): array {
+		if ( null === self::$regions_data ) {
+			$data               = include __DIR__ . '/data/regions.php';
+			self::$regions_data = is_array( $data ) ? $data : array();
+		}
+		return self::$regions_data;
+	}
+
+	/**
+	 * Real, mentionable regions of a country (WooCommerce list minus
+	 * non-geographic entries such as US military mail codes).
+	 *
+	 * @param string $country Country code.
+	 * @return array<string,string> code => name.
+	 */
+	public static function regions( string $country ): array {
+		$country = strtoupper( $country );
+		$exclude = (array) ( self::regions_data()['exclude'][ $country ] ?? array() );
+		return array_diff_key( Country::states( $country ), array_flip( $exclude ) );
+	}
+
+	/**
+	 * Default level for a region.
+	 *
+	 * @param string $country Country.
+	 * @param string $code    Region code.
+	 * @return int
+	 */
+	public static function default_region_level( string $country, string $code ): int {
+		$defaults = (array) ( self::regions_data()['defaults'][ strtoupper( $country ) ] ?? array() );
+		return isset( $defaults[ strtoupper( $code ) ] ) ? (int) $defaults[ strtoupper( $code ) ] : self::NORMAL;
+	}
+
+	/**
+	 * Default level for a city.
+	 *
+	 * @param string $country Country.
+	 * @param string $slug    City slug.
+	 * @return int
+	 */
+	public static function default_city_level( string $country, string $slug ): int {
+		$defaults = (array) ( self::regions_data()['cities'][ strtoupper( $country ) ] ?? array() );
+		return isset( $defaults[ $slug ] ) ? (int) $defaults[ $slug ] : self::NORMAL;
+	}
+
+	/**
+	 * Configured level of a city (ignoring its region).
+	 *
+	 * @param string $country Country.
+	 * @param string $slug    City slug.
+	 * @return int
+	 */
+	public static function city_level( string $country, string $slug ): int {
+		$map = (array) Settings::get( 'city_weights' );
+		$key = strtoupper( $country ) . ':' . $slug;
+		return isset( $map[ $key ] ) ? max( 0, min( 3, (int) $map[ $key ] ) ) : self::default_city_level( $country, $slug );
+	}
+
+	/**
+	 * Default level for a weight-map key (used to keep the stored option small).
+	 *
+	 * @param string $setting region_weights|city_weights|product_weights.
+	 * @param string $key     Map key.
+	 * @return int
+	 */
+	public static function default_level_for_key( string $setting, string $key ): int {
+		if ( 'product_weights' === $setting || false === strpos( $key, ':' ) ) {
+			return self::NORMAL;
+		}
+		list( $country, $code ) = explode( ':', $key, 2 );
+		return 'region_weights' === $setting ? self::default_region_level( $country, $code ) : self::default_city_level( $country, $code );
+	}
+
+	/**
 	 * Weight level of a region (default Normal).
 	 *
 	 * @param string $country Country.
@@ -106,7 +191,10 @@ final class Locations {
 	public static function region_weight( string $country, string $code ): int {
 		$map = (array) Settings::get( 'region_weights' );
 		$key = strtoupper( $country ) . ':' . strtoupper( $code );
-		return isset( $map[ $key ] ) ? max( 0, min( 3, (int) $map[ $key ] ) ) : self::NORMAL;
+		if ( in_array( strtoupper( $code ), (array) ( self::regions_data()['exclude'][ strtoupper( $country ) ] ?? array() ), true ) ) {
+			return self::OFF;
+		}
+		return isset( $map[ $key ] ) ? max( 0, min( 3, (int) $map[ $key ] ) ) : self::default_region_level( $country, $code );
 	}
 
 	/**
@@ -121,9 +209,7 @@ final class Locations {
 		if ( '' !== $region && self::OFF === self::region_weight( $country, $region ) ) {
 			return self::OFF;
 		}
-		$map = (array) Settings::get( 'city_weights' );
-		$key = strtoupper( $country ) . ':' . $slug;
-		return isset( $map[ $key ] ) ? max( 0, min( 3, (int) $map[ $key ] ) ) : self::NORMAL;
+		return self::city_level( $country, $slug );
 	}
 
 	/**
@@ -168,7 +254,7 @@ final class Locations {
 
 		if ( 'country' !== $level ) {
 			$options = array();
-			foreach ( Country::states( $country ) as $code => $name ) {
+			foreach ( self::regions( $country ) as $code => $name ) {
 				$weight = self::multiplier( self::region_weight( $country, (string) $code ) );
 				if ( $weight > 0 && ! in_array( 'r:' . $code, $avoid, true ) ) {
 					$options[ (string) $code ] = $weight;

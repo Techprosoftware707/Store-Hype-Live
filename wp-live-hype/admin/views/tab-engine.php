@@ -44,7 +44,7 @@ Admin::form_start( 'engine' );
 </section>
 <?php
 Admin::card_start( __( 'Synthetic rotation', 'wp-live-hype' ), __( 'Event types the engine mixes together. Types alternate so the same kind never appears twice in a row.', 'wp-live-hype' ) );
-Admin::toggle( 'promo_featured', __( 'Featured products', 'wp-live-hype' ), __( 'e.g. "Featured — Retatrutide". Uses products weighted High or Featured first.', 'wp-live-hype' ) );
+Admin::toggle( 'promo_featured', __( 'Featured products', 'wp-live-hype' ), __( 'e.g. "Retatrutide — featured in our store". Uses products weighted High or Featured first.', 'wp-live-hype' ) );
 Admin::toggle( 'promo_explore', __( 'Product spotlights', 'wp-live-hype' ), __( 'e.g. "Explore BPC-157".', 'wp-live-hype' ) );
 Admin::toggle(
 	'promo_location',

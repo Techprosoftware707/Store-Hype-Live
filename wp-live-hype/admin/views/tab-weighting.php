@@ -95,7 +95,7 @@ if ( empty( $wplh_products ) ) {
 Admin::card_end();
 
 foreach ( $wplh_countries as $wplh_cc ) :
-	$wplh_states = Country::states( $wplh_cc );
+	$wplh_states = Locations::regions( $wplh_cc );
 	$wplh_cities = Locations::cities( $wplh_cc );
 	/* translators: %s: country name. */
 	Admin::card_start( sprintf( __( 'Locations — %s', 'wp-live-hype' ), Country::name( $wplh_cc ) ), __( 'Regions come from WooCommerce; cities from the bundled list. Turning a region Off also turns off its cities. Only locations in this country are ever used.', 'wp-live-hype' ) );
@@ -117,7 +117,7 @@ foreach ( $wplh_countries as $wplh_cc ) :
 		$wplh_map = (array) $settings['city_weights'];
 		foreach ( $wplh_cities as $wplh_slug => $wplh_city ) {
 			$wplh_key   = $wplh_cc . ':' . $wplh_slug;
-			$wplh_level = isset( $wplh_map[ $wplh_key ] ) ? (int) $wplh_map[ $wplh_key ] : 2;
+			$wplh_level = Locations::city_level( $wplh_cc, (string) $wplh_slug );
 			$wplh_label = '' !== $wplh_city['region_name'] ? $wplh_city['name'] . ', ' . $wplh_city['region_name'] : $wplh_city['name'];
 			echo '<tr><th scope="row">' . esc_html( $wplh_label ) . '</th><td>';
 			$wplh_segment( Admin::name( 'city_weights' ) . '[' . $wplh_key . ']', 'wplh-cw-' . sanitize_html_class( $wplh_cc . '-' . $wplh_slug ), $wplh_place_levels, $wplh_level, $wplh_label );

@@ -266,7 +266,9 @@
 		var panels = document.querySelectorAll( '.wplh-preview' );
 		panels.forEach( function ( panel ) {
 			panel.setAttribute( 'data-device', 'desktop' );
-			panel.setAttribute( 'data-type', 'purchase' );
+			if ( ! panel.getAttribute( 'data-type' ) ) {
+				panel.setAttribute( 'data-type', 'featured' );
+			}
 			panel.querySelectorAll( '.wplh-seg' ).forEach( function ( button ) {
 				button.addEventListener( 'click', function () {
 					var attr = button.hasAttribute( 'data-device' ) ? 'data-device' : 'data-type';
@@ -318,7 +320,8 @@
 		var countries = data.countries || {};
 		if ( fieldValue( 'country_filter' ) ) {
 			var code = fieldValue( 'target_country' );
-			out.textContent = code && countries[ code ] ? ( i18n.eligibleOnly || '%s' ).replace( '%s', countries[ code ] ) : i18n.eligibleNone;
+			var template = data.mode === 'synthetic' ? '%s' : i18n.eligibleOnly || '%s';
+			out.textContent = code && countries[ code ] ? template.replace( '%s', countries[ code ] ) : i18n.eligibleNone;
 			return;
 		}
 		var scope = fieldValue( 'unfiltered_scope' );
@@ -348,11 +351,12 @@
 				level: fieldValue( 'location_level' ) || '',
 			} )
 				.done( function ( response ) {
-					if ( ! response || ! response.success || ! response.data.items || ! response.data.items.purchase ) {
+					var preferred = response && response.success && response.data.mode === 'synthetic' ? 'location' : 'purchase';
+					if ( ! response || ! response.success || ! response.data.items || ! response.data.items[ preferred ] ) {
 						text.textContent = i18n.previewFailed;
 						return;
 					}
-					var item = response.data.items.purchase;
+					var item = response.data.items[ preferred ];
 					text.textContent = '“' + item.message.replace( /\{time_ago\}/g, item.time_ago || '' ) + '”';
 					if ( window.WPLH && window.WPLH.renderStatic ) {
 						var root = window.WPLH.renderStatic( slot, $.extend( {}, item, { preview: true } ), displaySettings( false ), base, {} );

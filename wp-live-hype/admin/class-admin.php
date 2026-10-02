@@ -194,6 +194,7 @@ final class Admin {
 				'nonce'     => wp_create_nonce( self::NONCE ),
 				'preview'   => $preview_items,
 				'countries' => $countries,
+				'mode'      => (string) Settings::get( 'activity_mode' ),
 				'sounds'    => array(
 					'chime'  => WPLH_URL . 'assets/audio/chime.mp3',
 					'modern' => WPLH_URL . 'assets/audio/modern.mp3',
@@ -263,15 +264,18 @@ final class Admin {
 		if ( ! Security::can_manage() ) {
 			wp_send_json_error( array( 'message' => __( 'Permission denied.', 'wp-live-hype' ) ), 403 );
 		}
-		$country = isset( $_POST['country'] ) ? strtoupper( sanitize_text_field( wp_unslash( $_POST['country'] ) ) ) : '';
-		$level   = isset( $_POST['level'] ) ? sanitize_key( wp_unslash( $_POST['level'] ) ) : '';
-		$items   = array();
-		foreach ( Notifications::preview_items( $country, $level ) as $type => $item ) {
+		$country              = isset( $_POST['country'] ) ? strtoupper( sanitize_text_field( wp_unslash( $_POST['country'] ) ) ) : '';
+		$level                = isset( $_POST['level'] ) ? sanitize_key( wp_unslash( $_POST['level'] ) ) : '';
+		$items                = array();
+		$previews             = Notifications::preview_items( $country, $level );
+		$previews['location'] = Country::is_valid( $country ) ? Synthetic_Engine::preview_location( $country, $level ) : null;
+		foreach ( $previews as $type => $item ) {
 			$items[ $type ] = is_array( $item ) ? array_merge( Rest_Api::public_fields( $item ), array( 'preview' => true ) ) : null;
 		}
 		wp_send_json_success(
 			array(
 				'items'   => $items,
+				'mode'    => (string) Settings::get( 'activity_mode' ),
 				'country' => Country::name( Country::is_valid( $country ) ? $country : (string) Settings::get( 'target_country' ) ),
 			)
 		);
@@ -739,14 +743,44 @@ final class Admin {
 	}
 
 	/**
-	 * Preview panel markup (filled by admin.js).
+	 * Preview types the current activity mode can actually produce.
 	 *
-	 * @param string $id      Panel id.
-	 * @param bool   $live    Whether it follows unsaved Display form fields.
+	 * @return array<string,string> type => label.
+	 */
+	public static function preview_types(): array {
+		$all = array(
+			'purchase' => __( 'Purchase', 'wp-live-hype' ),
+			'featured' => __( 'Featured', 'wp-live-hype' ),
+			'explore'  => __( 'Spotlight', 'wp-live-hype' ),
+			'location' => __( 'Shipping', 'wp-live-hype' ),
+			'sale'     => __( 'Sale', 'wp-live-hype' ),
+			'popular'  => __( 'Popular', 'wp-live-hype' ),
+		);
+		switch ( (string) Settings::get( 'activity_mode' ) ) {
+			case 'aggregate':
+				$keys = array( 'purchase', 'sale', 'popular' );
+				break;
+			case 'hybrid':
+				$keys = array( 'purchase', 'featured', 'explore', 'location', 'sale', 'popular' );
+				break;
+			default:
+				$keys = array( 'featured', 'explore', 'location', 'sale' );
+		}
+		return array_intersect_key( $all, array_flip( $keys ) );
+	}
+
+	/**
+	 * Preview panel markup (filled by admin.js), limited to the types the
+	 * current activity mode can produce.
+	 *
+	 * @param string $id   Panel id.
+	 * @param bool   $live Whether it follows unsaved Display form fields.
 	 */
 	public static function preview_panel( string $id, bool $live = false ): void {
+		$types = self::preview_types();
+		$first = (string) key( $types );
 		?>
-		<div class="wplh-preview" id="<?php echo esc_attr( $id ); ?>" data-live="<?php echo $live ? '1' : '0'; ?>">
+		<div class="wplh-preview" id="<?php echo esc_attr( $id ); ?>" data-live="<?php echo $live ? '1' : '0'; ?>" data-type="<?php echo esc_attr( $first ); ?>">
 			<div class="wplh-preview__banner" role="note"><?php esc_html_e( 'SYNTHETIC PREVIEW — NOT REAL CUSTOMER ACTIVITY', 'wp-live-hype' ); ?></div>
 			<div class="wplh-preview__toolbar">
 				<div class="wplh-segmented" role="group" aria-label="<?php esc_attr_e( 'Device', 'wp-live-hype' ); ?>">
@@ -754,11 +788,9 @@ final class Admin {
 					<button type="button" class="wplh-seg" data-device="mobile" aria-pressed="false"><?php esc_html_e( 'Mobile', 'wp-live-hype' ); ?></button>
 				</div>
 				<div class="wplh-segmented" role="group" aria-label="<?php esc_attr_e( 'Notification type', 'wp-live-hype' ); ?>">
-					<button type="button" class="wplh-seg is-active" data-type="purchase" aria-pressed="true"><?php esc_html_e( 'Purchase', 'wp-live-hype' ); ?></button>
-					<button type="button" class="wplh-seg" data-type="sale" aria-pressed="false"><?php esc_html_e( 'Sale', 'wp-live-hype' ); ?></button>
-					<button type="button" class="wplh-seg" data-type="popular" aria-pressed="false"><?php esc_html_e( 'Popular', 'wp-live-hype' ); ?></button>
-					<button type="button" class="wplh-seg" data-type="featured" aria-pressed="false"><?php esc_html_e( 'Featured', 'wp-live-hype' ); ?></button>
-					<button type="button" class="wplh-seg" data-type="location" aria-pressed="false"><?php esc_html_e( 'Shipping', 'wp-live-hype' ); ?></button>
+					<?php foreach ( $types as $type => $label ) : ?>
+						<button type="button" class="wplh-seg <?php echo $type === $first ? 'is-active' : ''; ?>" data-type="<?php echo esc_attr( $type ); ?>" aria-pressed="<?php echo $type === $first ? 'true' : 'false'; ?>"><?php echo esc_html( $label ); ?></button>
+					<?php endforeach; ?>
 				</div>
 			</div>
 			<div class="wplh-preview__stage" data-device="desktop">
