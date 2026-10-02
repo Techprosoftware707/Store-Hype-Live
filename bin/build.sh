@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-# Build an installable WordPress plugin ZIP for ALWAYS FINAL Social Proof.
+# Build an installable WordPress plugin ZIP for WP Live Hype.
 #
 # Usage: bin/build.sh
 # Optional tools (used when available):
 #   - terser (npx terser)  → minifies public/js/notifications.js
-#   - wp-cli (wp)          → regenerates languages/always-final-social-proof.pot
+#   - wp-cli (wp)          → regenerates languages/wp-live-hype.pot
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SLUG="always-final-social-proof"
+SLUG="wp-live-hype"
 SRC="$ROOT/$SLUG"
 VERSION="$(sed -n 's/^ \* Version:[[:space:]]*//p' "$SRC/$SLUG.php" | head -n1 | tr -d '[:space:]')"
 DIST="$ROOT/dist"

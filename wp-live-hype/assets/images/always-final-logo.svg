@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="wplh-logo-title">
+	<title id="wplh-logo-title">ALWAYS FINAL</title>
+	<rect width="64" height="64" rx="14" fill="#0b0b0b"/>
+	<g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter">
+		<path d="M11 50 L21.5 15 L32 50"/>
+		<path d="M15.5 38 H27.5"/>
+		<path d="M40 50 V15 H53"/>
+		<path d="M40 31.5 H50"/>
+	</g>
+	<circle cx="53" cy="49" r="3.5" fill="#16a34a"/>
+</svg>
